@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="The Registry"
+config/name="مصلحة السجل — The Egyptian Registry"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=120

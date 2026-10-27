@@ -414,7 +414,7 @@ metadata/_custom_type_script = "uid://cftf5cycer8qm"
 [sub_resource type="Gradient" id="Gradient_cheapvig"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.7032641, 1)
-colors = PackedColorArray(0.13, 0.07072, 0.031200001, 0, 0, 0, 0, 0.08627451, 0, 0, 0, 0.49411765)
+colors = PackedColorArray(0.94, 0.88, 0.76, 0, 0.78, 0.65, 0.45, 0.08627451, 0.6, 0.45, 0.15, 0.49411765)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cheapvig"]
 gradient = SubResource("Gradient_cheapvig")
@@ -747,13 +747,13 @@ shader_parameter/tint_color = Color(0.82, 0.92, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_yqjtg"]
 offsets = PackedFloat32Array(0.25619835, 1)
-colors = PackedColorArray(1, 0.46101677, 0.3927373, 1, 0, 0.8411461, 0, 1)
+colors = PackedColorArray(0.831, 0.686, 0.216, 1, 0.78, 0.16, 0.18, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_lnu2h"]
 gradient = SubResource("Gradient_yqjtg")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edb"]
-bg_color = Color(0.24, 0.0408, 0.08727995, 0.8509804)
+bg_color = Color(0.78, 0.16, 0.18, 0.85)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
@@ -869,12 +869,12 @@ transition = 11
 metadata/_custom_type_script = "uid://d20fd7hw4vocu"
 
 [sub_resource type="StyleBoxFlat" id="SB_panel"]
-bg_color = Color(0.07, 0.07, 0.09, 0.85)
+bg_color = Color(0.94, 0.88, 0.76, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.506, 0.349, 0.29, 0.35)
+border_color = Color(0.6, 0.45, 0.15, 0.7)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -885,21 +885,21 @@ content_margin_left = 0.0
 content_margin_top = 6.0
 content_margin_right = 0.0
 content_margin_bottom = 6.0
-bg_color = Color(0.12, 0.12, 0.14, 0.9)
+bg_color = Color(0.15, 0.12, 0.09, 0.9)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="SB_slider_fill"]
-bg_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+bg_color = Color(0.831, 0.686, 0.216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="SB_slider_fill_hl"]
-bg_color = Color(0.61, 0.44, 0.37, 1)
+bg_color = Color(0.61, 0.5, 0.3, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -910,7 +910,7 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(1, 0.68466663, 0.57, 0.18039216)
+bg_color = Color(0.831, 0.686, 0.216, 0.18039216)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -921,7 +921,7 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(0.506, 0.349, 0.29, 0.5)
+bg_color = Color(0.78, 0.16, 0.18, 0.5)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -932,14 +932,14 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(0.506, 0.349, 0.29, 0.32)
+bg_color = Color(0.831, 0.686, 0.216, 0.32)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
-bg_color = Color(0.65, 0, 0.021666646, 0.39215687)
+bg_color = Color(0.78, 0.16, 0.18, 0.39215687)
 
 [sub_resource type="StyleBoxFlat" id="SB_prog_bg"]
 bg_color = Color(0.12, 0.12, 0.14, 0.9)
@@ -947,33 +947,32 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.506, 0.349, 0.29, 0.5)
+border_color = Color(0.6, 0.45, 0.15, 0.5)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="SB_prog_fill"]
-bg_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+bg_color = Color(0.831, 0.686, 0.216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_home"]
-bg_color = Color(0.75, 0.13, 0.13, 0.9)
+bg_color = Color(0.78, 0.16, 0.18, 0.9)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iekjf"]
-bg_color = Color(0.19315353, 0.19315353, 0.19315341, 1)
+bg_color = Color(0.18, 0.12, 0.05, 1)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndb"]
-bg_color = Color(0.1, 0.32, 0.65, 0.8509804)
+bg_color = Color(0.831, 0.686, 0.216, 0.8509804)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
@@ -1002,6 +1001,7 @@ script = ExtResource("10")
 paper_sfxs = [SubResource("Resource_gxtfn"), SubResource("Resource_twgab"), SubResource("Resource_02fa5"), SubResource("Resource_nepv3"), SubResource("Resource_7025r"), SubResource("Resource_m4url"), SubResource("Resource_8ool0")]
 
 [node name="DeskBG" type="TextureRect" parent="." unique_id=1865923391]
+modulate = Color(0.94, 0.88, 0.76, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

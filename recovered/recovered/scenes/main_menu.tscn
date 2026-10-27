@@ -135,7 +135,7 @@ transition = 11
 metadata/_custom_type_script = "uid://d20fd7hw4vocu"
 
 [sub_resource type="StyleBoxFlat" id="SB_links_panel"]
-bg_color = Color(0.0702, 0.0702, 0.09, 0.2784314)
+bg_color = Color(0.94, 0.88, 0.76, 0.85)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -216,14 +216,14 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.337, 0.282, 0.282, 1)
+border_color = Color(0.6, 0.45, 0.15, 0.7)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="SB_mm_slider_fill"]
-bg_color = Color(0.337, 0.282, 0.282, 1)
+bg_color = Color(0.831, 0.686, 0.216, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -235,15 +235,15 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.93, 0, 0, 0.6862745)
+border_color = Color(0.78, 0.16, 0.18, 0.8)
 
 [sub_resource type="StyleBoxFlat" id="SB_settings_normal"]
-bg_color = Color(0.07, 0.07, 0.09, 0.85)
+bg_color = Color(0.94, 0.88, 0.76, 0.9)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.506, 0.349, 0.29, 0.35)
+border_color = Color(0.6, 0.45, 0.15, 0.6)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -275,7 +275,7 @@ transition = 11
 metadata/_custom_type_script = "uid://d20fd7hw4vocu"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxnar"]
-bg_color = Color(0.6, 0.6, 0.6, 0.45882353)
+bg_color = Color(0.94, 0.88, 0.76, 0.45882353)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -288,12 +288,12 @@ content_margin_left = 20.0
 content_margin_top = 8.0
 content_margin_right = 20.0
 content_margin_bottom = 8.0
-bg_color = Color(0.37, 0.24013002, 0.081400014, 0.5764706)
+bg_color = Color(0.6, 0.45, 0.15, 0.65)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.33206052, 0.22004268, 0.17799726, 0.5019608)
+border_color = Color(0.831, 0.686, 0.216, 0.7)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 
@@ -302,12 +302,12 @@ content_margin_left = 20.0
 content_margin_top = 8.0
 content_margin_right = 20.0
 content_margin_bottom = 8.0
-bg_color = Color(0.67, 0.60858333, 0.5025, 0.56078434)
+bg_color = Color(0.94, 0.88, 0.76, 0.6)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.33206052, 0.22004268, 0.17799726, 0.5019608)
+border_color = Color(0.831, 0.686, 0.216, 0.7)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 
@@ -332,12 +332,12 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.11764706)
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.85, 0.1615, 0.333625, 0.4392157)
+border_color = Color(0.78, 0.16, 0.18, 0.5)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -348,7 +348,7 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(0.6, 0.12, 0.12, 0.5137255)
+bg_color = Color(0.78, 0.16, 0.18, 0.7)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -359,32 +359,32 @@ content_margin_left = 8.0
 content_margin_top = 4.0
 content_margin_right = 8.0
 content_margin_bottom = 4.0
-bg_color = Color(0.9, 0.216, 0.216, 0.20392157)
+bg_color = Color(0.78, 0.16, 0.18, 0.3)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="SB_confirm"]
-bg_color = Color(0.07, 0.07, 0.09, 0.85)
+bg_color = Color(0.94, 0.88, 0.76, 0.95)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.506, 0.349, 0.29, 0.35)
+border_color = Color(0.6, 0.45, 0.15, 0.7)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="SB_confirm_cancel"]
-bg_color = Color(0.19315353, 0.19315353, 0.19315341, 1)
+bg_color = Color(0.78, 0.16, 0.18, 1)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="SB_confirm_confirm"]
-bg_color = Color(0.24, 0.0408, 0.08727995, 0.8509804)
+bg_color = Color(0.18, 0.55, 0.25, 0.9)
 border_width_bottom = 2
 expand_margin_left = 10.0
 expand_margin_right = 10.0
@@ -392,7 +392,7 @@ expand_margin_right = 10.0
 [sub_resource type="StyleBoxEmpty" id="SB_confirm_pressed"]
 
 [node name="MainMenu" type="Control" unique_id=70906089]
-self_modulate = Color(0.23151812, 0.23151812, 0.23151812, 1)
+self_modulate = Color(0.15, 0.12, 0.09, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -411,7 +411,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+color = Color(0.12, 0.09, 0.06, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1574873630]
 layout_mode = 1
@@ -1387,9 +1387,9 @@ offset_top = 45.0
 offset_right = 575.0
 offset_bottom = 203.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
-theme_override_colors/font_outline_color = Color(0.3019608, 0.3019608, 0.3019608, 0.8745098)
+theme_override_colors/font_color = Color(0.831, 0.686, 0.216, 1)
+	theme_override_colors/font_shadow_color = Color(0.0, 0.18, 0.36, 1)
+	theme_override_colors/font_outline_color = Color(0.05, 0.05, 0.05, 0.9)
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 35
 theme_override_constants/shadow_outline_size = 16
@@ -1408,7 +1408,7 @@ position = Vector2(199, 112)
 points = PackedVector2Array(-28, 10, 2, 15, 43, 15, 70, 1, 100, -14, 128, -9, 143, -6, 193, -1, 210, -1, 231, -1, 257, -1, 280, -1, 304, -3, 323, -6, 346, -9, 377, -7, 406, -3, 440, 3, 461, 6, 502, 8, 525, 8, 558, 3, 601, 10, 619, 12, 627, 13, 652, 39, 659, 44, 673, 49, 683, 51, 699, 55, 741, 66, 763, 64, 776, 56)
 width = 40.0
 width_curve = SubResource("Curve_vr8o3")
-default_color = Color(1, 0, 0, 0.43400002)
+default_color = Color(0.831, 0.686, 0.216, 0.55)
 
 [node name="TitleHotspot" type="Control" parent="." unique_id=1926683339]
 z_index = 11

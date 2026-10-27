@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://drcxt5oxyt0nx"]
+
+[ext_resource type="Script" uid="uid://ydbgf7rmpq3u" path="res://system/scripts/message_bubble.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bwl8hoao1ybof" path="res://fonts/MP16REG.ttf" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="SB_bubble"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.998, 1, 0.905, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.15)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MessageBubble" type="HBoxContainer" unique_id=80301979]
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="LeftSpacer" type="Control" parent="." unique_id=1000594049]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1726637703]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="NameLabel" type="Label" parent="Content" unique_id=149034710]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.6)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 17
+text = "Customer"
+
+[node name="Bubble" type="PanelContainer" parent="Content" unique_id=1469075580]
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_bubble")
+
+[node name="Label" type="Label" parent="Content/Bubble" unique_id=895652151]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.4627451)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 24
+text = "Message"
+autowrap_mode = 3
+
+[node name="RightSpacer" type="Control" parent="." unique_id=1248274964]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2

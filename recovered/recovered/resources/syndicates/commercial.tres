@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndcomm7g"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "COMMERCIAL"
+name_en = "Commercial Syndicate"
+name_ar = "نقابة التجاريين"
+emojis = ["💼", "📊", "💰"]
+occupations_en = ["accountant", "graphic designer", "hr officer", "office administrator", "project manager", "sales rep", "marketing"]
+occupations_ar = ["محاسب", "مصمم", "موارد بشرية", "إداري", "مدير مشروعات", "مندوب مبيعات", " أخصائي تسويق"]

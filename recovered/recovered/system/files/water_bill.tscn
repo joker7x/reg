@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://dtv3njec678no"]
+
+[ext_resource type="Script" uid="uid://s4tg0ohap8t3" path="res://system/files/utility_bill.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://3cbld0v6itji" path="res://art/papers/water_bill.png" id="2"]
+[ext_resource type="Script" uid="uid://cqmexd3ayd17" path="res://system/scripts/utils/rand_number_label.gd" id="3"]
+[ext_resource type="Script" uid="uid://byis0tj6melxp" path="res://system/scripts/utils/rand_emoji_label.gd" id="4"]
+
+[node name="WaterBill" type="Control" unique_id=1593968564 node_paths=PackedStringArray("ref_numb_value", "full_name_value", "address_value", "gov_value", "unit_value", "floor_value", "apt_value", "usage_value", "fees_value", "amount_value")]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_bottom = 135.0
+script = ExtResource("1")
+ref_numb_value = NodePath("ContentMargin/GridContainer/RefNumbValue")
+full_name_value = NodePath("ContentMargin/GridContainer/FullNameValue")
+address_value = NodePath("ContentMargin/GridContainer/AddressValue")
+gov_value = NodePath("ContentMargin/HBoxContainer2/GovValue")
+unit_value = NodePath("ContentMargin/GridContainer2/UnitValue")
+floor_value = NodePath("ContentMargin/GridContainer2/FloorValue")
+apt_value = NodePath("ContentMargin/GridContainer2/AptValue")
+usage_value = NodePath("ContentMargin/GridContainer3/UsageValue")
+fees_value = NodePath("ContentMargin/GridContainer3/FeesValue")
+amount_value = NodePath("ContentMargin/GridContainer3/AmountValue")
+usage_postfix = "Units"
+usage_range = Vector2(10, 50)
+flip_texture_in_rtl = true
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=699610930]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=2047919230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="ContentMargin" type="Control" parent="." unique_id=1553935853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 12.0
+offset_right = 385.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 13
+text = "Water Bill"
+
+[node name="GridContainer" type="Control" parent="ContentMargin" unique_id=2002823425]
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 42.0
+offset_right = 239.78432
+offset_bottom = 133.0
+
+[node name="RefNumLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1109275086]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Ref. No.: "
+
+[node name="RefNumbValue" type="Label" parent="ContentMargin/GridContainer" unique_id=794520027]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 162.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "1234567891"
+vertical_alignment = 1
+script = ExtResource("3")
+integer_digits = 10
+
+[node name="FullNameLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=577065286]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 48.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Full name: "
+
+[node name="FullNameValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1734831960]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 33.0
+offset_right = 163.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "_________"
+vertical_alignment = 1
+
+[node name="AddressLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1547180659]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 48.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Address: "
+
+[node name="AddressValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1555461106]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 60.0
+offset_right = 192.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_constants/line_spacing = -3
+theme_override_font_sizes/font_size = 10
+text = "Banha, Damanhour"
+autowrap_mode = 3
+
+[node name="GridContainer2" type="Control" parent="ContentMargin" unique_id=1059476105]
+anchors_preset = 0
+offset_left = 224.0
+offset_top = 16.0
+offset_right = 420.0
+offset_bottom = 39.0
+
+[node name="UnitLabel" type="Label" parent="ContentMargin/GridContainer2" unique_id=1457548672]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 32.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Unit: "
+vertical_alignment = 1
+
+[node name="UnitValue" type="Label" parent="ContentMargin/GridContainer2" unique_id=429145353]
+layout_mode = 0
+offset_left = 25.999996
+offset_top = 2.9999995
+offset_right = 46.999996
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "199"
+vertical_alignment = 1
+
+[node name="FloorLabel" type="Label" parent="ContentMargin/GridContainer2" unique_id=1454336289]
+layout_mode = 0
+offset_left = 49.999996
+offset_top = 2.9999995
+offset_right = 86.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Floor: "
+vertical_alignment = 1
+
+[node name="FloorValue" type="Label" parent="ContentMargin/GridContainer2" unique_id=1242753921]
+layout_mode = 0
+offset_left = 78.00001
+offset_right = 97.00001
+offset_bottom = 23.000002
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "3"
+vertical_alignment = 1
+
+[node name="AptLabel" type="Label" parent="ContentMargin/GridContainer2" unique_id=1155102399]
+layout_mode = 0
+offset_left = 108.000015
+offset_top = 3.000001
+offset_right = 138.00002
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Apt.: "
+vertical_alignment = 1
+
+[node name="AptValue" type="Label" parent="ContentMargin/GridContainer2" unique_id=2021511370]
+layout_mode = 0
+offset_left = 133.0
+offset_right = 150.0
+offset_bottom = 23.000002
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "3"
+vertical_alignment = 1
+
+[node name="GridContainer3" type="Control" parent="ContentMargin" unique_id=1699419111]
+anchors_preset = 0
+offset_left = 226.0
+offset_top = 44.0
+offset_right = 436.7843
+offset_bottom = 123.0
+
+[node name="UsageLabel" type="Label" parent="ContentMargin/GridContainer3" unique_id=1588536856]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 37.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Usage: "
+vertical_alignment = 1
+
+[node name="UsageValue" type="Label" parent="ContentMargin/GridContainer3" unique_id=1719047672]
+layout_mode = 0
+offset_left = 52.0
+offset_right = 119.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 15
+text = "21.2 UNITS"
+vertical_alignment = 1
+
+[node name="FeesLabel" type="Label" parent="ContentMargin/GridContainer3" unique_id=2052699698]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 37.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "fees: "
+vertical_alignment = 1
+
+[node name="FeesValue" type="Label" parent="ContentMargin/GridContainer3" unique_id=606499593]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 28.0
+offset_right = 119.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 15
+text = "3.7 E£"
+vertical_alignment = 1
+
+[node name="AmountLabel" type="Label" parent="ContentMargin/GridContainer3" unique_id=333056095]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 37.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Paid: "
+vertical_alignment = 1
+
+[node name="AmountValue" type="Label" parent="ContentMargin/GridContainer3" unique_id=1065936108]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 55.0
+offset_right = 119.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 15
+text = "46 E£"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContentMargin" unique_id=1616623273]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 10.0
+offset_right = 191.0
+offset_bottom = 33.0
+alignment = 2
+
+[node name="GovValue" type="Label" parent="ContentMargin/HBoxContainer2" unique_id=663355275]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2541477, 0.4585014, 0.42974406, 1)
+theme_override_font_sizes/font_size = 9
+text = "Menofiya"
+
+[node name="WaterLogo" type="Label" parent="ContentMargin/HBoxContainer2" unique_id=1591655964]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "💦"
+script = ExtResource("4")
+emojis = ["💦", "💧", "🚰", "🫗", "🚿", "🔫", "🌊"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="CorpLabel" type="Label" parent="ContentMargin/HBoxContainer2" unique_id=926380784]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2541477, 0.4585014, 0.42974406, 1)
+theme_override_font_sizes/font_size = 9
+text = "Corp"

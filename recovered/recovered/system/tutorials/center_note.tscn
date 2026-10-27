@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dfgq8urglgfb1"]
+
+[ext_resource type="Script" uid="uid://b3f0n0t3gd1" path="res://system/tutorials/center_note.gd" id="1"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://bce50trctd2fg" path="res://audio/sfx/paper/860359__sokworks__paper-rustle.wav" id="3"]
+[ext_resource type="Texture2D" uid="uid://bhrbnyadkfcf7" path="res://art/papers/employment_cert.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl0n650pa1aw6" path="res://art/papers/tape.png" id="5"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="6"]
+[ext_resource type="Shader" uid="uid://ccvcbtgvflsaj" path="res://system/shaders/highlight.gdshader" id="7"]
+
+[sub_resource type="Resource" id="Resource_0qioj"]
+script = ExtResource("2")
+stream = ExtResource("3")
+min_volume = -10.0
+max_volume = -5.0
+min_pitch = 0.7
+max_pitch = 1.3
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hl"]
+shader = ExtResource("7")
+shader_parameter/Line_Smoothness = 0.062
+shader_parameter/Line_Width = 0.111
+shader_parameter/Brightness = 2.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.5
+shader_parameter/Speed = 0.5
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 0.346
+shader_parameter/surface = ExtResource("4")
+
+[node name="CenterNote" type="Control" unique_id=218864586]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+exit_duration = 0.4
+enter_duration = 0.2
+enter_transition = 8
+exit_transition = 11
+exit_spin_transition = 5
+exit_spin_ease = 0
+tilt_range = 4.0
+sequence_gap = 0.15
+hover_color = Color(1.1638972, 1.1638972, 1.1638972, 1)
+clicks_to_dismiss = 2
+shake_magnitude = 4.0
+shake_duration = 0.1
+flash_color = Color(1, 0.7186498, 0.696235, 1)
+flash_duration = 0.3
+click_sfxs = [SubResource("Resource_0qioj")]
+splash_droplet_count = 12
+splash_min_size = 5.0
+splash_lifetime_min = 0.15
+splash_speed_min = 200.0
+splash_speed_max = 400.0
+splash_gravity = 1000.0
+splash_fade = false
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1049073266]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.020000001
+anchor_top = 0.020000001
+anchor_right = 0.98
+anchor_bottom = 1.0200001
+offset_left = 2.0000002
+offset_top = -2.0000002
+offset_right = 2.0
+offset_bottom = -2.0000153
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=39608268]
+modulate = Color(0.98, 0.931, 0.686, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.017453292
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="Tape" type="TextureRect" parent="." unique_id=267997064]
+modulate = Color(1, 1, 1, 0.32156864)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40100002
+anchor_top = -0.133
+anchor_right = 0.62700003
+anchor_bottom = 0.133
+offset_left = 0.010749817
+offset_top = -0.049995422
+offset_right = -0.05001831
+offset_bottom = 0.049999237
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+script = ExtResource("6")
+max_offset = 20.0
+randomize_y = false
+max_rot = 10.0
+
+[node name="TapeShadow" type="TextureRect" parent="Tape" unique_id=634399520]
+modulate = Color(0, 0, 0, 0.12156863)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_top = 0.025
+anchor_right = 0.966
+anchor_bottom = 1.0250001
+offset_left = -0.010232568
+offset_right = -0.010234833
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=733173013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.017453292
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "This is a note"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_direction = 1
+
+[node name="Highlight" type="ColorRect" parent="." unique_id=384221715]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_hl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

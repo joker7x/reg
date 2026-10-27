@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndjour5e"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "JOURNALISTS"
+name_en = "Journalists' Syndicate"
+name_ar = "نقابة الصحفيين"
+emojis = ["📰", "🗞️", "✍️"]
+occupations_en = ["journalist"]
+occupations_ar = ["صحفي"]

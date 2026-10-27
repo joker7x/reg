@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bskag8pbvkmw4"]
+
+[ext_resource type="Script" uid="uid://cqmexd3ayd17" path="res://system/scripts/utils/rand_number_label.gd" id="1"]
+
+[node name="RandNumberLabel" type="Label" unique_id=1178599333]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1")

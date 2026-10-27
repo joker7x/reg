@@ -1,0 +1,90 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="مصلحة السجل — The Egyptian Registry"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=120
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://cndqr50xw0v1u"
+config/icon="uid://v0jqwsep0nic"
+
+[audio]
+
+buses/default_bus_layout="uid://dwpmr4k2wrdvc"
+
+[autoload]
+
+Enums="*uid://d2hrflefdxenx"
+FunnyTexts="*uid://dp3g2c3jqed5p"
+NameDatabase="*uid://bxwk8j7utgexs"
+DocumentRules="*uid://c1fb13med5brq"
+CaseGenerator="*uid://ujuqme11yas8"
+DocumentDatabase="*uid://skjdnn1lu37p"
+Signals="*uid://w2v3th66tslp"
+GameSettings="*uid://drwb47snjgjrg"
+SceneTransition="*uid://dqrw6p157gcew"
+MessageHistory="*res://system/scripts/auto_loads/message_history.gd"
+DialogueBox="*uid://d230l2kp1tgji"
+Global="*uid://csv874eoqhues"
+PlayerDialogueBox="*uid://dbspp5qnkm0er"
+SoundManager="*uid://b411kgd75ofp4"
+PortraitDatabase="*uid://chsgq60eqs642"
+FontManager="*uid://b5lfmk88wjhfl"
+CursorManager="*res://system/scripts/auto_loads/cursor_manager.tscn"
+TapIndicatorSpawner="*res://system/scripts/auto_loads/tap_indicator_spawner.tscn"
+OccupationDatabase="*res://system/scripts/auto_loads/occupation_database.tscn"
+SpecialCitizensDatabase="*res://system/scripts/auto_loads/special_citizens_database.tscn"
+RankSystem="*res://system/scripts/auto_loads/rank_system.gd"
+SaveSystem="*res://system/scripts/auto_loads/save_system.gd"
+ShopSystem="*res://system/scripts/auto_loads/shop_system.gd"
+ScoreSystem="*res://system/scripts/auto_loads/score_system.tscn"
+DialogueBubble="*res://system/scripts/auto_loads/dialogue_bubble.tscn"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/handheld/orientation=4
+
+[editor_overrides]
+
+text_editor/behavior/indent/type=0
+text_editor/behavior/indent/size=4
+
+[file_customization]
+
+folder_colors={
+"res://art/": "yellow",
+"res://audio/": "pink",
+"res://fonts/": "teal",
+"res://resources/": "green",
+"res://scenes/": "purple",
+"res://system/": "red"
+}
+
+[gui]
+
+theme/custom_font="uid://bwl8hoao1ybof"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/strings.ar.translation", "res://translations/strings.en.translation")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

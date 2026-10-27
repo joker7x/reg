@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dqrw6p157gcew"]
+
+[ext_resource type="Script" uid="uid://ca4ymhhi625de" path="res://system/scripts/auto_loads/fade_transition.gd" id="1"]
+[ext_resource type="Shader" uid="uid://c8b3hqcupdner" path="res://system/shaders/dither_shader.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe840"]
+shader = ExtResource("2")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 2.000000095
+shader_parameter/pixel_size = 2.0
+shader_parameter/resolution = Vector2(1280, 720)
+shader_parameter/dither_offset = Vector2(2, 0)
+shader_parameter/bayer_size = 2
+shader_parameter/interpolate = true
+shader_parameter/invert = true
+shader_parameter/falloff = 2.00000009174012
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[node name="FadeTransition" type="CanvasLayer" unique_id=1982701586]
+process_mode = 3
+script = ExtResource("1")
+fade_out_duration = 1.0
+fade_in_duration = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=565330234]
+material = SubResource("ShaderMaterial_fe840")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ws6yaxu6083v"
+path="res://.godot/imported/shutdown sequence.ogg-0051dbbfe29f004a0b9e1cf6018bef17.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/shutdown sequence.ogg"
+dest_files=["res://.godot/imported/shutdown sequence.ogg-0051dbbfe29f004a0b9e1cf6018bef17.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

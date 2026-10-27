@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l7i28j810rwo"
+path="res://.godot/imported/glass slide.wav-ca5f0b63ba16e220cde69d5d4d8c1279.sample"
+
+[deps]
+
+source_file="res://audio/sfx/tea/glass slide.wav"
+dest_files=["res://.godot/imported/glass slide.wav-ca5f0b63ba16e220cde69d5d4d8c1279.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=48000
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=0
+compress/mode=0

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dtqs1dschjsb3"]
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.6, 1, 1, 1, 0)
+
+[node name="SplashParticles" type="CPUParticles2D" unique_id=713705201]
+z_index = 1000
+emitting = false
+amount = 16
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 0.55
+direction = Vector2(0, -90)
+spread = 180.0
+gravity = Vector2(-300, 300)
+initial_velocity_min = 250.0
+initial_velocity_max = 400.0
+angular_velocity_min = 341.4
+angular_velocity_max = 720.0
+orbit_velocity_min = -1.0
+orbit_velocity_max = 1.0
+linear_accel_min = -20.0
+linear_accel_max = -20.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_fade")
+hue_variation_min = -1.0
+hue_variation_max = 1.0

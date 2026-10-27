@@ -1,0 +1,813 @@
+[gd_scene format=3 uid="uid://m6igc1ik4ygt"]
+
+[ext_resource type="Script" uid="uid://fxtf4q0rilll" path="res://system/files/form.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bj2fe8jvlpyjy" path="res://system/tools/stamped_approve_ink.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://r6je63afpm52" path="res://system/tools/stamped_reject_ink.tscn" id="3"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://g1ehjw8f7csw" path="res://audio/sfx/paper/p4.wav" id="5"]
+[ext_resource type="Texture2D" uid="uid://cy76q0b6p2jpv" path="res://art/papers/form.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b8n88yxkrbygu" path="res://art/papers/form wcivil.png" id="7"]
+[ext_resource type="FontVariation" uid="uid://bpy71vhpmyd6t" path="res://fonts/overrides/methlama-medium.tres" id="8"]
+[ext_resource type="FontVariation" uid="uid://derfs2s0x60lb" path="res://fonts/overrides/ArabixelBasic.tres" id="9"]
+[ext_resource type="Texture2D" uid="uid://cjvjujy4v6b2q" path="res://art/ui/check.png" id="10"]
+[ext_resource type="Script" uid="uid://ng5rluv0soov" path="res://system/files/form_field.gd" id="11"]
+[ext_resource type="Script" uid="uid://drdqmgjfl6jh0" path="res://system/scripts/resources/mistake_data.gd" id="12"]
+[ext_resource type="PackedScene" uid="uid://jgnce75bxuya" path="res://system/files/marker_line.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://k4pislkf822e" path="res://system/files/field_highlight.tscn" id="14"]
+[ext_resource type="Script" uid="uid://dokkgjjdj7tcy" path="res://system/files/form_checkbox_field.gd" id="15"]
+
+[sub_resource type="Resource" id="Resource_0827u"]
+script = ExtResource("4")
+stream = ExtResource("5")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ImageTexture" id="ImageTexture_dnx8u"]
+
+[sub_resource type="Resource" id="Resource_temmi"]
+script = ExtResource("12")
+type = 1
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_cksxq"]
+script = ExtResource("12")
+type = 1
+target_id = 1
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_vfxl4"]
+script = ExtResource("12")
+type = 1
+target_id = 2
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_jfuhq"]
+script = ExtResource("12")
+type = 1
+target_id = 3
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_mqp24"]
+script = ExtResource("12")
+type = 1
+target_id = 4
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_jvtco"]
+script = ExtResource("12")
+type = 1
+target_id = 4
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_lt8hr"]
+script = ExtResource("12")
+type = 1
+target_id = 5
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="ImageTexture" id="ImageTexture_rwphx"]
+
+[sub_resource type="Resource" id="Resource_61ayn"]
+script = ExtResource("12")
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="ImageTexture" id="ImageTexture_ac3dr"]
+
+[sub_resource type="Resource" id="Resource_8o8nt"]
+script = ExtResource("12")
+target_id = 1
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_ecwr7"]
+script = ExtResource("12")
+target_id = 2
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_dnx8u"]
+script = ExtResource("12")
+target_id = 3
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_rwphx"]
+script = ExtResource("12")
+target_id = 4
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Resource" id="Resource_ac3dr"]
+script = ExtResource("12")
+target_id = 5
+metadata/_custom_type_script = "uid://drdqmgjfl6jh0"
+
+[sub_resource type="Shader" id="Shader_dnx8u"]
+code = "shader_type canvas_item;
+render_mode blend_premul_alpha;
+
+uniform float Line_Smoothness : hint_range(0, 0.1) = 0.045;
+uniform float Line_Width : hint_range(0, 0.2) = 0.09;
+uniform float Brightness = 3.0;
+uniform float Rotation_deg : hint_range(-90, 90) = 30;
+uniform float Distortion : hint_range(1, 2) = 1.8;
+uniform float Speed = 0.7;
+uniform float Position : hint_range(0, 1) = 0;
+uniform float Position_Min = 0.25;
+uniform float Position_Max = 0.5;
+uniform float Alpha : hint_range(0, 1) = 1;
+uniform sampler2D surface: source_color;
+
+vec2 rotate_uv(vec2 uv, vec2 center, float rotation, bool use_degrees){
+		float _angle = rotation;
+		if(use_degrees){
+			_angle = rotation * (3.1415926/180.0);
+		}
+		mat2 _rotation = mat2(
+			vec2(cos(_angle), -sin(_angle)),
+			vec2(sin(_angle), cos(_angle))
+		);
+		vec2 _delta = uv - center;
+		_delta = _rotation * _delta;
+		return _delta + center;
+	}
+
+void fragment() {
+	vec2 center_uv = UV - vec2(0.5, 0.5);
+	float gradient_to_edge = max(abs(center_uv.x), abs(center_uv.y));
+	gradient_to_edge = gradient_to_edge * Distortion;
+	gradient_to_edge = 1.0 - gradient_to_edge;
+	vec2 rotaded_uv = rotate_uv(UV, vec2(0.5, 0.5), Rotation_deg, true);
+	
+	float remapped_position;
+	{
+		float output_range = Position_Max - Position_Min;
+		remapped_position = Position_Min + output_range * Position;
+	}
+	
+	float remapped_time = TIME * Speed + remapped_position;
+	remapped_time = fract(remapped_time);
+	{
+		remapped_time = -2.0 + 4.0 * remapped_time;
+	}
+	
+	vec2 offset_uv = vec2(rotaded_uv.xy) + vec2(remapped_time, 0.0);
+	float line = vec3(offset_uv, 0.0).x;
+	line = abs(line);
+	line = gradient_to_edge * line;
+	line = sqrt(line);
+	
+	float line_smoothness = clamp(Line_Smoothness, 0.001, 1.0);
+	float offset_plus = Line_Width + line_smoothness;
+	float offset_minus = Line_Width - line_smoothness;
+	
+	float remapped_line;
+	{
+		float input_range = offset_minus - offset_plus;
+		remapped_line = (line - offset_plus) / input_range;
+	}
+	remapped_line *= Brightness;
+	remapped_line = min(remapped_line, Alpha);
+	
+	vec4 surface_tex = texture(surface, UV);
+	COLOR.rgba *= vec4(remapped_line) * surface_tex.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rwphx"]
+shader = SubResource("Shader_dnx8u")
+shader_parameter/Line_Smoothness = 0.0870000041325
+shader_parameter/Line_Width = 0.20000000298023
+shader_parameter/Brightness = 2.0
+shader_parameter/Rotation_deg = -90.0
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 1.0
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 0.250000011875
+shader_parameter/surface = null
+
+[node name="Form" type="Control" unique_id=1593968564 node_paths=PackedStringArray("stamp_parent", "stamp_highlight", "check_box_new", "check_box_renew", "check_box_lost", "reason_value", "full_name_value", "birth_date_value", "birth_place_value", "gender_value", "address_value", "occupation_value", "status_value", "check_birth_certificate", "check_old_id", "check_proof_of_residence", "check_police_report", "check_marriage_certificate", "check_occupation")]
+custom_minimum_size = Vector2(400, 550)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 550.0
+script = ExtResource("1")
+hover_offset = Vector2(0, -20)
+stamp_parent = NodePath("StampAreaClip")
+stamp_highlight = NodePath("StampHighlight")
+check_box_new = NodePath("ContentMargin/VBoxContainer/CheckBoxNew")
+check_box_renew = NodePath("ContentMargin/VBoxContainer/CheckBoxRenew")
+check_box_lost = NodePath("ContentMargin/VBoxContainer/CheckBoxLost")
+reason_value = NodePath("ContentMargin/ReasonValue")
+full_name_value = NodePath("ContentMargin/PersonalGridContainer/FullNameValue")
+birth_date_value = NodePath("ContentMargin/PersonalGridContainer/BirthValue")
+birth_place_value = NodePath("ContentMargin/PersonalGridContainer/BirthPlaceValue")
+gender_value = NodePath("ContentMargin/PersonalGridContainer/GenderValue")
+address_value = NodePath("ContentMargin/PersonalGridContainer/AddressValue")
+occupation_value = NodePath("ContentMargin/PersonalGridContainer/OccupationValue")
+status_value = NodePath("ContentMargin/PersonalGridContainer/StatusValue")
+check_birth_certificate = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxBirth")
+check_old_id = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxID")
+check_proof_of_residence = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxResidence")
+check_police_report = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxPolice")
+check_marriage_certificate = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxMarriage")
+check_occupation = NodePath("ContentMargin/AttachedGridCheckList/CheckBoxOccupation")
+approve_ink = ExtResource("2")
+reject_ink = ExtResource("3")
+review_stamp_offset = Vector2(50, 35)
+hover_sfx = SubResource("Resource_0827u")
+flip_texture_in_rtl = true
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1282329922]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=1661368583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7")
+
+[node name="ContentMargin" type="Control" parent="." unique_id=951712391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=731185389]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 381.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("8")
+theme_override_font_sizes/font_size = 24
+text = "ID CARD"
+horizontal_alignment = 1
+
+[node name="Header2" type="Label" parent="ContentMargin" unique_id=401599129]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 47.0
+offset_right = 381.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("9")
+theme_override_font_sizes/font_size = 10
+text = "APPLICATION FORM"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="Control" parent="ContentMargin" unique_id=1975404669]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 33.0
+offset_right = 93.0
+offset_bottom = 125.0
+
+[node name="CheckBoxNew" type="CheckBox" parent="ContentMargin/VBoxContainer" unique_id=693955677]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 29.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_dnx8u")
+button_mask = 0
+text = "New ID"
+
+[node name="CheckBoxRenew" type="CheckBox" parent="ContentMargin/VBoxContainer" unique_id=544569293]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 19.0
+offset_right = 74.0
+offset_bottom = 47.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_dnx8u")
+button_mask = 0
+text = "Renew"
+
+[node name="CheckBoxLost" type="CheckBox" parent="ContentMargin/VBoxContainer" unique_id=649522531]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 37.0
+offset_right = 74.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_font_sizes/font_size = 12
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_dnx8u")
+button_mask = 0
+text = "Lost"
+
+[node name="ReasonLabel" type="Label" parent="ContentMargin" unique_id=1075662408]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 75.0
+offset_right = 400.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Reason: "
+horizontal_alignment = 1
+
+[node name="ReasonValue" type="Label" parent="ContentMargin" unique_id=1596217185]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 87.0
+offset_right = 368.97
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "Time to finally have a piece of plastic with my name on it."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PersonalHeader" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 109.0
+offset_right = 382.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 13
+text = "PERSONAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PersonalGridContainer" type="Control" parent="ContentMargin" unique_id=721340247]
+anchors_preset = 0
+offset_left = 43.0
+offset_top = 141.0
+offset_right = 403.0
+offset_bottom = 308.0
+
+[node name="FullNameLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=577065286]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 76.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Full name: "
+
+[node name="FullNameValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1734831960 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -2.0
+offset_right = 253.0
+offset_bottom = 18.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+script = ExtResource("11")
+mistake = SubResource("Resource_temmi")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/FullNameValue" unique_id=484492972 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/FullNameValue" unique_id=470876410 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="BirthLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1645008622]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 76.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Birth date: "
+
+[node name="BirthValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1802553350 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 27.0
+offset_right = 253.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+script = ExtResource("11")
+mistake = SubResource("Resource_cksxq")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/BirthValue" unique_id=94833277 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/BirthValue" unique_id=640621745 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="BirthPlaceLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=161880682]
+layout_mode = 0
+offset_top = 61.0
+offset_right = 76.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Birth place: "
+
+[node name="BirthPlaceValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1598984478 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 54.0
+offset_right = 253.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+script = ExtResource("11")
+mistake = SubResource("Resource_vfxl4")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/BirthPlaceValue" unique_id=164447074 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/BirthPlaceValue" unique_id=308066005 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="GenderLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1186418166]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 76.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Gender: "
+
+[node name="GenderValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1732469458 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 86.0
+offset_right = 153.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "Female"
+script = ExtResource("11")
+mistake = SubResource("Resource_jfuhq")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/GenderValue" unique_id=1889453049 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/GenderValue" unique_id=178350614 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="AddressLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1443972934]
+layout_mode = 0
+offset_top = 121.0
+offset_right = 76.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Current Address: "
+
+[node name="AddressValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=503116329 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 116.0
+offset_right = 322.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 14
+text = "_______________"
+script = ExtResource("11")
+mistake = SubResource("Resource_mqp24")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/AddressValue" unique_id=294052499 instance=ExtResource("13")]
+layout_mode = 0
+offset_top = -2.0
+offset_bottom = 38.0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/AddressValue" unique_id=836171360 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="OccupationLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=1297225201]
+layout_mode = 0
+offset_top = 149.0
+offset_right = 76.0
+offset_bottom = 161.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Occupation"
+
+[node name="OccupationValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=607502299 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 142.0
+offset_right = 253.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+script = ExtResource("11")
+mistake = SubResource("Resource_jvtco")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/OccupationValue" unique_id=594448852 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/OccupationValue" unique_id=1278895467 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="StatusLabel" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=748827202]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 92.0
+offset_right = 238.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 10
+text = "Status: "
+
+[node name="StatusValue" type="Label" parent="ContentMargin/PersonalGridContainer" unique_id=446269641 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 87.0
+offset_right = 321.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "Married"
+script = ExtResource("11")
+mistake = SubResource("Resource_lt8hr")
+highlight = NodePath("FieldHighlight")
+
+[node name="MarkerLine" parent="ContentMargin/PersonalGridContainer/StatusValue" unique_id=1027214026 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/PersonalGridContainer/StatusValue" unique_id=1733983747 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="AttachedGridCheckList" type="Control" parent="ContentMargin" unique_id=769807724]
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 353.0
+offset_right = 389.0
+offset_bottom = 435.0
+
+[node name="CheckBoxBirth" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=417593655 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_right = 167.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_rwphx")
+button_mask = 0
+text = "Birth Certificate"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_61ayn")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxBirth" unique_id=470870702 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxBirth" unique_id=646197530 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="CheckBoxID" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=1809149351 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 167.0
+offset_right = 310.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_ac3dr")
+button_mask = 0
+text = "Old ID"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_8o8nt")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxID" unique_id=1581190627 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxID" unique_id=1269614236 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="CheckBoxResidence" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=1953361905 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 167.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_ac3dr")
+button_mask = 0
+text = "Proof of residence"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_ecwr7")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxResidence" unique_id=1657231909 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxResidence" unique_id=1771559866 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="CheckBoxPolice" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=1550416266 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 18.0
+offset_right = 310.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_ac3dr")
+button_mask = 0
+text = "Police Report"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_dnx8u")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxPolice" unique_id=1389601819 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxPolice" unique_id=232613395 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="CheckBoxMarriage" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=1043238736 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 167.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_ac3dr")
+button_mask = 0
+text = "Marital Status Proof"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_rwphx")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" unique_id=2001066791 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" unique_id=1796333574 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="CheckBoxOccupation" type="CheckBox" parent="ContentMargin/AttachedGridCheckList" unique_id=841446605 node_paths=PackedStringArray("highlight")]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 36.0
+offset_right = 310.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_focus_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/icon_max_width = 15
+theme_override_icons/checked = ExtResource("10")
+theme_override_icons/unchecked = SubResource("ImageTexture_ac3dr")
+button_mask = 0
+text = "Occupation proof"
+script = ExtResource("15")
+highlight = NodePath("FieldHighlight")
+mistake = SubResource("Resource_ac3dr")
+
+[node name="MarkerLine" parent="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" unique_id=1574521764 instance=ExtResource("13")]
+layout_mode = 0
+
+[node name="FieldHighlight" parent="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" unique_id=107304456 instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+
+[node name="AttachedHeader" type="Label" parent="ContentMargin" unique_id=824519832]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 321.0
+offset_right = 382.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 13
+text = "ATTACHED DOCS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StampHeader" type="Label" parent="ContentMargin" unique_id=517914887]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 470.0
+offset_right = 380.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0.33715135, 0.2827793, 0.2827793, 0.26900002)
+text = "STAMP SECTION"
+horizontal_alignment = 1
+
+[node name="StampAreaClip" type="Control" parent="." unique_id=1614899483]
+clip_contents = true
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 332.0
+offset_right = 401.575
+offset_bottom = 550.0
+mouse_filter = 2
+
+[node name="StampHighlight" type="ColorRect" parent="." unique_id=681746476]
+visible = false
+z_index = 5
+material = SubResource("ShaderMaterial_rwphx")
+layout_mode = 0
+offset_left = 15.0
+offset_top = 423.0
+offset_right = 386.0
+offset_bottom = 540.0
+
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/FullNameValue" to="ContentMargin/PersonalGridContainer/FullNameValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/FullNameValue" to="ContentMargin/PersonalGridContainer/FullNameValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/BirthValue" to="ContentMargin/PersonalGridContainer/BirthValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/BirthValue" to="ContentMargin/PersonalGridContainer/BirthValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/BirthPlaceValue" to="ContentMargin/PersonalGridContainer/BirthPlaceValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/BirthPlaceValue" to="ContentMargin/PersonalGridContainer/BirthPlaceValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/GenderValue" to="ContentMargin/PersonalGridContainer/GenderValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/GenderValue" to="ContentMargin/PersonalGridContainer/GenderValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/AddressValue" to="ContentMargin/PersonalGridContainer/AddressValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/AddressValue" to="ContentMargin/PersonalGridContainer/AddressValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/OccupationValue" to="ContentMargin/PersonalGridContainer/OccupationValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/OccupationValue" to="ContentMargin/PersonalGridContainer/OccupationValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/PersonalGridContainer/StatusValue" to="ContentMargin/PersonalGridContainer/StatusValue" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/PersonalGridContainer/StatusValue" to="ContentMargin/PersonalGridContainer/StatusValue" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxBirth" to="ContentMargin/AttachedGridCheckList/CheckBoxBirth" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxBirth" to="ContentMargin/AttachedGridCheckList/CheckBoxBirth" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxID" to="ContentMargin/AttachedGridCheckList/CheckBoxID" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxID" to="ContentMargin/AttachedGridCheckList/CheckBoxID" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxResidence" to="ContentMargin/AttachedGridCheckList/CheckBoxResidence" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxResidence" to="ContentMargin/AttachedGridCheckList/CheckBoxResidence" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxPolice" to="ContentMargin/AttachedGridCheckList/CheckBoxPolice" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxPolice" to="ContentMargin/AttachedGridCheckList/CheckBoxPolice" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" to="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" to="ContentMargin/AttachedGridCheckList/CheckBoxMarriage" method="mouse_exit"]
+[connection signal="mouse_entered" from="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" to="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" method="try_mouse_enter"]
+[connection signal="mouse_exited" from="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" to="ContentMargin/AttachedGridCheckList/CheckBoxOccupation" method="mouse_exit"]

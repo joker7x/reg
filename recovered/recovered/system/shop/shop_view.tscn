@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://btfebsoijxsnw"]
+
+[ext_resource type="Script" uid="uid://be02s0po8enpe" path="res://system/shop/shop_view.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbnd535gmiaff" path="res://art/ui/Desk.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://cdshopitm0004" path="res://system/shop/shop_item.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://m6jeomnpqvsp" path="res://art/papers/marker.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://hlh4w3iyt2j8" path="res://art/papers/speech_bubbles.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://crg80u66a04dn" path="res://art/papers/uv_lamp_icon.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bkdfj4g4kjij0" path="res://art/ui/Tea_Cup.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cl08tiv8kt82p" path="res://art/ui/coffee_cup.png" id="8"]
+
+[node name="ShopView" type="Control" unique_id=652278851]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BGBottom" type="TextureRect" parent="." unique_id=743644415]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2")
+
+[node name="Header" type="HBoxContainer" parent="." unique_id=951602987]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031000001
+anchor_top = 0.033
+anchor_right = 0.96900004
+anchor_bottom = 0.086
+offset_left = 0.3199997
+offset_top = 0.23999977
+offset_right = -0.32006836
+offset_bottom = 0.07999802
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Header" unique_id=2100304928]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Shop"
+
+[node name="Money" type="Label" parent="Header" unique_id=1653080982]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Money: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Footer" type="HBoxContainer" parent="." unique_id=1165793128]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031000001
+anchor_top = 0.88900006
+anchor_right = 0.96900004
+anchor_bottom = 0.96700007
+offset_left = 0.3199997
+offset_top = -0.08001709
+offset_right = -0.32006836
+offset_bottom = -0.24005127
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="Footer" unique_id=876263041]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Items" type="Control" parent="." unique_id=1582244888]
+layout_direction = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarkerCard" parent="Items" unique_id=1416846794 instance=ExtResource("3")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_top = 162.0
+offset_right = -26.0
+offset_bottom = 352.0
+grow_horizontal = 0
+item_id = "marker"
+sprite_texture = ExtResource("4")
+
+[node name="ChatCard" parent="Items" unique_id=883400175 instance=ExtResource("3")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -305.0
+offset_top = 465.0
+offset_right = -135.0
+offset_bottom = 655.0
+grow_horizontal = 0
+item_id = "chat_history"
+sprite_texture = ExtResource("5")
+
+[node name="UvCard" parent="Items" unique_id=48856859 instance=ExtResource("3")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1015.0
+offset_top = 238.0
+offset_right = -748.0
+offset_bottom = 614.94116
+grow_horizontal = 0
+item_id = "uv_light"
+sprite_texture = ExtResource("6")
+
+[node name="TeaCard" parent="Items" unique_id=638805671 instance=ExtResource("3")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -387.0
+offset_top = 155.0
+offset_right = -217.0
+offset_bottom = 345.0
+grow_horizontal = 0
+item_id = "tea_skin_black"
+sprite_texture = ExtResource("7")
+
+[node name="CoffeeCard" parent="Items" unique_id=283498133 instance=ExtResource("3")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -561.0
+offset_top = 153.0
+offset_right = -391.0
+offset_bottom = 343.0
+grow_horizontal = 0
+item_id = "tea_skin_coffee"
+sprite_texture = ExtResource("8")

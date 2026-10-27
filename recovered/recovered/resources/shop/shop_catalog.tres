@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="ShopCatalog" format=3 uid="uid://cdshopcat0001"]
+
+[ext_resource type="Texture2D" uid="uid://bkdfj4g4kjij0" path="res://art/ui/Tea_Cup.png" id="1"]
+[ext_resource type="Script" uid="uid://dj33g456wlnrt" path="res://system/scripts/resources/tea_cup_skin_data.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cl08tiv8kt82p" path="res://art/ui/coffee_cup.png" id="3"]
+[ext_resource type="Script" uid="uid://cv7vgbw4a275s" path="res://system/scripts/resources/shop_item_data.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://m6jeomnpqvsp" path="res://art/papers/marker.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://hlh4w3iyt2j8" path="res://art/papers/speech_bubbles.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://crg80u66a04dn" path="res://art/papers/uv_lamp_icon.png" id="7"]
+[ext_resource type="Script" uid="uid://b0mt00wqii3ge" path="res://system/scripts/resources/shop_catalog.gd" id="8"]
+
+[sub_resource type="Resource" id="item_tea_black"]
+script = ExtResource("2")
+cup_texture = ExtResource("1")
+id = "tea_skin_black"
+name_key = "Shop Item Black Tea"
+description_key = "Shop Item Black Tea Desc"
+sprite = ExtResource("1")
+cost = 50
+required_rank_index = 1
+
+[sub_resource type="Resource" id="item_tea_coffee"]
+script = ExtResource("2")
+cup_texture = ExtResource("3")
+id = "tea_skin_coffee"
+name_key = "Shop Item Coffee"
+description_key = "Shop Item Coffee Desc"
+sprite = ExtResource("3")
+cost = 150
+required_rank_index = 1
+
+[sub_resource type="Resource" id="item_marker"]
+script = ExtResource("4")
+id = "marker"
+name_key = "Shop Item Marker"
+description_key = "Shop Item Marker Desc"
+sprite = ExtResource("5")
+cost = 50
+
+[sub_resource type="Resource" id="item_chat"]
+script = ExtResource("4")
+id = "chat_history"
+name_key = "Shop Item Chat History"
+description_key = "Shop Item Chat History Desc"
+sprite = ExtResource("6")
+cost = 40
+
+[sub_resource type="Resource" id="item_uv"]
+script = ExtResource("4")
+id = "uv_light"
+name_key = "Shop Item UV Light"
+description_key = "Shop Item UV Light Desc"
+sprite = ExtResource("7")
+cost = 300
+required_rank_index = 2
+
+[resource]
+script = ExtResource("8")
+items = [SubResource("item_tea_black"), SubResource("item_tea_coffee"), SubResource("item_marker"), SubResource("item_chat"), SubResource("item_uv")]

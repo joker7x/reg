@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dhlva1eigfw" path="res://system/scripts/auto_loads/score_system.gd" id="1"]
+
+[node name="ScoreSystem" type="Node" unique_id=1029040314]
+script = ExtResource("1")

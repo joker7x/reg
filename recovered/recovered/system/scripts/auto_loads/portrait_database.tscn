@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://chsgq60eqs642"]
+
+[ext_resource type="Script" uid="uid://dfa4pdlyx7xq1" path="res://system/scripts/auto_loads/portrait_database.gd" id="1"]
+[ext_resource type="Script" uid="uid://cqy8nidx0mxg1" path="res://system/scripts/resources/portrait_entry.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://e2opvti7npwc" path="res://art/Males/Male_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c5plea4ueglsg" path="res://art/Males/Male_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b087xt38vblg6" path="res://art/Males/Male_3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bgjsg31mldbuw" path="res://art/Males/Male_4.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://p5lolu3vbwpj" path="res://art/Males/Male_5.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://d3as15b08opgt" path="res://art/Males/Male_6.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cp6740qopxxqy" path="res://art/Males/Male_7.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dqn72cn423ouh" path="res://art/Males/Male_8.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dvfv82db7k3j4" path="res://art/Males/Male_9.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cbip5ugm0xnu" path="res://art/Males/Male_10.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://cjf3qpw4by3dg" path="res://art/Females/Female_1.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bglrkbpu21pbr" path="res://art/Females/Female_2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://b1mj1nbhi4ova" path="res://art/Females/Female_3.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dmuimxs5n0mfp" path="res://art/Females/Female_4.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://81lgoi1elhk7" path="res://art/Females/Female_5.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bw1y8dhblnrj6" path="res://art/Females/Female_6.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://il4vpuh82ilb" path="res://art/Females/Female_7.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://bygj642sllxp1" path="res://art/Females/Female_8.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bk3qy15qgooe8" path="res://art/Females/Female_9.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cc28b1av8rxgx" path="res://art/Females/Female_10.png" id="22"]
+
+[sub_resource type="Resource" id="Resource_8pdrg"]
+script = ExtResource("2")
+texture = ExtResource("3")
+min_age = 25
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_scdgb"]
+script = ExtResource("2")
+texture = ExtResource("4")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_1ltup"]
+script = ExtResource("2")
+texture = ExtResource("5")
+min_age = 30
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_m0xtm"]
+script = ExtResource("2")
+texture = ExtResource("6")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_3coni"]
+script = ExtResource("2")
+texture = ExtResource("7")
+min_age = 40
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_qiimh"]
+script = ExtResource("2")
+texture = ExtResource("8")
+min_age = 25
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_6x24v"]
+script = ExtResource("2")
+texture = ExtResource("9")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_dd2he"]
+script = ExtResource("2")
+texture = ExtResource("10")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_ls3fk"]
+script = ExtResource("2")
+texture = ExtResource("11")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_o7ft4"]
+script = ExtResource("2")
+texture = ExtResource("12")
+religion = 1
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_c8jb6"]
+script = ExtResource("2")
+texture = ExtResource("13")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_wy7tc"]
+script = ExtResource("2")
+texture = ExtResource("14")
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_ogkau"]
+script = ExtResource("2")
+texture = ExtResource("15")
+min_age = 35
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_3bckl"]
+script = ExtResource("2")
+texture = ExtResource("16")
+max_age = 40
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_107yc"]
+script = ExtResource("2")
+texture = ExtResource("17")
+religion = 1
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_ulk1w"]
+script = ExtResource("2")
+texture = ExtResource("18")
+min_age = 30
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_vy4cm"]
+script = ExtResource("2")
+texture = ExtResource("19")
+min_age = 25
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_ppgt3"]
+script = ExtResource("2")
+texture = ExtResource("20")
+religion = 1
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_qeg71"]
+script = ExtResource("2")
+texture = ExtResource("21")
+max_age = 30
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[sub_resource type="Resource" id="Resource_fv8vp"]
+script = ExtResource("2")
+texture = ExtResource("22")
+min_age = 30
+metadata/_custom_type_script = "uid://cqy8nidx0mxg1"
+
+[node name="PortraitDatabase" type="Control" unique_id=316884499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+male_portraits = [SubResource("Resource_8pdrg"), SubResource("Resource_scdgb"), SubResource("Resource_1ltup"), SubResource("Resource_m0xtm"), SubResource("Resource_3coni"), SubResource("Resource_qiimh"), SubResource("Resource_6x24v"), SubResource("Resource_dd2he"), SubResource("Resource_ls3fk"), SubResource("Resource_o7ft4")]
+female_portraits = [SubResource("Resource_c8jb6"), SubResource("Resource_wy7tc"), SubResource("Resource_ogkau"), SubResource("Resource_3bckl"), SubResource("Resource_107yc"), SubResource("Resource_ulk1w"), SubResource("Resource_vy4cm"), SubResource("Resource_ppgt3"), SubResource("Resource_qeg71"), SubResource("Resource_fv8vp")]

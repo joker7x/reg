@@ -1,0 +1,271 @@
+[gd_scene format=3 uid="uid://bfa8jo5wmhvmg"]
+
+[ext_resource type="Script" uid="uid://c2bpfogemfq35" path="res://system/files/employment_letter.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bhrbnyadkfcf7" path="res://art/papers/employment_cert.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://7acc1gtdeso7" path="res://art/stamps/bc_stamp_1.png" id="3"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bv1cjvxxd81rn" path="res://art/stamps/ok_stamp_en.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c54bci212tbm7" path="res://art/stamps/ok_stamp_ar.png" id="6"]
+[ext_resource type="FontVariation" uid="uid://07jaeunxnlyb" path="res://fonts/overrides/7_12_Serif.tres" id="7"]
+[ext_resource type="Script" uid="uid://byis0tj6melxp" path="res://system/scripts/utils/rand_emoji_label.gd" id="8"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lb7ht"]
+grow_end = -242.0
+
+[node name="EmploymentLetter" type="Control" unique_id=1593968564 node_paths=PackedStringArray("full_name_value", "occupation_value", "start_date_value", "issue_date_value", "hr_name_value", "company_value", "employed_as_label", "notes_label")]
+custom_minimum_size = Vector2(320, 380)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 380.0
+script = ExtResource("1")
+full_name_value = NodePath("VBoxContainer/PersonalSection/FullNameValue")
+occupation_value = NodePath("VBoxContainer/PersonalSection/OccupationValue")
+start_date_value = NodePath("VBoxContainer/PersonalSection/GridContainer/StartDateValue")
+issue_date_value = NodePath("VBoxContainer/PersonalSection/GridContainer/IssueDateValue")
+hr_name_value = NodePath("VBoxContainer/PersonalSection/HRNameValue")
+company_value = NodePath("VBoxContainer/PersonalSection/CompanyLabel")
+employed_as_label = NodePath("VBoxContainer/PersonalSection/Text2")
+notes_label = NodePath("VBoxContainer/PersonalSection/Notes")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=465265955]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=1176975459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="Stamp" type="TextureRect" parent="." unique_id=258474569]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_mode = 0
+offset_left = 171.0
+offset_top = 291.0
+offset_right = 263.00003
+offset_bottom = 359.0
+pivot_offset = Vector2(46, 25)
+texture = ExtResource("3")
+stretch_mode = 5
+script = ExtResource("4")
+max_offset = 50.0
+randomize_y = false
+max_rot = 35.0
+en_textures = [ExtResource("3"), ExtResource("5")]
+ar_textures = [ExtResource("3"), ExtResource("6")]
+
+[node name="VBoxContainer" type="Control" parent="." unique_id=145801793]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 360.0
+
+[node name="PersonalSection" type="Control" parent="VBoxContainer" unique_id=11127163]
+anchors_preset = 0
+offset_top = -15.0
+offset_right = 280.0
+offset_bottom = 344.0
+
+[node name="Header" type="Label" parent="VBoxContainer/PersonalSection" unique_id=443485610]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 16
+text = "Employment Verification Letter"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/PersonalSection" unique_id=428350980]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 280.0
+offset_bottom = 28.0
+
+[node name="Text1" type="Label" parent="VBoxContainer/PersonalSection" unique_id=243442736]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 280.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+text = "This letter confirms that:"
+
+[node name="FullNameValue" type="Label" parent="VBoxContainer/PersonalSection" unique_id=801647062]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 280.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.2627451, 0.21176471, 0.7058824, 1)
+theme_override_font_sizes/font_size = 20
+text = "[Full Name]"
+horizontal_alignment = 1
+
+[node name="Text2" type="Label" parent="VBoxContainer/PersonalSection" unique_id=1332473930]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 280.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 14
+text = "is currently employed as:"
+
+[node name="OccupationValue" type="Label" parent="VBoxContainer/PersonalSection" unique_id=1683462924]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 280.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.2627451, 0.21176471, 0.7058824, 1)
+theme_override_font_sizes/font_size = 20
+text = "[Occupation]"
+horizontal_alignment = 1
+
+[node name="Text3" type="Label" parent="VBoxContainer/PersonalSection" unique_id=764698746]
+layout_mode = 0
+offset_top = 131.0
+offset_right = 280.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+text = "at:"
+
+[node name="CompanyLabel" type="Label" parent="VBoxContainer/PersonalSection" unique_id=2056593450]
+layout_mode = 0
+offset_top = 155.0
+offset_right = 280.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 20
+text = "[Company]"
+horizontal_alignment = 1
+script = ExtResource("8")
+emojis = ["Wadi El-Nile", "Delta", "Al-Nasr", "Horizon", "Green Valley", "Golden Star", "Al-Wataniya", "El-Mahrousa", "Awlad El-Balad", "Hamouksha", "Walter White", "Lahaleebo", "Hamboula & Sons", "Skibidi", "Sigma", "Goofy ahh", "Vibes Unlimited", "Bingus", "Bonk", "We Ball", "Cooked", "Bikini Bottom", "Batata", "Katkoot", "Abu Kersh", "Om Hassan", "Hawawshi", "Balboos", "Yasta"]
+ar_emojis = ["وادي النيل", "الدلتا", "النصر", "الأفق", "المصرية الحديثة", "الوادي الأخضر", "النجمة الذهبية", "الوطنية", "المحروسة", "أولاد البلد", "بكرة أحسن", "أولاد الحاج عبده", "الحاج رمضان", "الإخوة المتحدة", "أبناء النيل", "السلام الدولية", "النور", "أي حاجة وخلاص", "تحت التأسيس", "حاموكشة", "وائل الأبيض للممنوعات", "المعلم رشدان", "الحج شقلط", "لهاليبو يح يح", "أولاد حمبولة", "الهبد الدولية", "الكينج إنترناشونال", "أبو كرش", "الشنب الصغير", "أم حسن", "طعمية و كنافة", "شاي بلبن"]
+ar_prefixes = ["شركة", "مؤسسة", "مجموعة", "وكالة", "مكتب", "محلات"]
+suffixes = ["Co.", "Company", "Corp.", "Corporation", "Organization", "Group", "Solutions", "International", "LLC"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="__" type="Label" parent="VBoxContainer/PersonalSection" unique_id=1576015543]
+layout_mode = 0
+offset_top = 182.0
+offset_right = 280.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+
+[node name="Notes" type="Label" parent="VBoxContainer/PersonalSection" unique_id=827953571]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 280.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 14
+text = "Has not set anything on fire recently."
+script = ExtResource("8")
+emojis = ["\"They show up most days.\"", "\"Performs duties, sometimes.\"", "\"Has not set anything on fire recently.\"", "\"Still employed. For now.\"", "\"Signed with mild confidence.\"", "\"Verified by HR (probably).\""]
+ar_emojis = ["«{m:بييجي|بتيجي} أغلب الأيام.»", "«{m:بيشتغل|بتشتغل} بس مش متأكدين.»", "«{m:مولعش|مولعتش} لسا في المكان.»", "«لسه {m:شغال|شغالة}. نص نص.»", "«موقّع بثقة خفيفة.»", "«الموارد البشرية اتأكدت {m:منه|منها}.»", "«{m:شغال|شغالة} معانا اه.»", "«{m:هوقعلو|هوقعلها} الورقة عشان {m:عمال يزن|عمالة تزن} عليا»"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/PersonalSection" unique_id=2017396746]
+layout_mode = 0
+offset_top = 221.0
+offset_right = 280.0
+offset_bottom = 241.0
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxLine_lb7ht")
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/PersonalSection" unique_id=1710725094]
+layout_mode = 0
+offset_top = 245.0
+offset_right = 280.0
+offset_bottom = 301.0
+columns = 2
+
+[node name="StartDateLabel" type="Label" parent="VBoxContainer/PersonalSection/GridContainer" unique_id=389253609]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+text = "Start Date:"
+
+[node name="StartDateValue" type="Label" parent="VBoxContainer/PersonalSection/GridContainer" unique_id=298551472]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+text = "[Date]"
+horizontal_alignment = 1
+
+[node name="IssueDateLabel" type="Label" parent="VBoxContainer/PersonalSection/GridContainer" unique_id=1833745187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+text = "Issued on:"
+
+[node name="IssueDateValue" type="Label" parent="VBoxContainer/PersonalSection/GridContainer" unique_id=218869271]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+text = "[Date]"
+horizontal_alignment = 1
+
+[node name="__" type="Label" parent="VBoxContainer/PersonalSection/GridContainer" unique_id=274628360]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="Sincerly" type="Label" parent="VBoxContainer/PersonalSection" unique_id=194248721]
+layout_mode = 0
+offset_top = 305.0
+offset_right = 280.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 11
+text = "Sincerely,"
+
+[node name="HRNameValue" type="Label" parent="VBoxContainer/PersonalSection" unique_id=55939733]
+layout_mode = 0
+offset_top = 323.0
+offset_right = 280.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 13
+text = "HR Name"
+
+[node name="HROccupation4" type="Label" parent="VBoxContainer/PersonalSection" unique_id=1913668068]
+layout_mode = 0
+offset_top = 343.0
+offset_right = 280.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 13
+text = "Head - Human Resources"
+script = ExtResource("8")
+emojis = ["Head - Human Resources", "Founder", "Human Resources", "H.R.", "Management", "CEO"]
+ar_emojis = ["رئيس الموارد البشرية", "مؤسس", "الموارد البشرية", "إدارة الموارد البشرية", "الإدارة", "المدير التنفيذي"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="StampOverlayLayer" type="Control" parent="." unique_id=1691263784]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DragHandle" type="Control" parent="." unique_id=1650722950]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

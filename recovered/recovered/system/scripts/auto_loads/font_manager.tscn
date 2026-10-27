@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5lfmk88wjhfl"]
+
+[ext_resource type="Script" uid="uid://cekiyto374cbw" path="res://system/scripts/auto_loads/font_manager.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://c8f317cqddb1j" path="res://fonts/arabic/unixel-Regular.ttf" id="2"]
+
+[node name="FontManager" type="Node" unique_id=895511836]
+script = ExtResource("1")
+arabic_font = ExtResource("2")

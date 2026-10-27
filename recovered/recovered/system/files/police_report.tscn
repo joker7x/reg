@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://dawycarfwf5wl"]
+
+[ext_resource type="Script" uid="uid://cg6fdq2avguvn" path="res://system/files/police_report.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bh6lkxw4kpu5w" path="res://art/papers/police_report.png" id="2"]
+[ext_resource type="FontVariation" uid="uid://hybxur6i3cmq" path="res://fonts/overrides/methlama-regular.tres" id="3"]
+[ext_resource type="Script" uid="uid://byis0tj6melxp" path="res://system/scripts/utils/rand_emoji_label.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bjibsnlpenlcy" path="res://art/stamps/tmam_stamp_ar.png" id="5"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://14ohi1tynajv" path="res://art/stamps/tmam_stamp_en.png" id="7"]
+
+[node name="PoliceReport" type="Control" unique_id=1593968564 node_paths=PackedStringArray("full_name_value", "birth_value", "department_label", "reason_value", "report_date_value", "notes_value")]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 450.0
+script = ExtResource("1")
+full_name_value = NodePath("ContentMargin/GridContainer/FullNameValue")
+birth_value = NodePath("ContentMargin/GridContainer/BirthValue")
+department_label = NodePath("ContentMargin/DepartmentLabel")
+reason_value = NodePath("ContentMargin/GridContainer2/ReasonValue")
+report_date_value = NodePath("ContentMargin/GridContainer2/ReportDateValue")
+notes_value = NodePath("ContentMargin/NotesValue")
+flip_texture_in_rtl = true
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=803906996]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = -37.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=324747350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="ContentMargin" type="Control" parent="." unique_id=237664556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=1189608501]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 368.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 23
+text = "POLICE REPORT"
+horizontal_alignment = 1
+script = ExtResource("4")
+emojis = ["Police Report", "Incident Report", "Loss Report", "Statement Report", "Theft Report"]
+ar_emojis = ["محضر شرطة", "محضر إثبات حالة", "محضر تحقيق", "محضر بلاغ سرقة", "محضر إثبات فقد"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="DepartmentLabel" type="Label" parent="ContentMargin" unique_id=367464397]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 60.0
+offset_right = 368.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "DEPARTMENT"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="Control" parent="ContentMargin" unique_id=998589763]
+anchors_preset = 0
+offset_left = 39.0
+offset_top = 107.0
+offset_right = 399.0
+offset_bottom = 156.0
+
+[node name="FullNameLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=577065286]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 94.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Full name: "
+
+[node name="FullNameValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1734831960]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 269.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+
+[node name="BirthLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1645008622]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 94.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Date of birth: "
+
+[node name="BirthValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1802553350]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 20.0
+offset_right = 269.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+
+[node name="GridContainer2" type="Control" parent="ContentMargin" unique_id=1915670212]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 190.0
+offset_right = 400.0
+offset_bottom = 269.0
+
+[node name="ReasonLabel" type="Label" parent="ContentMargin/GridContainer2" unique_id=1565573092]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 90.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Details: "
+
+[node name="ReasonValue" type="Label" parent="ContentMargin/GridContainer2" unique_id=988839322]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 269.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+
+[node name="ReportDateLabel" type="Label" parent="ContentMargin/GridContainer2" unique_id=741288017]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 90.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Report Date: "
+
+[node name="ReportDateValue" type="Label" parent="ContentMargin/GridContainer2" unique_id=603737764]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 22.0
+offset_right = 269.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "__________"
+
+[node name="NotesLabel" type="Label" parent="ContentMargin" unique_id=179988683]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 272.0
+offset_right = 141.0
+offset_bottom = 285.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Notes: "
+
+[node name="NotesValue" type="Label" parent="ContentMargin" unique_id=1656740425]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 267.0
+offset_right = 313.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "test__________"
+
+[node name="StampLabel" type="Label" parent="ContentMargin" unique_id=487398965]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 294.0
+offset_right = 370.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "STAMP"
+horizontal_alignment = 1
+
+[node name="Stamp" type="TextureRect" parent="." unique_id=376422174]
+self_modulate = Color(0.1897483, 0.34580213, 0, 0.80700004)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 114.0
+offset_top = 312.0
+offset_right = -127.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(79.5, 50)
+texture = ExtResource("5")
+stretch_mode = 5
+script = ExtResource("6")
+max_offset = 50.0
+randomize_y = false
+max_rot = 22.0
+en_textures = [ExtResource("7")]
+ar_textures = [ExtResource("5")]
+metadata/_custom_type_script = "uid://02r85r5e1cp0"

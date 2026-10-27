@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="SpecialCitizenData" format=3 uid="uid://b2r07sbfs703o"]
+
+[ext_resource type="Script" uid="uid://dyfr64tqkd06o" path="res://system/scripts/resources/custom_date.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c5plea4ueglsg" path="res://art/Males/Male_2.png" id="2"]
+[ext_resource type="Script" uid="uid://cobcb1fas8a55" path="res://system/scripts/resources/civilian_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://c5kqdf7t51i3r" path="res://system/scripts/resources/special_citizen_data.gd" id="4"]
+
+[sub_resource type="Resource" id="Date_adel"]
+script = ExtResource("1")
+date_dict = {
+"day": 3,
+"month": 3,
+"weekday": 0,
+"year": 1980
+}
+
+[sub_resource type="Resource" id="Civ_adel"]
+script = ExtResource("3")
+gender = "m"
+marrital = "m"
+full_name = "Adel Hashem"
+portrait = ExtResource("2")
+birth_date = SubResource("Date_adel")
+occupation = "Real Estate Tycoon"
+
+[resource]
+script = ExtResource("4")
+id = "ADEL_HASHEM"
+weight = 1.5
+allowed_case_types = Array[int]([0, 1])
+civilian = SubResource("Civ_adel")
+arrival_dialogues = Array[String](["My brother knows the mayor personally. Just saying.", "I am a busy man. The faster this goes, the better."])
+new_id_reasons = Array[String](["New ID for my newest property deal.", "Building permits need a fresh identity."])
+renew_id_reasons = Array[String](["Renewal before the inspection tomorrow.", "My card looks old and that is bad for business."])
+lost_id_reasons = Array[String](["Lost it while signing contracts downtown."])
+visit_overrides = Array[Dictionary]([{
+"arrival_dialogues": ["A first-time visit. My brother knows the mayor personally, so let us keep this quick.", "You have one job. Do it fast and I will remember you."],
+"wrong_form_chance": 0.1
+}, {
+"arrival_dialogues": ["Back again. My assistant handled my papers last time; today I had to do it myself.", "Second time in a month. This registry is becoming a habit."],
+"new_id_reasons": ["Second card this month. The first one is already useless."],
+"provided_documents_ids": ["BIRTH_CERT"]
+}])

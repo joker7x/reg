@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bwwh8t1o3bnqj"]
+
+[ext_resource type="Shader" uid="uid://ccmjnnqjv40hr" path="res://system/shaders/vhs.gdshader" id="1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rysoc"]
+shader = ExtResource("1")
+shader_parameter/resolution = Vector2(960, 540)
+shader_parameter/scan_line_amount = 0.150000007125
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_amount = 0.50000002375
+shader_parameter/vignette_intensity = 0.2000000095
+shader_parameter/grille_amount = 0.118000005605
+shader_parameter/brightness_boost = 1.10000000475
+
+[node name="PPLayer" type="CanvasLayer" unique_id=1611966179]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=485807841]
+material = SubResource("ShaderMaterial_rysoc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

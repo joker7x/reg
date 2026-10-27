@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cbkf5ob80obdc"]
+
+[ext_resource type="FontFile" uid="uid://bwl8hoao1ybof" path="res://fonts/MP16REG.ttf" id="1"]
+[ext_resource type="FontFile" uid="uid://c3q63kgxt0hw0" path="res://fonts/arabic/alfont_com_AlFont_com_Raqami_not_free.ttf" id="2"]
+
+[resource]
+fallbacks = [ExtResource("2")]
+base_font = ExtResource("1")

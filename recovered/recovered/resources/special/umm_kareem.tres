@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="SpecialCitizenData" format=3 uid="uid://g88h3cijdc7n"]
+
+[ext_resource type="Script" uid="uid://dyfr64tqkd06o" path="res://system/scripts/resources/custom_date.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjf3qpw4by3dg" path="res://art/Females/Female_1.png" id="2"]
+[ext_resource type="Script" uid="uid://cobcb1fas8a55" path="res://system/scripts/resources/civilian_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://c5kqdf7t51i3r" path="res://system/scripts/resources/special_citizen_data.gd" id="4"]
+
+[sub_resource type="Resource" id="Date_umm"]
+script = ExtResource("1")
+date_dict = {
+"day": 1,
+"month": 7,
+"weekday": 1,
+"year": 1952
+}
+
+[sub_resource type="Resource" id="Civ_umm"]
+script = ExtResource("3")
+gender = "f"
+marrital = "s"
+full_name = "Umm Kareem"
+portrait = ExtResource("2")
+birth_date = SubResource("Date_umm")
+occupation = "Retired"
+
+[resource]
+script = ExtResource("4")
+id = "UMM_KAREEM"
+allowed_case_types = Array[int]([0, 1, 2])
+civilian = SubResource("Civ_umm")
+arrival_dialogues = Array[String](["As-salamu alaykum, habibi. I hope I brought everything, I am getting old.", "Forgive me, my papers are all over the place these days."])
+new_id_reasons = Array[String](["First time in years I have needed a new card.", "The old one is barely readable anymore."])
+renew_id_reasons = Array[String](["It is that time again, God bless you.", "Renewing so my pension keeps coming."])
+lost_id_reasons = Array[String](["I must have left it at the market again.", "It got wet in the rain last winter."])
+wrong_form_chance = 0.2
+missing_doc_chance = 0.8
+visit_overrides = Array[Dictionary]([{
+"arrival_dialogues": ["As-salamu alaykum, habibi. Let me check my bag... do I have everything?", "First visit today, God willing everything is in order."],
+"missing_doc_chance": 0.9
+}, {
+"arrival_dialogues": ["I came back because the old card finally gave up on me.", "My son drove me again. He says I should stop losing papers."],
+"missing_doc_chance": 1.0
+}])

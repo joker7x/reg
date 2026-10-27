@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4kq7r2x9m1pd"]
+
+[ext_resource type="Script" path="res://system/tools/radio.gd" id="1"]
+[ext_resource type="Texture2D" path="res://art/ui/Radio.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/ui/Radio_dial.png" id="3"]
+[ext_resource type="Texture2D" path="res://art/ui/Radio_needle.png" id="4"]
+[ext_resource type="Texture2D" path="res://art/ui/Radio_glow.png" id="5"]
+[ext_resource type="Resource" path="res://resources/sfx/ui_switch_sfx.tres" id="6"]
+
+[node name="Radio" type="Control" node_paths=PackedStringArray("highlight", "hover_scale_target")]
+offset_right = 150.0
+offset_bottom = 122.0
+mouse_filter = 2
+script = ExtResource("1")
+highlight = NodePath("Art/Visual/Highlight")
+hover_scale_target = NodePath("Art")
+switch_sfx = ExtResource("6")
+
+[node name="Art" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Visual" type="Control" parent="Art"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.58, 0.58)
+mouse_filter = 2
+
+[node name="Body" type="TextureRect" parent="Art/Visual"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Highlight" type="TextureRect" parent="Art/Visual"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.45)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Dial" type="TextureRect" parent="Art/Visual"]
+visible = false
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Glow" type="TextureRect" parent="Art/Visual"]
+visible = false
+self_modulate = Color(1, 0.72, 0.32, 0.45)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Needle" type="TextureRect" parent="Art/Visual"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 208.0
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="PowerButton" type="TextureButton" parent="Art"]
+offset_left = 22.0
+offset_top = 83.0
+offset_right = 42.0
+offset_bottom = 103.0
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+
+[node name="TuneButton" type="TextureButton" parent="Art"]
+offset_left = 46.0
+offset_top = 83.0
+offset_right = 66.0
+offset_bottom = 103.0
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+
+[node name="Status" type="Label" parent="."]
+offset_left = -25.0
+offset_top = -28.0
+offset_right = 175.0
+offset_bottom = -4.0
+mouse_filter = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Art/PowerButton" to="." method="_on_power_pressed"]
+[connection signal="pressed" from="Art/TuneButton" to="." method="_on_tune_pressed"]
+[connection signal="mouse_entered" from="Art/PowerButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Art/PowerButton" to="." method="_on_mouse_exit"]
+[connection signal="mouse_entered" from="Art/TuneButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Art/TuneButton" to="." method="_on_mouse_exit"]

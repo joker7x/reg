@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://7mto4fbyuxf2"]
+
+[ext_resource type="Script" uid="uid://bdmkc155xg04y" path="res://system/tools/day_stamp.gd" id="1"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://dttlejmm34vhw" path="res://audio/sfx/stamp/boss_stamp.mp3" id="3"]
+[ext_resource type="Texture2D" uid="uid://8b8nia4rj31f" path="res://art/ui/wooden_stamp.png" id="4"]
+[ext_resource type="FontVariation" uid="uid://0u8gayfx2fre" path="res://fonts/overrides/PixelAEBold.tres" id="5"]
+
+[sub_resource type="Resource" id="Resource_dstmp"]
+script = ExtResource("2")
+stream = ExtResource("3")
+
+[node name="DayStamp" type="Control" unique_id=875425344]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+fade_duration = 8.0
+stamp_sfx = SubResource("Resource_dstmp")
+
+[node name="StampVisual" type="TextureRect" parent="." unique_id=2099703680]
+visible = false
+z_index = 5
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+texture = ExtResource("4")
+stretch_mode = 5
+
+[node name="DayLabel" type="Label" parent="." unique_id=791714451]
+visible = false
+layout_mode = 1
+offset_left = -150.0
+offset_top = -35.0
+offset_right = 150.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.55, 0.049499985, 0.049499985, 0.5176471)
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 40
+text = "DAY 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndLabel" type="Label" parent="." unique_id=232477134]
+visible = false
+layout_mode = 1
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 300.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 56
+text = "DAY ENDED"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://ct8qr12puljbt"]
+
+[ext_resource type="Script" uid="uid://c18r48upg45gr" path="res://system/files/marriage_cert.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cokakrl7otcsx" path="res://art/papers/marriage_cert.png" id="2"]
+[ext_resource type="FontVariation" uid="uid://hybxur6i3cmq" path="res://fonts/overrides/methlama-regular.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://c54bci212tbm7" path="res://art/stamps/ok_stamp_ar.png" id="4"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://bv1cjvxxd81rn" path="res://art/stamps/ok_stamp_en.png" id="6"]
+
+[node name="MarriageCertificate" type="Control" unique_id=1593968564 node_paths=PackedStringArray("mister_name_label", "miss_name_label", "date_value", "place_value", "stamp_text")]
+custom_minimum_size = Vector2(347, 433)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 347.0
+offset_bottom = 433.0
+script = ExtResource("1")
+mister_name_label = NodePath("ContentMargin/SpousesSection/Mister/MisterNameLabel")
+miss_name_label = NodePath("ContentMargin/SpousesSection/Miss/MissNameLabel")
+date_value = NodePath("ContentMargin/GridContainer/DateValue")
+place_value = NodePath("ContentMargin/GridContainer/PlaceValue")
+stamp_text = NodePath("ContentMargin/StampText")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=695754543]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=54566986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="ContentMargin" type="Control" parent="." unique_id=174217808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 29.0
+offset_right = 327.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/line_spacing = -14
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 23
+text = "MARRIAGE
+CERTIFICATE"
+horizontal_alignment = 1
+
+[node name="SpousesSection" type="HBoxContainer" parent="ContentMargin" unique_id=96710162]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 104.0
+offset_right = 328.0
+offset_bottom = 154.0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Mister" type="VBoxContainer" parent="ContentMargin/SpousesSection" unique_id=2088346909]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="ContentMargin/SpousesSection/Mister" unique_id=1374163261]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Mr."
+horizontal_alignment = 1
+
+[node name="MisterNameLabel" type="Label" parent="ContentMargin/SpousesSection/Mister" unique_id=774312240]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "-"
+horizontal_alignment = 1
+
+[node name="Miss" type="VBoxContainer" parent="ContentMargin/SpousesSection" unique_id=1773822779]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="ContentMargin/SpousesSection/Miss" unique_id=221130359]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Mrs."
+horizontal_alignment = 1
+
+[node name="MissNameLabel" type="Label" parent="ContentMargin/SpousesSection/Miss" unique_id=1148264234]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "-"
+horizontal_alignment = 1
+
+[node name="Header2" type="Label" parent="ContentMargin" unique_id=1429747353]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 171.0
+offset_right = 323.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Marriage Details"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ContentMargin" unique_id=949744456]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 197.0
+offset_right = 352.0
+offset_bottom = 241.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = -2
+columns = 2
+
+[node name="DateLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1501409926]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Marriage Date: "
+
+[node name="DateValue" type="Label" parent="ContentMargin/GridContainer" unique_id=377744267]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "_______"
+
+[node name="PlaceLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=2066839892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Place of Marriage: "
+
+[node name="PlaceValue" type="Label" parent="ContentMargin/GridContainer" unique_id=414922220]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+text = "_______"
+
+[node name="StampText" type="Label" parent="ContentMargin" unique_id=1196052042]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 272.0
+offset_right = 304.03
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Marriage approved 👍"
+horizontal_alignment = 1
+
+[node name="Stamp" type="TextureRect" parent="ContentMargin" unique_id=1489895039]
+self_modulate = Color(0.41140202, 0, 0.63822544, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = 307.0
+offset_right = -103.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(73, 47.5)
+texture = ExtResource("4")
+stretch_mode = 5
+script = ExtResource("5")
+max_offset = 50.0
+randomize_y = false
+max_rot = 35.0
+en_textures = [ExtResource("6")]
+ar_textures = [ExtResource("4")]
+metadata/_custom_type_script = "uid://02r85r5e1cp0"

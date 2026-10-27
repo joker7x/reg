@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://dvrcc4sc8j3v"]
+
+[ext_resource type="Script" uid="uid://dvrcc4k0x5h2" path="res://system/files/divorce_cert.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcfciy8v16h6i" path="res://art/papers/birth_cert_2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d2dp42bpajsx6" path="res://art/papers/divorce_cert.png" id="3"]
+[ext_resource type="FontVariation" uid="uid://hybxur6i3cmq" path="res://fonts/overrides/methlama-regular.tres" id="4"]
+[ext_resource type="Script" uid="uid://byis0tj6melxp" path="res://system/scripts/utils/rand_emoji_label.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://7acc1gtdeso7" path="res://art/stamps/bc_stamp_1.png" id="6"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://duvcx0365vk37" path="res://art/stamps/tmam_stamp_2_ar.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://2ksd0adijulm" path="res://art/stamps/rect_stamp_2_en.png" id="9"]
+
+[node name="DivorceCertificate" type="Control" unique_id=1593968564 node_paths=PackedStringArray("husband_name_value", "wife_name_value", "date_value", "place_value", "case_number_value")]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 500.0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1")
+husband_name_value = NodePath("ContentMargin/SpousesSection/Mister/MisterNameLabel")
+wife_name_value = NodePath("ContentMargin/SpousesSection/Miss/MissNameLabel")
+date_value = NodePath("ContentMargin/GridContainer/DateValue")
+place_value = NodePath("ContentMargin/GridContainer/PlaceValue")
+case_number_value = NodePath("ContentMargin/CaseNumberValue")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1204369955]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=1910465168]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")
+stretch_mode = 5
+
+[node name="ContentMargin" type="Control" parent="." unique_id=1908994498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 82.666664
+offset_top = 44.0
+offset_right = 266.66666
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -12
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 30
+text = "DIVORCE
+CERTIFICATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpousesSection" type="Control" parent="ContentMargin" unique_id=766606470]
+anchors_preset = 0
+offset_left = 21.333334
+offset_top = 124.0
+offset_right = 329.33334
+offset_bottom = 200.0
+
+[node name="Mister" type="Control" parent="ContentMargin/SpousesSection" unique_id=842202554]
+anchors_preset = 0
+offset_right = 123.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+
+[node name="Header" type="Label" parent="ContentMargin/SpousesSection/Mister" unique_id=1374163261]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "Husband:"
+horizontal_alignment = 1
+
+[node name="MisterNameLabel" type="Label" parent="ContentMargin/SpousesSection/Mister" unique_id=774312240]
+layout_mode = 0
+offset_left = 18.666668
+offset_top = 30.666666
+offset_right = 141.66667
+offset_bottom = 62.666664
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 22
+text = "-"
+autowrap_mode = 3
+
+[node name="RandEmojiLabel" type="Label" parent="ContentMargin/SpousesSection" unique_id=1807564964]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 21.0
+offset_right = 173.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 28
+text = "💔"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5")
+emojis = ["💔"]
+metadata/_custom_type_script = "uid://byis0tj6melxp"
+
+[node name="Miss" type="Control" parent="ContentMargin/SpousesSection" unique_id=511308876]
+anchors_preset = 0
+offset_left = 185.0
+offset_right = 308.0
+offset_bottom = 76.0
+size_flags_horizontal = 3
+
+[node name="Header2" type="Label" parent="ContentMargin/SpousesSection/Miss" unique_id=221130359]
+layout_mode = 0
+offset_right = 123.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "Wife:"
+horizontal_alignment = 1
+
+[node name="MissNameLabel" type="Label" parent="ContentMargin/SpousesSection/Miss" unique_id=1148264234]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 30.666666
+offset_right = 106.0
+offset_bottom = 62.666664
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 22
+text = "-"
+horizontal_alignment = 2
+autowrap_mode = 3
+
+[node name="CaseNumberLabel" type="Label" parent="ContentMargin" unique_id=2066839893]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 301.0
+offset_right = 146.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+text = "Case No.: "
+
+[node name="CaseNumberValue" type="Label" parent="ContentMargin" unique_id=414922221]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 299.0
+offset_right = 268.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 18
+text = "_______"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ContentMargin" unique_id=949744456]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 218.66666
+offset_right = 290.0
+offset_bottom = 280.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="DateLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1501409926]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+text = "Divorce Date: "
+
+[node name="DateValue" type="Label" parent="ContentMargin/GridContainer" unique_id=377744267]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 18
+text = "_______"
+horizontal_alignment = 1
+
+[node name="PlaceLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=2066839892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 16
+text = "Place: "
+
+[node name="PlaceValue" type="Label" parent="ContentMargin/GridContainer" unique_id=414922220]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 18
+text = "_______"
+horizontal_alignment = 1
+
+[node name="Stamp" type="TextureRect" parent="ContentMargin" unique_id=175308070]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_direction = 2
+layout_mode = 0
+offset_left = 29.333328
+offset_top = 34.666656
+offset_right = 105.33333
+offset_bottom = 110.66666
+pivot_offset = Vector2(38, 38)
+texture = ExtResource("6")
+script = ExtResource("7")
+
+[node name="Stamp2" type="TextureRect" parent="ContentMargin" unique_id=576729368]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_direction = 2
+layout_mode = 0
+offset_left = 82.666664
+offset_top = 376.0
+offset_right = 270.66672
+offset_bottom = 452.0
+pivot_offset = Vector2(94, 38)
+texture = ExtResource("8")
+stretch_mode = 5
+script = ExtResource("7")
+max_offset = 15.0
+max_rot = 20.0
+en_textures = [ExtResource("9")]
+ar_textures = [ExtResource("8")]
+
+[node name="StampOverlayLayer" type="Control" parent="." unique_id=1691263784]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DragHandle" type="Control" parent="." unique_id=1650722950]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

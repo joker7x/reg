@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://dg8albctbbh6v"]
+
+[ext_resource type="Script" uid="uid://cucyu4j7m0bgb" path="res://system/files/education_cert.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://8y6k5mxbwyvq" path="res://art/papers/education_cert.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://7acc1gtdeso7" path="res://art/stamps/bc_stamp_1.png" id="3"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bv1cjvxxd81rn" path="res://art/stamps/ok_stamp_en.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c54bci212tbm7" path="res://art/stamps/ok_stamp_ar.png" id="6"]
+[ext_resource type="FontVariation" uid="uid://bpy71vhpmyd6t" path="res://fonts/overrides/methlama-medium.tres" id="7"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gi1jr"]
+color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+
+[node name="EducationCertifacte" type="Control" unique_id=1593968564 node_paths=PackedStringArray("university_value", "name_value", "degree_value", "date_value", "degree_text_label")]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 250.0
+script = ExtResource("1")
+university_value = NodePath("ContentMargin/VBoxContainer/PersonalSection/UniversityValue")
+name_value = NodePath("ContentMargin/VBoxContainer/PersonalSection/NameValue")
+degree_value = NodePath("ContentMargin/VBoxContainer/PersonalSection/DegreeValue")
+date_value = NodePath("ContentMargin/HBoxContainer/DateValue")
+degree_text_label = NodePath("ContentMargin/VBoxContainer/PersonalSection/Text2")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1778951057]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=669239883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+
+[node name="Stamp" type="TextureRect" parent="." unique_id=540919121]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_mode = 0
+offset_left = 301.0
+offset_top = 168.0
+offset_right = 351.0
+offset_bottom = 218.0
+pivot_offset = Vector2(25, 25)
+texture = ExtResource("3")
+script = ExtResource("4")
+en_textures = [ExtResource("3"), ExtResource("5")]
+ar_textures = [ExtResource("3"), ExtResource("6")]
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=1490722661]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 142.0
+offset_right = 259.0
+offset_bottom = 146.0
+theme_override_styles/separator = SubResource("StyleBoxLine_gi1jr")
+
+[node name="ContentMargin" type="Control" parent="." unique_id=762234614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="Control" parent="ContentMargin" unique_id=1060714644]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 43.0
+offset_right = 380.0
+offset_bottom = 230.0
+
+[node name="PersonalSection" type="Control" parent="ContentMargin/VBoxContainer" unique_id=393267475]
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 165.0
+
+[node name="Header" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=443485610]
+layout_mode = 0
+offset_top = -7.0
+offset_right = 360.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 42
+text = "CERTIFICATE"
+horizontal_alignment = 1
+
+[node name="UniversityValue" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=367464397]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 360.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "University of Cairo"
+horizontal_alignment = 1
+
+[node name="Text1" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=831646566]
+layout_mode = 0
+offset_top = 68.0
+offset_right = 360.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "Certifies that"
+horizontal_alignment = 1
+
+[node name="NameValue" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=794523368]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 360.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.26666668, 0.26666668, 0.7294118, 1)
+theme_override_font_sizes/font_size = 20
+text = "Full Name"
+horizontal_alignment = 1
+
+[node name="Text2" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=1253225367]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 102.0
+offset_right = 361.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 12
+text = "has the degree of"
+horizontal_alignment = 1
+
+[node name="DegreeValue" type="Label" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=979795502]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 360.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_colors/font_outline_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 14
+text = "Software Engineering"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ContentMargin/VBoxContainer/PersonalSection" unique_id=138012207]
+custom_minimum_size = Vector2(0, 40.33)
+anchors_preset = 0
+offset_top = 125.0
+offset_right = 360.0
+offset_bottom = 165.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="Control" parent="ContentMargin" unique_id=2044846090]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 219.0
+offset_right = 20.0
+offset_bottom = 219.0
+
+[node name="DateValue" type="Label" parent="ContentMargin/HBoxContainer" unique_id=487390832]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -10.0
+offset_right = 88.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 14
+text = "99/99/9999"
+
+[node name="SignatureLabel" type="Label" parent="ContentMargin/HBoxContainer" unique_id=1692324244]
+layout_mode = 0
+offset_left = 287.0
+offset_top = -8.0
+offset_right = 337.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.33715135, 0.2827793, 0.2827793, 0.586)
+theme_override_font_sizes/font_size = 12
+text = "Signature"
+
+[node name="StampOverlayLayer" type="Control" parent="." unique_id=1691263784]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DragHandle" type="Control" parent="." unique_id=1650722950]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://quqbvcruc7gj"]
+
+[ext_resource type="Script" uid="uid://bbvorud7gxrbo" path="res://system/scripts/auto_loads/cursor_manager.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c6uiuq4m4xsnv" path="res://art/papers/point.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bn5rqifwgcf8f" path="res://art/papers/hold.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://dtqs1dschjsb3" path="res://system/scripts/auto_loads/splash_particles.tscn" id="4"]
+
+[node name="CursorManager" type="Node" unique_id=1967923122]
+script = ExtResource("1")
+default_cursor = ExtResource("2")
+hover_cursor = ExtResource("3")
+splash_particles = ExtResource("4")
+hotspot = Vector2i(10, 0)

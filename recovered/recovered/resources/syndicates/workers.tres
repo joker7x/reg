@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndwork13m"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "WORKERS"
+name_en = "Workers' Syndicate"
+name_ar = "نقابة العمال"
+emojis = ["🔨", "🪛", "🧱"]
+occupations_en = ["carpenter", "plumber", "electrician", "blacksmith", "construction worker"]
+occupations_ar = ["نجار", "سباك", "كهربائي", "حداد", "عامل بناء"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsynddriv12l"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "DRIVERS"
+name_en = "Drivers' Syndicate"
+name_ar = "نقابة السواقين"
+emojis = ["🚕", "🚌", "🚚"]
+occupations_en = ["driver", "microbus driver", "tuk-tuk operator", "ferry captain"]
+occupations_ar = ["سواق", "ميكروباص", "توك توك", "معدية"]

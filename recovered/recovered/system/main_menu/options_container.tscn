@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cjclygbg0weci"]
+
+[ext_resource type="Script" uid="uid://erwrqdgqv5ee" path="res://system/main_menu/options_container.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://18lfmmqypdx0" path="res://system/main_menu/volume_slider.tscn" id="2"]
+
+[node name="OptionsContainer" type="ScrollContainer" unique_id=1821321418]
+offset_right = 348.13
+offset_bottom = 648.0
+script = ExtResource("1")
+
+[node name="SectionsContainer" type="VBoxContainer" parent="." unique_id=1939900918]
+layout_mode = 2
+
+[node name="SoundSection" type="VBoxContainer" parent="SectionsContainer" unique_id=258960533]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Title" type="Label" parent="SectionsContainer/SoundSection" unique_id=1795637654]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterLabel" type="Label" parent="SectionsContainer/SoundSection" unique_id=2124083499]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Master"
+vertical_alignment = 1
+
+[node name="VolumeSlider3" parent="SectionsContainer/SoundSection" unique_id=148288413 instance=ExtResource("2")]
+layout_mode = 2
+script = null
+
+[node name="MusicLabel" type="Label" parent="SectionsContainer/SoundSection" unique_id=543755756]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Music"
+vertical_alignment = 1
+
+[node name="VolumeSlider2" parent="SectionsContainer/SoundSection" unique_id=967356846 instance=ExtResource("2")]
+layout_mode = 2
+script = null
+
+[node name="SFXLabel" type="Label" parent="SectionsContainer/SoundSection" unique_id=1857713792]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Sound FX"
+vertical_alignment = 1
+
+[node name="VolumeSlider" parent="SectionsContainer/SoundSection" unique_id=629970316 instance=ExtResource("2")]
+layout_mode = 2
+script = null
+
+[node name="DisplaySection" type="VBoxContainer" parent="SectionsContainer" unique_id=680718325]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Title" type="Label" parent="SectionsContainer/DisplaySection" unique_id=182983943]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Display"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SensitivityLabel" type="Label" parent="SectionsContainer/DisplaySection" unique_id=804284113]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Resolution"
+vertical_alignment = 1
+
+[node name="ResolutionDropdown" type="OptionButton" parent="SectionsContainer/DisplaySection" unique_id=155574137]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "1280 x 720"
+popup/item_0/id = 0
+
+[node name="FullScreenToggle" type="CheckButton" parent="SectionsContainer/DisplaySection" unique_id=1283641074]
+layout_mode = 2
+text = "FullScreen"
+
+[node name="ResetDefaultButton" type="Button" parent="SectionsContainer" unique_id=738303404]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9999239, 0.4667514, 0.39862257, 1)
+text = "Reset To Default"
+
+[connection signal="pressed" from="SectionsContainer/ResetDefaultButton" to="." method="_reset_to_default"]

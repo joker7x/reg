@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bspt8yc0vjppy"]
+
+[ext_resource type="Script" uid="uid://glvqvxq2bs0" path="res://system/scripts/auto_loads/occupation_database.gd" id="1"]
+[ext_resource type="Resource" uid="uid://bsynddocs1a" path="res://resources/syndicates/doctors.tres" id="2"]
+[ext_resource type="Resource" uid="uid://bsyndphrm2b" path="res://resources/syndicates/pharmacists.tres" id="3"]
+[ext_resource type="Resource" uid="uid://bsyndlawy3c" path="res://resources/syndicates/lawyers.tres" id="4"]
+[ext_resource type="Resource" uid="uid://bsyndengi4d" path="res://resources/syndicates/engineers.tres" id="5"]
+[ext_resource type="Resource" uid="uid://bsyndjour5e" path="res://resources/syndicates/journalists.tres" id="6"]
+[ext_resource type="Resource" uid="uid://bsyndteac6f" path="res://resources/syndicates/teachers.tres" id="7"]
+[ext_resource type="Resource" uid="uid://bsyndcomm7g" path="res://resources/syndicates/commercial.tres" id="8"]
+[ext_resource type="Resource" uid="uid://bsyndnurs8h" path="res://resources/syndicates/nursing.tres" id="9"]
+[ext_resource type="Resource" uid="uid://bsyndagro10j" path="res://resources/syndicates/agronomists.tres" id="10"]
+[ext_resource type="Resource" uid="uid://bsyndcine11k" path="res://resources/syndicates/cinema.tres" id="11"]
+[ext_resource type="Resource" uid="uid://bsynddriv12l" path="res://resources/syndicates/drivers.tres" id="12"]
+[ext_resource type="Resource" uid="uid://bsyndwork13m" path="res://resources/syndicates/workers.tres" id="13"]
+[ext_resource type="Resource" uid="uid://bsyndoffi14n" path="res://resources/syndicates/officers.tres" id="14"]
+[ext_resource type="Resource" uid="uid://bsyndunem15o" path="res://resources/syndicates/unemployed.tres" id="15"]
+[ext_resource type="Resource" uid="uid://bsyndthie16p" path="res://resources/syndicates/thieves.tres" id="16"]
+
+[node name="OccupationDatabase" type="Node" unique_id=1406159136]
+script = ExtResource("1")
+syndicates = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11"), ExtResource("12"), ExtResource("13"), ExtResource("14"), ExtResource("15"), ExtResource("16")]

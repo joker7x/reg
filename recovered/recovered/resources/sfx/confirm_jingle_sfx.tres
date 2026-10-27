@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SFXClip" format=3 uid="uid://d4l7qi2kiegus"]
+
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://c8sxg7n0ers5c" path="res://audio/sfx/correct_wrong/545238__mr_fritz__item-sparkle.wav" id="2"]
+
+[resource]
+script = ExtResource("1")
+stream = ExtResource("2")
+min_volume = -20.0
+max_volume = -15.0
+min_pitch = 0.5
+max_pitch = 1.2

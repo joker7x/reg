@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://d73ht0rqyxip"]
+
+[ext_resource type="Script" uid="uid://7g8okygo547f" path="res://system/main_menu/endless_picker.gd" id="1"]
+[ext_resource type="Script" uid="uid://cc5iw1caa1lfv" path="res://system/tween_button.gd" id="2"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="SB_confirm"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="SB_eod_primary"]
+bg_color = Color(0.1, 0.32, 0.65, 0.8509804)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="SB_pressed"]
+
+[sub_resource type="StyleBoxFlat" id="SB_eod_disabled"]
+bg_color = Color(0.32, 0.32, 0.32, 0.24313726)
+border_width_bottom = 2
+border_color = Color(0.41981283, 0.41981325, 0.4198128, 1)
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="Resource" id="Resource_lb_hi"]
+script = ExtResource("3")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.2, 1.2)
+duration = 0.15
+transition = 10
+
+[sub_resource type="Resource" id="Resource_lb_ho"]
+script = ExtResource("3")
+from_value = Vector2(1.2, 1.2)
+to_value = Vector2(1, 1)
+duration = 0.15
+transition = 10
+
+[sub_resource type="Resource" id="Resource_links_rot"]
+script = ExtResource("3")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.3
+transition = 11
+
+[sub_resource type="StyleBoxFlat" id="SB_eod_classic"]
+bg_color = Color(0.52, 0.30264, 0.17679998, 1)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3w1u2"]
+bg_color = Color(0.24, 0.196, 0.17999999, 0.6156863)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loopp"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="EndlessPicker" type="Control" unique_id=1803187099]
+visible = false
+z_index = 501
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1803187100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Slide" type="Control" parent="." unique_id=1803187116]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Slide" unique_id=1803187101]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -230.0
+offset_right = 200.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_confirm")
+
+[node name="VBox" type="VBoxContainer" parent="Slide/Panel" unique_id=1803187102]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="Slide/Panel/VBox" unique_id=1803187103]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Endless Mode"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="Slide/Panel/VBox" unique_id=1803187104]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Serve citizens with no day limit. Difficulty ramps up the longer you survive."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ResumeButton" type="Button" parent="Slide/Panel/VBox" unique_id=1803187107]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.41981283, 0.41981325, 0.4198128, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_eod_primary")
+theme_override_styles/pressed = SubResource("SB_pressed")
+theme_override_styles/hover = SubResource("SB_eod_primary")
+theme_override_styles/disabled = SubResource("SB_eod_disabled")
+text = "Resume"
+script = ExtResource("2")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+rotate_on_press = false
+
+[node name="ContinueLock" type="Label" parent="Slide/Panel/VBox" unique_id=1397783316]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "No endless run to resume"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="Slide/Panel/VBox" unique_id=1803187110]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="StandardGroup" type="VBoxContainer" parent="Slide/Panel/VBox" unique_id=1803187113]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="StandardButton" type="Button" parent="Slide/Panel/VBox/StandardGroup" unique_id=1803187106]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.41981283, 0.41981325, 0.4198128, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_eod_primary")
+theme_override_styles/pressed = SubResource("SB_pressed")
+theme_override_styles/hover = SubResource("SB_eod_primary")
+theme_override_styles/disabled = SubResource("SB_eod_disabled")
+text = "Standard"
+script = ExtResource("2")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+rotate_on_press = false
+
+[node name="StandardDesc" type="Label" parent="Slide/Panel/VBox/StandardGroup" unique_id=1803187114]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 18
+text = "Everything on. Forgeries, tickets, micro-errors."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StandardLock" type="Label" parent="Slide/Panel/VBox/StandardGroup" unique_id=1803187115]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "Reach Day 4 first"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ClassicGroup" type="VBoxContainer" parent="Slide/Panel/VBox" unique_id=1803187111]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+
+[node name="ClassicButton" type="Button" parent="Slide/Panel/VBox/ClassicGroup" unique_id=1803187105]
+custom_minimum_size = Vector2(260, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_eod_classic")
+theme_override_styles/pressed = SubResource("SB_pressed")
+theme_override_styles/hover = SubResource("SB_eod_classic")
+text = "Classic"
+script = ExtResource("2")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+rotate_on_press = false
+
+[node name="ClassicDesc" type="Label" parent="Slide/Panel/VBox/ClassicGroup" unique_id=1803187112]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 18
+text = "The original shift. Papers only, no extras."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="XButton" type="Button" parent="Slide" unique_id=1803187109]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -263.0
+offset_right = -167.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_3w1u2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_loopp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_3w1u2")
+text = "❌"
+
+[connection signal="pressed" from="Slide/Panel/VBox/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Slide/Panel/VBox/StandardGroup/StandardButton" to="." method="_on_standard_pressed"]
+[connection signal="pressed" from="Slide/Panel/VBox/ClassicGroup/ClassicButton" to="." method="_on_classic_pressed"]
+[connection signal="pressed" from="Slide/XButton" to="." method="_on_close_pressed"]

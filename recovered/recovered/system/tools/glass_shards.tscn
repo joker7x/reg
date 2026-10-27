@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bwaa211id22bs"]
+
+[ext_resource type="Script" uid="uid://c0fl6rs83djja" path="res://system/tools/glass_shards.gd" id="1"]
+
+[node name="GlassShards" type="Node2D" unique_id=2052338407]
+z_index = 1000
+script = ExtResource("1")
+lifetime = 2.0
+speed_min = 100.0
+speed_max = 1000.0
+shard_size = 8.0
+shard_color = Color(0.6851391, 0.78689444, 0.9290339, 1)
+spread = 120.0
+twinkle_speed = 100.0
+twinkle_amount = 100.0

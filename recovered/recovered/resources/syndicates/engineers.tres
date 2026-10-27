@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndengi4d"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "ENGINEERS"
+name_en = "Engineers' Syndicate"
+name_ar = "نقابة المهندسين"
+emojis = ["🔧", "⚙️", "🏗️"]
+occupations_en = ["engineer", "architect", "software developer", "telecom technician"]
+occupations_ar = ["مهندس", "معماري", "مطور", "فني اتصالات"]

@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cwvp1s6uvlubb"]
+
+[ext_resource type="FontFile" uid="uid://bwl8hoao1ybof" path="res://fonts/MP16REG.ttf" id="1"]
+[ext_resource type="FontFile" uid="uid://bhus2wf88ghqo" path="res://fonts/arabic/Handjet-Medium.ttf" id="2"]
+
+[resource]
+fallbacks = [ExtResource("2")]
+base_font = ExtResource("1")

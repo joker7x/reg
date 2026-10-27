@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://21lxkty1nrua"]
+
+[ext_resource type="Script" uid="uid://dtr2gukndh2dt" path="res://system/scripts/message_history_panel.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://drcxt5oxyt0nx" path="res://system/scripts/message_bubble.tscn" id="2"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://hlh4w3iyt2j8" path="res://art/papers/speech_bubbles.png" id="4"]
+[ext_resource type="Script" uid="uid://cc5iw1caa1lfv" path="res://system/tween_button.gd" id="5"]
+
+[sub_resource type="Resource" id="TP_show"]
+script = ExtResource("3")
+property = "position:y"
+from_value = 0.0
+to_value = 0.0
+transition = 5
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="TP_hide"]
+script = ExtResource("3")
+property = "position:y"
+from_value = 0.0
+to_value = 0.0
+duration = 0.3
+ease_type = 0
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="TP_hover_in"]
+script = ExtResource("3")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.5, 1.5)
+duration = 0.15
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="TP_hover_out"]
+script = ExtResource("3")
+from_value = Vector2(1.5, 1.5)
+to_value = Vector2(1, 1)
+duration = 0.15
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="TP_rotate"]
+script = ExtResource("3")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.4
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+bg_color = Color(0.07, 0.07, 0.09, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.5)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="MessageHistoryPanel" type="Control" unique_id=1365629814]
+z_index = 250
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+bubble_scene = ExtResource("2")
+show_tp = SubResource("TP_show")
+hide_tp = SubResource("TP_hide")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=331779424]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HistoryButton" type="TextureButton" parent="." unique_id=331779423]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777
+anchor_top = 0.92100006
+anchor_right = 0.82100004
+anchor_bottom = 0.9990001
+offset_left = 0.44000244
+offset_top = -25.120056
+offset_right = 0.11999512
+offset_bottom = -25.28003
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5")
+hover_in_tp = SubResource("TP_hover_in")
+hover_out_tp = SubResource("TP_hover_out")
+rotate_tp = SubResource("TP_rotate")
+
+[node name="Panel" type="Panel" parent="." unique_id=59146243]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -549.0
+offset_top = -470.0
+offset_right = 300.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("SB_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=433602786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox" unique_id=1627925522]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Panel/VBox/Header" unique_id=1213833281]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "Chat History"
+
+[node name="ClearButton" type="Button" parent="Panel/VBox/Header" unique_id=563052195]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.387, 0.50669986, 1)
+theme_override_font_sizes/font_size = 16
+text = "Clear"
+
+[node name="CloseButton" type="Button" parent="Panel/VBox/Header" unique_id=2126094849]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 18
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBox" unique_id=1591580402]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MessagesContainer" type="VBoxContainer" parent="Panel/VBox/ScrollContainer" unique_id=1923909685]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8

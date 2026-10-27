@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://skjdnn1lu37p"]
+
+[ext_resource type="Script" uid="uid://d0wt3spudxsfr" path="res://system/scripts/auto_loads/document_database.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://m6igc1ik4ygt" path="res://system/files/form.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dmn5xefywdvcl" path="res://system/files/attachments_folder.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dh64ap1jwc245" path="res://system/files/birth_cert.tscn" id="4"]
+[ext_resource type="Script" uid="uid://bmw3tqe416gpe" path="res://system/scripts/resources/document_data.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://b0d8121yglilo" path="res://system/files/electricity_bill.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://ct8qr12puljbt" path="res://system/files/marriage_cert.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dawycarfwf5wl" path="res://system/files/police_report.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://dtv3njec678no" path="res://system/files/water_bill.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://b8an003bio36c" path="res://system/files/id_card.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://bfa8jo5wmhvmg" path="res://system/files/employment_letter.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://dg8albctbbh6v" path="res://system/files/education_cert.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://c4k7jw2kr6c52" path="res://system/files/enrollment_proof.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://dvrcc4sc8j3v" path="res://system/files/divorce_cert.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://rntlc4sc7k2b" path="res://system/files/rental_contract.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://syndc4sc8j5m" path="res://system/files/syndicate_card.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://duxdf3p0q75dx" path="res://system/files/ticket.tscn" id="17"]
+
+[sub_resource type="Resource" id="Resource_vrmnm"]
+script = ExtResource("5")
+id = "BIRTH_CERT"
+prefab = ExtResource("4")
+display_name = "Birth Certificate"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_0t2t4"]
+script = ExtResource("5")
+id = "ELECTRICITY_BILL"
+requirement_group = 2
+prefab = ExtResource("6")
+display_name = "Electricity Bill"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_8q3ns"]
+script = ExtResource("5")
+id = "MARRIAGE_CERT"
+requirement_group = 4
+prefab = ExtResource("7")
+display_name = "Marriage Certificate"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_5xnba"]
+script = ExtResource("5")
+id = "POLICE_REPORT"
+requirement_group = 3
+prefab = ExtResource("8")
+display_name = "Police Report"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_gbx7g"]
+script = ExtResource("5")
+id = "WATER_BILL"
+requirement_group = 2
+prefab = ExtResource("9")
+display_name = "Water Bill"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_q17cy"]
+script = ExtResource("5")
+id = "OLD_ID"
+requirement_group = 1
+prefab = ExtResource("10")
+display_name = "Old ID"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_75xo0"]
+script = ExtResource("5")
+id = "EMPLOYMENT_LETTER"
+requirement_group = 5
+prefab = ExtResource("11")
+display_name = "Employment Letter"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_5ubed"]
+script = ExtResource("5")
+id = "EDUCATION_CERT"
+requirement_group = 5
+prefab = ExtResource("12")
+display_name = "Education Certificate"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_enrpr"]
+script = ExtResource("5")
+id = "ENROLLMENT_PROOF"
+requirement_group = 5
+prefab = ExtResource("13")
+display_name = "Enrollment Proof"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_dvc"]
+script = ExtResource("5")
+id = "DIVORCE_CERT"
+requirement_group = 6
+prefab = ExtResource("14")
+display_name = "Divorce Certificate"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_rnc"]
+script = ExtResource("5")
+id = "RENTAL_CONTRACT"
+requirement_group = 2
+prefab = ExtResource("15")
+display_name = "Rental Contract"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_syc"]
+script = ExtResource("5")
+id = "SYNDICATE_CARD"
+requirement_group = 5
+prefab = ExtResource("16")
+display_name = "Syndicate Card"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[sub_resource type="Resource" id="Resource_ticket"]
+script = ExtResource("5")
+id = "TICKET"
+requirement_group = 7
+prefab = ExtResource("17")
+display_name = "Ticket"
+metadata/_custom_type_script = "uid://bmw3tqe416gpe"
+
+[node name="DocumentDatabase" type="Control" unique_id=1533353056]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+form_scene = ExtResource("2")
+folder_scene = ExtResource("3")
+documents = [SubResource("Resource_vrmnm"), SubResource("Resource_0t2t4"), SubResource("Resource_8q3ns"), SubResource("Resource_5xnba"), SubResource("Resource_gbx7g"), SubResource("Resource_q17cy"), SubResource("Resource_75xo0"), SubResource("Resource_5ubed"), SubResource("Resource_enrpr"), SubResource("Resource_dvc"), SubResource("Resource_rnc"), SubResource("Resource_syc"), SubResource("Resource_ticket")]

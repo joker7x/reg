@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c8xrfxq2v1a0"]
+
+[ext_resource type="Script" uid="uid://c7xrfxq2v1a0" path="res://system/scripts/result_fx.gd" id="1"]
+[ext_resource type="Shader" uid="uid://exay1umnac3x" path="res://system/shaders/emoji_outline.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://cuyda3kcslthk" path="res://art/ui/emoji_smiley.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cjvjujy4v6b2q" path="res://art/ui/check.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://b1nksp1ash70" path="res://system/tools/ink_splash.tscn" id="5"]
+
+[sub_resource type="ShaderMaterial" id="Mat_emoji"]
+shader = ExtResource("2")
+shader_parameter/outline_color = Color(0.1, 0.05, 0, 1)
+shader_parameter/outline_thickness = 8.0
+
+[sub_resource type="ShaderMaterial" id="Mat_verdict"]
+shader = ExtResource("2")
+shader_parameter/outline_color = Color(0.1, 0.05, 0, 1)
+shader_parameter/outline_thickness = 8.0
+
+[node name="ResultFx" type="Control" unique_id=4688436 node_paths=PackedStringArray("emoji_rect", "verdict_rect", "burst")]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1")
+emoji_rect = NodePath("Emoji")
+verdict_rect = NodePath("Verdict")
+burst = NodePath("Burst")
+
+[node name="Emoji" type="TextureRect" parent="." unique_id=1885743893]
+z_index = 200
+material = SubResource("Mat_emoji")
+layout_mode = 0
+offset_left = 40.0
+offset_top = -10.0
+offset_right = 164.0
+offset_bottom = 114.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Verdict" type="TextureRect" parent="." unique_id=1373990610]
+z_index = 201
+material = SubResource("Mat_verdict")
+layout_mode = 0
+offset_left = 77.0
+offset_top = 87.0
+offset_right = 125.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Burst" parent="." unique_id=1734115940 instance=ExtResource("5")]
+min_size = 5.0
+max_size = 20.0
+auto_free = false

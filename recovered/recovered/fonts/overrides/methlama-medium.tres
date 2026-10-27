@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" format=3 uid="uid://bpy71vhpmyd6t"]
+
+[ext_resource type="FontFile" uid="uid://bwl8hoao1ybof" path="res://fonts/MP16REG.ttf" id="1"]
+[ext_resource type="FontFile" uid="uid://28kkoe4uuk1b" path="res://fonts/arabic/ko-methlama-medium.otf" id="2"]
+
+[resource]
+fallbacks = [ExtResource("2")]
+base_font = ExtResource("1")

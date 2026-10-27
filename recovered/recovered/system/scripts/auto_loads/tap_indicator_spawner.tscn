@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cvxbwx6r3alvx" path="res://system/scripts/auto_loads/tap_indicator_spawner.gd" id="1"]
+[ext_resource type="PackedScene" path="res://system/scripts/tap_indicator.tscn" id="2"]
+
+[node name="TapIndicatorSpawner" type="CanvasLayer" unique_id=878526902]
+layer = 100
+script = ExtResource("1")
+indicator_scene = ExtResource("2")

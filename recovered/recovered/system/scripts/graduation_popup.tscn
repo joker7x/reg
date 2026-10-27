@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://008d3emb63u4"]
+
+[ext_resource type="Script" uid="uid://b32yorh0sjlok" path="res://system/scripts/graduation_popup.gd" id="1"]
+[ext_resource type="Shader" uid="uid://dv5rm7ofmanda" path="res://system/shaders/confetti_screen.gdshader" id="2"]
+[ext_resource type="Script" uid="uid://cc5iw1caa1lfv" path="res://system/tween_button.gd" id="3"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_conf"]
+shader = ExtResource("2")
+shader_parameter/speed = 120.0
+shader_parameter/sway_strength = 103.3330049083175
+shader_parameter/sway_speed = 1.4
+shader_parameter/spin_speed = 5.3890002559775
+shader_parameter/piece_size = 5.000000142499999
+shader_parameter/aspect_ratio = 1.00000004098023
+shader_parameter/resolution = Vector2(1920, 1080)
+shader_parameter/col0 = Color(1, 0.59000003, 0.59000003, 1)
+shader_parameter/col1 = Color(1, 0.88383335, 0.59000003, 1)
+shader_parameter/col2 = Color(0.512, 0.8, 0.5936, 1)
+shader_parameter/col3 = Color(0.53999996, 0.7546667, 1, 1)
+shader_parameter/col4 = Color(0.923, 0.58000004, 1, 1)
+shader_parameter/col5 = Color(1, 0.62, 0.81, 1)
+shader_parameter/col6 = Color(0.627, 0.93385005, 0.95, 1)
+shader_parameter/col7 = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndb"]
+bg_color = Color(0.1, 0.32, 0.65, 0.8509804)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iekjf"]
+
+[sub_resource type="Resource" id="Resource_edb_hi"]
+script = ExtResource("4")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.35, 1.35)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_edb_ho"]
+script = ExtResource("4")
+from_value = Vector2(1.35, 1.35)
+to_value = Vector2(1, 1)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_edb_rot"]
+script = ExtResource("4")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.5
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[node name="GraduationPopup" type="Control" unique_id=1879074487]
+visible = false
+z_index = 400
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="ShaderConfetti" type="ColorRect" parent="." unique_id=1675069791]
+material = SubResource("ShaderMaterial_conf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1809879641]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=2130501288]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Panel/VBox" unique_id=2081297005]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Graduation title"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="Panel/VBox" unique_id=2081297006]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Graduation message"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBox" unique_id=1918944658]
+layout_mode = 2
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Panel/VBox/Buttons" unique_id=1164176190]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ndb")
+text = "Continue"
+script = ExtResource("3")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")

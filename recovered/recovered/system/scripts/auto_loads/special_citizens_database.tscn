@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dkydbtsqcr15x" path="res://system/scripts/auto_loads/special_citizens_database.gd" id="1"]
+[ext_resource type="Resource" uid="uid://cqwhqr26b10nj" path="res://resources/special/sultan_almasri.tres" id="2"]
+[ext_resource type="Resource" uid="uid://b2r07sbfs703o" path="res://resources/special/adel_hashem.tres" id="3"]
+[ext_resource type="Resource" uid="uid://g88h3cijdc7n" path="res://resources/special/umm_kareem.tres" id="4"]
+
+[node name="SpecialCitizensDatabase" type="Node" unique_id=2068075969]
+script = ExtResource("1")
+citizens = [ExtResource("2"), ExtResource("3"), ExtResource("4")]

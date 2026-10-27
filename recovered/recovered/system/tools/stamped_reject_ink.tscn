@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://r6je63afpm52"]
+
+[ext_resource type="Script" uid="uid://dk8yqt3p4v2bn" path="res://system/tools/stamped_ink.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bdby1ih0g4064" path="res://art/stamps/denied_ar.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cis6y6p5bjidd" path="res://art/stamps/DENIED.png" id="3"]
+
+[node name="StampedInk" type="Control" unique_id=1729970292]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 50.0
+script = ExtResource("1")
+arabic_texture = ExtResource("2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=618876662]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.946557, 6.9356414e-05, 0.18946719, 0.2784314)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=990067679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")

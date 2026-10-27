@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="SpecialCitizenData" format=3 uid="uid://cqwhqr26b10nj"]
+
+[ext_resource type="Script" uid="uid://dyfr64tqkd06o" path="res://system/scripts/resources/custom_date.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://e2opvti7npwc" path="res://art/Males/Male_1.png" id="2"]
+[ext_resource type="Script" uid="uid://cobcb1fas8a55" path="res://system/scripts/resources/civilian_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://c5kqdf7t51i3r" path="res://system/scripts/resources/special_citizen_data.gd" id="4"]
+
+[sub_resource type="Resource" id="Date_sultan"]
+script = ExtResource("1")
+date_dict = {
+"day": 15,
+"month": 6,
+"weekday": 0,
+"year": 1998
+}
+
+[sub_resource type="Resource" id="Civ_sultan"]
+script = ExtResource("3")
+gender = "m"
+marrital = "m"
+full_name = "Sultan Almasri"
+portrait = ExtResource("2")
+birth_date = SubResource("Date_sultan")
+occupation = "Professional Footballer"
+
+[resource]
+script = ExtResource("4")
+id = "SULTAN_ALMASRI"
+allowed_case_types = Array[int]([0, 1, 2])
+civilian = SubResource("Civ_sultan")
+arrival_dialogues = Array[String](["You know me, right? The striker. Just need my card renewed quickly.", "I have a big match tomorrow, can you make this fast?"])
+new_id_reasons = Array[String](["New ID for the national team roster.", "Lost my card at the stadium celebrations."])
+renew_id_reasons = Array[String](["Renewing before the transfer window closes.", "Card expired after my move abroad."])
+lost_id_reasons = Array[String](["Someone stole it at the training ground.", "It fell out during the derby."])
+visit_overrides = Array[Dictionary]([{
+"arrival_dialogues": ["First time at the registry. The club said you would sort my card today.", "Keep it quiet, but I lost my ID at the stadium again."],
+"wrong_form_chance": 0.4
+}, {
+"arrival_dialogues": ["Back again. They still misspell my name on every card.", "Second visit, habibi. Third card, same problem."],
+"missing_doc_chance": 0.6,
+"renew_id_reasons": ["Renewing because my last card had my name wrong, again.", "The transfer window closes today, hurry."]
+}])

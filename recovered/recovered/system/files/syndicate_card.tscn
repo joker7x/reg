@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://syndc4sc8j5m"]
+
+[ext_resource type="Script" uid="uid://syndc4k0x6ra" path="res://system/files/syndicate_card.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bjncqx0b66ym2" path="res://art/papers/card_mod_1_hi.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://beewohs74prff" path="res://art/papers/card_mod_2_hi.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://vp0tmo1w6llp" path="res://art/papers/card_mod_4_hi.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b38hdrh5ombps" path="res://art/papers/card_mod_7_hi.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bgx35vhwuu1nx" path="res://art/papers/card_mod_8_hi.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bwgbma0fn2q0k" path="res://art/papers/card_mod_3_lo.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dk3tdlpo3puuy" path="res://art/papers/card_mod_5_lo.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cj8nme21uud0k" path="res://art/papers/card_mod_6_lo.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dp73cut302410" path="res://art/papers/card_mod_9_lo.png" id="10"]
+[ext_resource type="Script" uid="uid://bsc3ti2qi77w2" path="res://system/files/syndicate_card_randomizer.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://c34ogalrds1fa" path="res://art/papers/white_card.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://7acc1gtdeso7" path="res://art/stamps/bc_stamp_1.png" id="13"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://bv1cjvxxd81rn" path="res://art/stamps/ok_stamp_en.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://c54bci212tbm7" path="res://art/stamps/ok_stamp_ar.png" id="16"]
+[ext_resource type="Script" uid="uid://cqmexd3ayd17" path="res://system/scripts/utils/rand_number_label.gd" id="17"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0a35"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.079216056, 0.48783416, 0.28059453, 1)
+
+[node name="SyndicateCard" type="Control" unique_id=1593968564 node_paths=PackedStringArray("full_name_value", "profession_value", "syndicate_value", "syndicate_emoji_value", "header_label", "end_date_label", "end_date_value", "body_panel", "upper_sprite", "lower_sprite")]
+custom_minimum_size = Vector2(255, 144)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 255.0
+offset_bottom = 144.0
+script = ExtResource("1")
+full_name_value = NodePath("ContentMargin/FullNameValue")
+profession_value = NodePath("ContentMargin/ProfessionValue")
+syndicate_value = NodePath("ContentMargin/SyndicateValue")
+syndicate_emoji_value = NodePath("ContentMargin/SyndicateEmoji")
+header_label = NodePath("ContentMargin/Header")
+end_date_label = NodePath("ContentMargin/IssueDateLabel")
+end_date_value = NodePath("ContentMargin/IssueDateValue")
+body_panel = NodePath("PaperPanel")
+upper_sprite = NodePath("UpperSprite")
+lower_sprite = NodePath("LowerSprite")
+upper_textures = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6")]
+lower_textures = [ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10")]
+body_colors = [Color(0.98039216, 1, 0.9490196, 1), Color(0.93, 0.9, 0.8, 1), Color(0.85, 0.92, 0.96, 1), Color(0.8544, 0.96, 0.87376, 1), Color(0.9358354, 0.9056493, 0.98314494, 1)]
+accent_colors = [Color(0.8399934, 0.5860702, 0.33904487, 1), Color(0.605962, 0.13120344, 0.13468847, 1), Color(0.08255295, 0.27759346, 0.58531547, 1), Color(0.079216056, 0.48783416, 0.28059453, 1), Color(0.27263266, 0.14340198, 0.397534, 1), Color(0.6095896, 0.46266663, 0.05787967, 1)]
+ignore_rtl = true
+
+[node name="Randomizer" type="Node" parent="." unique_id=2100000001 node_paths=PackedStringArray("target_card")]
+script = ExtResource("11")
+target_card = NodePath("..")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=465265955]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12")
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=1176975459]
+modulate = Color(0.8544, 0.96, 0.87376, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12")
+
+[node name="LowerSprite" type="TextureRect" parent="." unique_id=1899900002]
+modulate = Color(0.079216056, 0.48783416, 0.28059453, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9")
+
+[node name="UpperSprite" type="TextureRect" parent="." unique_id=1899900001]
+modulate = Color(0.079216056, 0.48783416, 0.28059453, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="Stamp" type="TextureRect" parent="." unique_id=933337783]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_mode = 0
+offset_left = 190.0
+offset_top = 71.0
+offset_right = 230.0
+offset_bottom = 111.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("13")
+stretch_mode = 5
+script = ExtResource("14")
+max_offset = 8.0
+max_rot = 35.0
+en_textures = [ExtResource("13"), ExtResource("15")]
+ar_textures = [ExtResource("13"), ExtResource("16")]
+
+[node name="ContentMargin" type="Control" parent="." unique_id=174217808]
+layout_mode = 1
+anchor_right = 1.0040001
+anchor_bottom = 1.0
+offset_right = 78.620514
+offset_bottom = 43.620926
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.765, 0.765)
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 189.54248
+offset_top = 49.673203
+offset_right = 323.92157
+offset_bottom = 72.42433
+theme_override_colors/font_color = Color(0.33163914, 0.33163962, 0.33163917, 1)
+theme_override_font_sizes/font_size = 13
+text = "Syndicate Card"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="SyndicateValue" type="Label" parent="ContentMargin" unique_id=801647062]
+layout_mode = 0
+offset_left = 1.3071896
+offset_right = 333.33334
+offset_bottom = 39.215687
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.43529412)
+theme_override_colors/font_outline_color = Color(0.079216056, 0.48783416, 0.28059453, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "[Syndicate]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FullNameValue" type="Label" parent="ContentMargin" unique_id=801647064]
+layout_mode = 0
+offset_left = 16.993464
+offset_top = 58.82353
+offset_right = 316.0705
+offset_bottom = 85.82353
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 23
+text = "[Full Name]"
+horizontal_alignment = 1
+
+[node name="ProfessionValue" type="Label" parent="ContentMargin" unique_id=801647065]
+layout_mode = 0
+offset_left = 16.993464
+offset_top = 84.96732
+offset_right = 316.0705
+offset_bottom = 105.96732
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "[Profession]"
+horizontal_alignment = 1
+
+[node name="SyndicateEmoji" type="Label" parent="ContentMargin" unique_id=992211001]
+layout_mode = 0
+offset_left = 18.300653
+offset_top = 54.901962
+offset_right = 77.30066
+offset_bottom = 107.189545
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0a35")
+text = "🏗️"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardNumberValue" type="Label" parent="ContentMargin" unique_id=581885580]
+layout_mode = 0
+offset_left = 19.607843
+offset_top = 115.032684
+offset_right = 78.43138
+offset_bottom = 135.03268
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "999999"
+horizontal_alignment = 1
+script = ExtResource("17")
+integer_digits = 6
+metadata/_custom_type_script = "uid://cqmexd3ayd17"
+
+[node name="IssueDateLabel" type="Label" parent="ContentMargin" unique_id=2066839892]
+layout_mode = 0
+offset_left = 112.418304
+offset_top = 121.56863
+offset_right = 218.30066
+offset_bottom = 141.56863
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 17
+text = "Until"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IssueDateValue" type="Label" parent="ContentMargin" unique_id=414922220]
+layout_mode = 0
+offset_left = 108.496735
+offset_top = 134.6405
+offset_right = 220.49673
+offset_bottom = 154.6405
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "99/99/2999"
+horizontal_alignment = 1
+
+[node name="StampOverlayLayer" type="Control" parent="." unique_id=1691263784]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DragHandle" type="Control" parent="." unique_id=1650722950]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

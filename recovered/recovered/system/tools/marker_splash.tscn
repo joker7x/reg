@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qu4b3rosubeu"]
+
+[ext_resource type="Script" uid="uid://co154jprvbaoh" path="res://system/tools/marker_splash.gd" id="1"]
+
+[node name="MarkerSplash" type="Control" unique_id=2120864965]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c8ulrljyqtjs6"]
+
+[ext_resource type="Script" uid="uid://dxt6dy80b4j0s" path="res://system/day_dots.gd" id="1"]
+
+[node name="DayDots" type="HBoxContainer" unique_id=412637872]
+offset_right = 135.0
+offset_bottom = 12.0
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 2
+script = ExtResource("1")
+done_color = Color(1, 1, 1, 0.5019608)
+current_color = Color(1, 0.8483333, 0.3, 0.3254902)
+current_border_color = Color(1, 1, 1, 0.62352943)
+upcoming_color = Color(0, 0, 0, 0.2509804)

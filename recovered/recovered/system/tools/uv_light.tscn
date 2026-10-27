@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://c8q7p3uvl1ght"]
+
+[ext_resource type="Script" uid="uid://edc41xm1tkp2" path="res://system/tools/uv_light.gd" id="1"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://kwtpy2volwq4" path="res://audio/sfx/uv/switch_6.wav" id="3"]
+[ext_resource type="Texture2D" uid="uid://eh6n58124kfd" path="res://art/papers/uv_lamp_on_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c7g23qefcx8fg" path="res://art/papers/uv_lamp_off_2.png" id="5"]
+[ext_resource type="Shader" uid="uid://ccvcbtgvflsaj" path="res://system/shaders/highlight.gdshader" id="6"]
+[ext_resource type="Shader" uid="uid://hfb0jdgp568" path="res://system/shaders/uv_glow.gdshader" id="7"]
+
+[sub_resource type="Resource" id="Resource_clk7"]
+script = ExtResource("2")
+stream = ExtResource("3")
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hl"]
+shader = ExtResource("6")
+shader_parameter/Line_Smoothness = 0.098000004655
+shader_parameter/Line_Width = 0.0330000015675
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = -74.9999992875
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+shader_parameter/surface = ExtResource("5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q62hu"]
+shader = ExtResource("7")
+shader_parameter/glow_color = Color(0.75, 0.25, 1, 1)
+shader_parameter/intensity = 0.18
+shader_parameter/radius = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35ekw"]
+shader = ExtResource("7")
+shader_parameter/glow_color = Color(0.4841668, 0, 0.83, 1)
+shader_parameter/intensity = 0.702000033345
+shader_parameter/radius = 0.790000037525
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8h2d"]
+shader = ExtResource("7")
+shader_parameter/glow_color = Color(0.25, 1, 0.3375001, 1)
+shader_parameter/intensity = 0.5190000246525
+shader_parameter/radius = 0.5
+
+[node name="UVLight" type="Control" unique_id=1876597137 node_paths=PackedStringArray("highlight", "hover_scale_target")]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_left = 620.0
+offset_top = 249.0
+offset_right = 660.0
+offset_bottom = 471.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
+script = ExtResource("1")
+click_sfxs = [SubResource("Resource_clk7")]
+on_texture = ExtResource("4")
+off_texture = ExtResource("5")
+hit_area = NodePath("HitArea")
+highlight = NodePath("IdleTexture/Highlight")
+hover_scale_target = NodePath(".")
+hover_mode = 1
+hover_lift_amount = 5.0
+
+[node name="IdleTexture" type="Control" parent="." unique_id=2125141491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="Shadow" type="TextureRect" parent="IdleTexture" unique_id=1266852793]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texture" type="TextureRect" parent="IdleTexture" unique_id=987915282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="IdleTexture" unique_id=459658881]
+visible = false
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_hl")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32500002
+anchor_right = 0.675
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Glows" type="Control" parent="." unique_id=202449807]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DocumentGlow" type="ColorRect" parent="Glows" unique_id=650728442]
+material = SubResource("ShaderMaterial_q62hu")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -14.1
+anchor_top = -1.7030001
+anchor_right = 8.400001
+anchor_bottom = 2.351
+offset_top = 0.06600952
+offset_right = -3.0517578e-05
+offset_bottom = 0.07800293
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LampGlow" type="ColorRect" parent="Glows" unique_id=480807467]
+material = SubResource("ShaderMaterial_35ekw")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = -0.045
+anchor_right = 0.52500004
+anchor_bottom = 0.79700005
+offset_top = -0.009999275
+offset_bottom = 0.06599426
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SwitchGlow" type="ColorRect" parent="Glows" unique_id=725376714]
+material = SubResource("ShaderMaterial_i8h2d")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.275
+anchor_top = 0.92300004
+anchor_right = 0.77500004
+anchor_bottom = 1.014
+offset_top = 0.0940094
+offset_bottom = -0.10800171
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HitArea" type="Control" parent="." unique_id=613591918]
+layout_mode = 1
+anchor_left = -0.15
+anchor_top = 0.689
+anchor_right = 1.1750001
+anchor_bottom = 1.018
+offset_top = 0.041992188
+offset_bottom = 0.0039978027
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]

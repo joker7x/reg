@@ -1,0 +1,2019 @@
+[gd_scene format=3 uid="uid://co1qw74noh1qn"]
+
+[ext_resource type="Script" uid="uid://dicjsti7r6jay" path="res://system/main_menu/main_menu.gd" id="1"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://f7m12tvf0bg6" path="res://audio/sfx/paper/line_marker_trimmed2.ogg" id="3"]
+[ext_resource type="Texture2D" uid="uid://dsvpprc6mrayn" path="res://art/ui/MainMenuDesk.png" id="4"]
+[ext_resource type="Script" uid="uid://cs6i4txq882kq" path="res://system/main_menu/credit_card.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://4fmh7pwsrhtj" path="res://art/papers/id_card.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d3as15b08opgt" path="res://art/Males/Male_6.png" id="7"]
+[ext_resource type="Script" uid="uid://cqmexd3ayd17" path="res://system/scripts/utils/rand_number_label.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://dmuimxs5n0mfp" path="res://art/Females/Female_4.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://81lgoi1elhk7" path="res://art/Females/Female_5.png" id="10"]
+[ext_resource type="Script" uid="uid://ddkcxl53cubc6" path="res://system/main_menu/mm_printer.gd" id="11"]
+[ext_resource type="AudioStream" uid="uid://b15juh11i8glm" path="res://audio/sfx/printer/printer_main_1.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://ddfvrkggsu35q" path="res://audio/sfx/printer/printer_main_2.mp3" id="13"]
+[ext_resource type="AudioStream" uid="uid://ehtdxuhuqsgw" path="res://audio/sfx/printer/printer_main_3.wav" id="14"]
+[ext_resource type="AudioStream" uid="uid://b0o4nwrbio7kb" path="res://audio/sfx/printer/printer_main_4.wav" id="15"]
+[ext_resource type="AudioStream" uid="uid://dqddskk1seyw7" path="res://audio/sfx/printer/printer_secondary_noise.wav" id="16"]
+[ext_resource type="AudioStream" uid="uid://bk5hfehh7nqpl" path="res://audio/sfx/paper/card drop.ogg" id="17"]
+[ext_resource type="AudioStream" uid="uid://ccwvxsf6g03rj" path="res://audio/sfx/dialogue/319791__zmobie__uncorking-fine-scotch-3b.wav" id="18"]
+[ext_resource type="Texture2D" uid="uid://db2luotow5unc" path="res://art/printer/ID_Printer_.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://1p2tvn3aritn" path="res://art/printer/ID_Printer_Background.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://db7rnbgivhic3" path="res://art/printer/ID_Printer_Lamp.png" id="21"]
+[ext_resource type="Script" uid="uid://cv7283m1a3etp" path="res://system/main_menu/mm_button.gd" id="22"]
+[ext_resource type="PackedScene" uid="uid://jgnce75bxuya" path="res://system/files/marker_line.tscn" id="23"]
+[ext_resource type="Script" uid="uid://dnlob74qsx3gx" path="res://system/main_menu/links_container.gd" id="24"]
+[ext_resource type="Script" uid="uid://cc5iw1caa1lfv" path="res://system/tween_button.gd" id="25"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="26"]
+[ext_resource type="Texture2D" uid="uid://k20femioc7td" path="res://art/itch_icon.png" id="27"]
+[ext_resource type="Script" uid="uid://de4eyc0s0cq8x" path="res://system/main_menu/link_button.gd" id="28"]
+[ext_resource type="Texture2D" uid="uid://b51d8j1nfibed" path="res://art/discord.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://ba8afwk3vl0wg" path="res://art/instagram-logo.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://dwvmxkadeq2v1" path="res://art/tik-tok (1).png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bhrbnyadkfcf7" path="res://art/papers/employment_cert.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bl0n650pa1aw6" path="res://art/papers/tape.png" id="33"]
+[ext_resource type="Shader" uid="uid://ccvcbtgvflsaj" path="res://system/shaders/highlight.gdshader" id="34"]
+[ext_resource type="Shader" uid="uid://hb7rbggi40gg" path="res://system/main_menu/outline_shader.gdshader" id="35"]
+[ext_resource type="FontVariation" uid="uid://d1epqt0kwixou" path="res://fonts/overrides/TitleArabic.tres" id="36"]
+[ext_resource type="Script" uid="uid://dqtqd3gm5m7xk" path="res://system/main_menu/mm_title.gd" id="37"]
+[ext_resource type="Script" uid="uid://dns5kh4rq3tls" path="res://system/main_menu/menu_settings_container.gd" id="38"]
+[ext_resource type="AudioStream" uid="uid://54cpytlagy3k" path="res://audio/sfx/printer/25421__andrewweathers__receipt.wav" id="39"]
+[ext_resource type="AudioStream" uid="uid://crjl4dkuvoiyc" path="res://audio/sfx/paper/p5.wav" id="40"]
+[ext_resource type="Texture2D" uid="uid://cpwt4kjgyg6pn" path="res://art/papers/ticket.png" id="41"]
+[ext_resource type="Script" uid="uid://erwrqdgqv5ee" path="res://system/main_menu/options_container.gd" id="42"]
+[ext_resource type="PackedScene" uid="uid://18lfmmqypdx0" path="res://system/main_menu/volume_slider.tscn" id="43"]
+[ext_resource type="Texture2D" uid="uid://bka4ddiidvawc" path="res://art/ui/mm_slider_knob.svg" id="44"]
+[ext_resource type="Texture2D" uid="uid://bjp4pfxysb0hb" path="res://art/ui/unchecked_toggle_red.png" id="45"]
+[ext_resource type="Script" path="res://system/scripts/utils/touch_slider.gd" id="46"]
+[ext_resource type="Texture2D" uid="uid://cparm2ltgro8l" path="res://art/ui/checked_toggle.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://djdw5p3pdehf" path="res://art/ui/unchecked_toggle.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://b5u825ymdxl7a" path="res://fonts/arabic/eg.svg" id="49"]
+[ext_resource type="Texture2D" uid="uid://cj85pm4r27bne" path="res://fonts/arabic/gb.svg" id="50"]
+[ext_resource type="Script" uid="uid://djiu3bkcwr3n6" path="res://system/scripts/fps_counter.gd" id="51"]
+[ext_resource type="AudioStream" uid="uid://sen0wm058e28" path="res://audio/music/sleek frequencies.ogg" id="52"]
+[ext_resource type="PackedScene" uid="uid://bwwh8t1o3bnqj" path="res://system/pp_layer.tscn" id="53"]
+[ext_resource type="PackedScene" uid="uid://d73ht0rqyxip" path="res://system/main_menu/endless_picker.tscn" id="54"]
+
+[sub_resource type="Resource" id="Resource_qouja"]
+script = ExtResource("2")
+stream = ExtResource("3")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_458eo"]
+script = ExtResource("2")
+stream = ExtResource("12")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_h3rex"]
+script = ExtResource("2")
+stream = ExtResource("13")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_fedci"]
+script = ExtResource("2")
+stream = ExtResource("14")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_8qswn"]
+script = ExtResource("2")
+stream = ExtResource("15")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_rm0al"]
+script = ExtResource("2")
+stream = ExtResource("16")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_hl5e0"]
+script = ExtResource("2")
+stream = ExtResource("17")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_engjn"]
+script = ExtResource("2")
+stream = ExtResource("18")
+min_pitch = 0.7
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_lb_hi"]
+script = ExtResource("26")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.5, 1.5)
+duration = 0.15
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_lb_ho"]
+script = ExtResource("26")
+from_value = Vector2(1.5, 1.5)
+to_value = Vector2(1, 1)
+duration = 0.15
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_links_rot"]
+script = ExtResource("26")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="SB_links_panel"]
+bg_color = Color(0.0702, 0.0702, 0.09, 0.2784314)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Resource" id="Resource_lb_pr"]
+script = ExtResource("26")
+from_value = Vector2(1, 1)
+to_value = Vector2(0.92, 0.92)
+duration = 0.1
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_lb_rl"]
+script = ExtResource("26")
+from_value = Vector2(0.92, 0.92)
+to_value = Vector2(1.15, 1.15)
+duration = 0.12
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hl"]
+shader = ExtResource("34")
+shader_parameter/Line_Smoothness = 0.062
+shader_parameter/Line_Width = 0.111
+shader_parameter/Brightness = 2.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.5
+shader_parameter/Speed = 0.5
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 0.346
+shader_parameter/surface = ExtResource("32")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cd460"]
+shader = ExtResource("35")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/fade_minimum_alpha = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/rotation = 2.90000013775
+shader_parameter/draw_border = false
+shader_parameter/fill_style = 1
+
+[sub_resource type="Curve" id="Curve_vr8o3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.12546816, 0.88510823), 0.0, 0.0, 0, 0, Vector2(0.37640452, 1), 0.0, 0.0, 0, 0, Vector2(0.55992514, 0.81904554), 0.0, 0.0, 0, 0, Vector2(0.6985019, 1), 0.0, 0.0, 0, 0, Vector2(0.78464425, 0.9942554), 0.0, 0.0, 0, 0, Vector2(0.86142325, 0.8621299), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="Resource" id="Resource_b4jiv"]
+script = ExtResource("2")
+stream = ExtResource("39")
+min_volume = 0.0
+max_volume = 3.0
+min_pitch = 0.9
+max_pitch = 1.3
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_68b7m"]
+script = ExtResource("2")
+stream = ExtResource("40")
+min_volume = 0.0
+max_volume = 3.0
+min_pitch = 0.5
+max_pitch = 0.8
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="StyleBoxTexture" id="SB_ticket_panel"]
+texture = ExtResource("41")
+
+[sub_resource type="StyleBoxFlat" id="SB_mm_slider_track"]
+content_margin_left = 0.0
+content_margin_top = 9.0
+content_margin_right = 0.0
+content_margin_bottom = 9.0
+bg_color = Color(0, 0, 0, 0)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.337, 0.282, 0.282, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_mm_slider_fill"]
+bg_color = Color(0.337, 0.282, 0.282, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_toggle_hover"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.93, 0, 0, 0.6862745)
+
+[sub_resource type="StyleBoxFlat" id="SB_settings_normal"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="SB_settings_pressed"]
+
+[sub_resource type="Resource" id="Resource_mm_set_hi"]
+script = ExtResource("26")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.5, 1.5)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_mm_set_ho"]
+script = ExtResource("26")
+from_value = Vector2(1.5, 1.5)
+to_value = Vector2(1, 1)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_mm_set_rot"]
+script = ExtResource("26")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.5
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxnar"]
+bg_color = Color(0.6, 0.6, 0.6, 0.45882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="SB_hotspot"]
+
+[sub_resource type="StyleBoxFlat" id="SB_endless_normal"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.37, 0.24013002, 0.081400014, 0.5764706)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.33206052, 0.22004268, 0.17799726, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eku7s"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.67, 0.60858333, 0.5025, 0.56078434)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.33206052, 0.22004268, 0.17799726, 0.5019608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+
+[sub_resource type="Resource" id="Resource_endless_hi"]
+script = ExtResource("26")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.2, 1.2)
+duration = 0.15
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_endless_ho"]
+script = ExtResource("26")
+from_value = Vector2(1.2, 1.2)
+to_value = Vector2(1, 1)
+duration = 0.15
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="SB_exit_normal"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.11764706)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.1615, 0.333625, 0.4392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="SB_exit_pressed"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.12, 0.12, 0.5137255)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="SB_exit_hover"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9, 0.216, 0.216, 0.20392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="SB_confirm"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="SB_confirm_cancel"]
+bg_color = Color(0.19315353, 0.19315353, 0.19315341, 1)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="SB_confirm_confirm"]
+bg_color = Color(0.24, 0.0408, 0.08727995, 0.8509804)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="SB_confirm_pressed"]
+
+[node name="MainMenu" type="Control" unique_id=70906089]
+self_modulate = Color(0.23151812, 0.23151812, 0.23151812, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+mark_sfx = SubResource("Resource_qouja")
+debug_force_phone_stretch = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=764545044]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18120003, 0.18120006, 0.18120003, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1574873630]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_right = 1280.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(0, 720)
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CardsHidePos" type="Control" parent="." unique_id=368218262]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 154.0
+offset_top = 257.0
+offset_right = 194.0
+offset_bottom = 297.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="FikiCard" type="Control" parent="." unique_id=1593968564]
+z_index = 2
+custom_minimum_size = Vector2(255, 144)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.0
+offset_top = 262.0
+offset_right = -31.0
+offset_bottom = 406.0
+grow_horizontal = 2
+rotation = -0.40142572
+script = ExtResource("5")
+
+[node name="Shadow" type="TextureRect" parent="FikiCard" unique_id=1820179408]
+self_modulate = Color(0, 0, 0, 0.36100003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="PaperPanel" type="TextureRect" parent="FikiCard" unique_id=1982001674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="ContentMargin" type="Control" parent="FikiCard" unique_id=719562458]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 89.39218
+offset_bottom = 43.620926
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+
+[node name="Header" type="Label" parent="FikiCard/ContentMargin" unique_id=725189077]
+layout_mode = 0
+offset_left = 15.6862755
+offset_top = 10.457517
+offset_right = 339.68628
+offset_bottom = 27.457516
+theme_override_colors/font_color = Color(0.45034134, 0.5938364, 0.84798825, 1)
+theme_override_font_sizes/font_size = 12
+text = "Identification Card"
+uppercase = true
+
+[node name="PortraitTexture" type="TextureRect" parent="FikiCard/ContentMargin" unique_id=1692879090]
+layout_mode = 0
+offset_left = 26.143791
+offset_top = 44.444447
+offset_right = 124.183014
+offset_bottom = 146.40523
+texture = ExtResource("7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IDValue" type="Label" parent="FikiCard/ContentMargin" unique_id=1178599333]
+layout_mode = 0
+offset_left = 171.24184
+offset_top = 138.56209
+offset_right = 348.24182
+offset_bottom = 166.56209
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "123456789012345"
+script = ExtResource("8")
+integer_digits = 12
+
+[node name="NameValue" type="Label" parent="FikiCard/ContentMargin" unique_id=1789081091]
+layout_mode = 0
+offset_left = 122.875824
+offset_top = 40.522877
+offset_right = 325.22083
+offset_bottom = 75.52287
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 30
+text = "Ahmed Alfiki"
+horizontal_alignment = 1
+
+[node name="BirthValue" type="Label" parent="FikiCard/ContentMargin" unique_id=794520027]
+layout_mode = 0
+offset_left = 32.679737
+offset_top = 145.09804
+offset_right = 115.67973
+offset_bottom = 168.09804
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "01.01.1999"
+horizontal_alignment = 1
+
+[node name="OccupationValue" type="Label" parent="FikiCard/ContentMargin" unique_id=835697974]
+layout_mode = 0
+offset_left = 129.41176
+offset_top = 73.20262
+offset_right = 297.06677
+offset_bottom = 96.20262
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "Dev"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FikiCard/ContentMargin" unique_id=1353960296]
+visible = false
+layout_mode = 0
+offset_left = 130.71895
+offset_top = 91.50327
+offset_right = 307.87396
+offset_bottom = 136.50327
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Address1Value" type="Label" parent="FikiCard/ContentMargin/VBoxContainer" unique_id=1555461106]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "125, El Gamaa St.,"
+horizontal_alignment = 2
+
+[node name="Address2Value" type="Label" parent="FikiCard/ContentMargin/VBoxContainer" unique_id=462418800]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 9
+text = "Nasr City, Cairo
+"
+horizontal_alignment = 2
+
+[node name="EmmyCard" type="Control" parent="." unique_id=214199419]
+z_index = 2
+custom_minimum_size = Vector2(255, 144)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 279.0
+offset_right = 149.0
+offset_bottom = 423.0
+grow_horizontal = 2
+script = ExtResource("5")
+
+[node name="Shadow2" type="TextureRect" parent="EmmyCard" unique_id=1549699991]
+self_modulate = Color(0, 0, 0, 0.50600004)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="PaperPanel" type="TextureRect" parent="EmmyCard" unique_id=1052461124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="ContentMargin" type="Control" parent="EmmyCard" unique_id=1936500238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 89.39218
+offset_bottom = 43.620926
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+
+[node name="Header" type="Label" parent="EmmyCard/ContentMargin" unique_id=93072233]
+layout_mode = 0
+offset_left = 15.6862755
+offset_top = 10.457517
+offset_right = 339.68628
+offset_bottom = 27.457516
+theme_override_colors/font_color = Color(0.45034134, 0.5938364, 0.84798825, 1)
+theme_override_font_sizes/font_size = 12
+text = "Identification Card"
+uppercase = true
+
+[node name="PortraitTexture" type="TextureRect" parent="EmmyCard/ContentMargin" unique_id=1167683235]
+layout_mode = 0
+offset_left = 26.143791
+offset_top = 44.444447
+offset_right = 124.183014
+offset_bottom = 146.40523
+texture = ExtResource("9")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IDValue" type="Label" parent="EmmyCard/ContentMargin" unique_id=1500805474]
+layout_mode = 0
+offset_left = 171.24184
+offset_top = 138.56209
+offset_right = 348.24182
+offset_bottom = 166.56209
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "123456789012345"
+script = ExtResource("8")
+integer_digits = 12
+
+[node name="NameValue" type="Label" parent="EmmyCard/ContentMargin" unique_id=1741517684]
+layout_mode = 0
+offset_left = 122.875824
+offset_top = 40.522877
+offset_right = 325.22083
+offset_bottom = 75.52287
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 28
+text = "Emmy Alshafeay"
+horizontal_alignment = 1
+
+[node name="BirthValue" type="Label" parent="EmmyCard/ContentMargin" unique_id=489014751]
+layout_mode = 0
+offset_left = 32.679737
+offset_top = 145.09804
+offset_right = 115.67973
+offset_bottom = 168.09804
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "01.01.1999"
+horizontal_alignment = 1
+
+[node name="OccupationValue" type="Label" parent="EmmyCard/ContentMargin" unique_id=543260270]
+layout_mode = 0
+offset_left = 129.41176
+offset_top = 73.20262
+offset_right = 297.06677
+offset_bottom = 96.20262
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "Art"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EmmyCard/ContentMargin" unique_id=782447340]
+visible = false
+layout_mode = 0
+offset_left = 130.71895
+offset_top = 91.50327
+offset_right = 307.87396
+offset_bottom = 136.50327
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Address1Value" type="Label" parent="EmmyCard/ContentMargin/VBoxContainer" unique_id=77037205]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "125, El Gamaa St.,"
+horizontal_alignment = 2
+
+[node name="Address2Value" type="Label" parent="EmmyCard/ContentMargin/VBoxContainer" unique_id=1535945612]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 9
+text = "Nasr City, Cairo
+"
+horizontal_alignment = 2
+
+[node name="SarahCard" type="Control" parent="." unique_id=1214660622]
+z_index = 2
+custom_minimum_size = Vector2(255, 144)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 69.0
+offset_top = 148.99998
+offset_right = 324.0
+offset_bottom = 293.0
+grow_horizontal = 2
+rotation = 0.2617994
+script = ExtResource("5")
+
+[node name="Shadow2" type="TextureRect" parent="SarahCard" unique_id=1837384809]
+self_modulate = Color(0, 0, 0, 0.50600004)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="PaperPanel" type="TextureRect" parent="SarahCard" unique_id=1515967848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="ContentMargin" type="Control" parent="SarahCard" unique_id=165527777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 89.39218
+offset_bottom = 43.620926
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+
+[node name="Header" type="Label" parent="SarahCard/ContentMargin" unique_id=447658286]
+layout_mode = 0
+offset_left = 15.6862755
+offset_top = 10.457517
+offset_right = 339.68628
+offset_bottom = 27.457516
+theme_override_colors/font_color = Color(0.45034134, 0.5938364, 0.84798825, 1)
+theme_override_font_sizes/font_size = 12
+text = "Identification Card"
+uppercase = true
+
+[node name="PortraitTexture" type="TextureRect" parent="SarahCard/ContentMargin" unique_id=1668406440]
+layout_mode = 0
+offset_left = 26.143791
+offset_top = 44.444447
+offset_right = 124.183014
+offset_bottom = 146.40523
+texture = ExtResource("10")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IDValue" type="Label" parent="SarahCard/ContentMargin" unique_id=140924670]
+layout_mode = 0
+offset_left = 171.24184
+offset_top = 138.56209
+offset_right = 348.24182
+offset_bottom = 166.56209
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "123456789012345"
+script = ExtResource("8")
+integer_digits = 12
+
+[node name="NameValue" type="Label" parent="SarahCard/ContentMargin" unique_id=1431664764]
+layout_mode = 0
+offset_left = 122.875824
+offset_top = 40.522877
+offset_right = 325.22083
+offset_bottom = 75.52287
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 30
+text = "Sarah Alaa"
+horizontal_alignment = 1
+
+[node name="BirthValue" type="Label" parent="SarahCard/ContentMargin" unique_id=1844315343]
+layout_mode = 0
+offset_left = 32.679737
+offset_top = 145.09804
+offset_right = 115.67973
+offset_bottom = 168.09804
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 11
+text = "01.01.1999"
+horizontal_alignment = 1
+
+[node name="OccupationValue" type="Label" parent="SarahCard/ContentMargin" unique_id=1342448599]
+layout_mode = 0
+offset_left = 122.87581
+offset_top = 73.20262
+offset_right = 290.53082
+offset_bottom = 96.20262
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = "Art"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SarahCard/ContentMargin" unique_id=2036356654]
+visible = false
+layout_mode = 0
+offset_left = 130.71895
+offset_top = 91.50327
+offset_right = 307.87396
+offset_bottom = 136.50327
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Address1Value" type="Label" parent="SarahCard/ContentMargin/VBoxContainer" unique_id=1139491324]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "125, El Gamaa St.,"
+horizontal_alignment = 2
+
+[node name="Address2Value" type="Label" parent="SarahCard/ContentMargin/VBoxContainer" unique_id=1855355885]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 9
+text = "Nasr City, Cairo
+"
+horizontal_alignment = 2
+
+[node name="JamCard" type="Control" parent="." unique_id=305870439]
+z_index = 3
+custom_minimum_size = Vector2(255, 144)
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_top = 481.99994
+offset_right = 168.0
+offset_bottom = 625.99994
+grow_horizontal = 2
+rotation = 0.27052602
+script = ExtResource("5")
+
+[node name="Shadow2" type="TextureRect" parent="JamCard" unique_id=222422618]
+self_modulate = Color(0, 0, 0, 0.50600004)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6")
+
+[node name="PaperPanel" type="ColorRect" parent="JamCard" unique_id=1497773388]
+modulate = Color(1.3075098, 1.3074999, 1.3075024, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shadow" type="TextureRect" parent="JamCard" unique_id=1887398213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContentMargin" type="Control" parent="JamCard" unique_id=721533153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 89.39218
+offset_bottom = 43.620926
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.765, 0.765)
+mouse_filter = 2
+
+[node name="NameValue" type="Label" parent="JamCard/ContentMargin" unique_id=2055911403]
+layout_mode = 0
+offset_left = 92.696106
+offset_top = 40.762905
+offset_right = 302.6961
+offset_bottom = 75.76291
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 30
+text = "Egypt Game Jam"
+horizontal_alignment = 1
+
+[node name="OccupationValue" type="Label" parent="JamCard/ContentMargin" unique_id=532555199]
+layout_mode = 0
+offset_left = 129.41176
+offset_top = 73.20262
+offset_right = 297.06677
+offset_bottom = 96.20262
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 16
+text = " 2026"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JamCard/ContentMargin" unique_id=1448911955]
+visible = false
+layout_mode = 0
+offset_left = 130.71895
+offset_top = 91.50327
+offset_right = 307.87396
+offset_bottom = 136.50327
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Address1Value" type="Label" parent="JamCard/ContentMargin/VBoxContainer" unique_id=1630107626]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 12
+text = "125, El Gamaa St.,"
+horizontal_alignment = 2
+
+[node name="Address2Value" type="Label" parent="JamCard/ContentMargin/VBoxContainer" unique_id=1389473295]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 9
+text = "Nasr City, Cairo
+"
+horizontal_alignment = 2
+
+[node name="Printer" type="Control" parent="." unique_id=1113646800 node_paths=PackedStringArray("cards")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -246.0
+offset_top = 179.0
+offset_right = 94.0
+offset_bottom = 479.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("11")
+print_sfxs = [SubResource("Resource_458eo"), SubResource("Resource_h3rex"), SubResource("Resource_fedci"), SubResource("Resource_8qswn")]
+print_sec_sfx = SubResource("Resource_rm0al")
+card_drop_sfx = SubResource("Resource_hl5e0")
+print_stop = SubResource("Resource_engjn")
+cards = [NodePath("../FikiCard"), NodePath("../EmmyCard"), NodePath("../SarahCard"), NodePath("../JamCard")]
+
+[node name="PrinterParent" type="Control" parent="Printer" unique_id=1710881699]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shadow" type="TextureRect" parent="Printer/PrinterParent" unique_id=1405429810]
+modulate = Color(0, 0, 0, 0.4)
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Body" type="TextureRect" parent="Printer/PrinterParent" unique_id=664323717]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BGShadow" type="TextureRect" parent="Printer/PrinterParent" unique_id=1361343053]
+modulate = Color(0, 0, 0, 0.4)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BG" type="TextureRect" parent="Printer/PrinterParent" unique_id=1240850445]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Lamp" type="TextureRect" parent="Printer/PrinterParent" unique_id=596814821]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardSpawn" type="Control" parent="Printer" unique_id=141592621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 355.0
+offset_top = 87.0
+offset_right = 355.0
+offset_bottom = -163.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardPrint" type="Control" parent="Printer" unique_id=1135842450]
+anchors_preset = 0
+offset_left = -202.0
+offset_top = 82.0
+offset_right = -162.0
+offset_bottom = 122.0
+mouse_filter = 2
+
+[node name="CardThrow" type="Control" parent="Printer" unique_id=1935867481]
+anchors_preset = 0
+offset_left = -687.0
+offset_top = 63.0
+offset_right = -647.0
+offset_bottom = 103.0
+mouse_filter = 2
+
+[node name="CreditsButton" type="Button" parent="Printer" unique_id=407372816]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 277.0
+offset_right = 218.0
+offset_bottom = 345.0
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.742698, 0.7007688, 1)
+theme_override_colors/font_outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+flat = true
+alignment = 0
+script = ExtResource("22")
+mark_sfx = SubResource("Resource_qouja")
+
+[node name="MarkerLine" parent="Printer/CreditsButton" unique_id=484492972 instance=ExtResource("23")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+min_width = 12.0
+max_width = 40
+points = 20
+
+[node name="LinksContainerShowPos" type="Control" parent="." unique_id=-1294967293]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 140.0
+offset_right = -1.0
+offset_bottom = 210.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="LinksContainer" type="Control" parent="." unique_id=-1294967292 node_paths=PackedStringArray("show_pos_node", "links_btn")]
+z_index = 5
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 140.0
+offset_right = 215.0
+offset_bottom = 210.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("24")
+show_pos_node = NodePath("../LinksContainerShowPos")
+links_btn = NodePath("LinksButton")
+
+[node name="LinksButton" type="Button" parent="LinksContainer" unique_id=-1294967295]
+layout_mode = 0
+offset_left = -85.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 41.0
+pivot_offset = Vector2(30, 12)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.742698, 0.7007688, 1)
+theme_override_font_sizes/font_size = 24
+text = "Links >"
+flat = true
+script = ExtResource("25")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+
+[node name="Panel" type="Panel" parent="LinksContainer" unique_id=-1294967291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_links_panel")
+
+[node name="HBox" type="HBoxContainer" parent="LinksContainer" unique_id=-1294967287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="ItchButton" type="TextureButton" parent="LinksContainer/HBox" unique_id=-1294967288]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("27")
+texture_pressed = ExtResource("27")
+texture_hover = ExtResource("27")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("28")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+pressed_tp = SubResource("Resource_lb_pr")
+release_tp = SubResource("Resource_lb_rl")
+metadata/url = "https://fikifiki.itch.io/"
+
+[node name="DiscordButton" type="TextureButton" parent="LinksContainer/HBox" unique_id=-1294967286]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("29")
+texture_pressed = ExtResource("29")
+texture_hover = ExtResource("29")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("28")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+pressed_tp = SubResource("Resource_lb_pr")
+release_tp = SubResource("Resource_lb_rl")
+metadata/url = "Discord: https://discord.gg/vdBeNVFTFT"
+
+[node name="InstagramButton" type="TextureButton" parent="LinksContainer/HBox" unique_id=-1294967290]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("30")
+texture_pressed = ExtResource("30")
+texture_hover = ExtResource("30")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("28")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+pressed_tp = SubResource("Resource_lb_pr")
+release_tp = SubResource("Resource_lb_rl")
+metadata/url = "https://www.instagram.com/_fiki.exe"
+
+[node name="TikTokButton" type="TextureButton" parent="LinksContainer/HBox" unique_id=-1294967289]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("31")
+texture_pressed = ExtResource("31")
+texture_hover = ExtResource("31")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("28")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+pressed_tp = SubResource("Resource_lb_pr")
+release_tp = SubResource("Resource_lb_rl")
+metadata/url = "https://www.tiktok.com/@_fiki.exe"
+
+[node name="CenterNote" type="Control" parent="LinksContainer" unique_id=218864586]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 225.5
+offset_top = 355.0
+offset_right = 425.5
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shadow" type="TextureRect" parent="LinksContainer/CenterNote" unique_id=1049073266]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.020000001
+anchor_top = 0.020000001
+anchor_right = 0.98
+anchor_bottom = 1.0200001
+offset_left = 2.0000002
+offset_top = -2.0000002
+offset_right = 2.0
+offset_bottom = -2.0000153
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("32")
+expand_mode = 1
+
+[node name="PaperPanel" type="TextureRect" parent="LinksContainer/CenterNote" unique_id=39608268]
+modulate = Color(0.98, 0.931, 0.686, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.017453292
+mouse_filter = 2
+texture = ExtResource("32")
+expand_mode = 1
+
+[node name="Tape" type="TextureRect" parent="LinksContainer/CenterNote" unique_id=267997064]
+modulate = Color(1, 1, 1, 0.32156864)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40100002
+anchor_top = -0.133
+anchor_right = 0.62700003
+anchor_bottom = 0.133
+offset_left = 0.010749817
+offset_top = -0.049995422
+offset_right = -0.05001831
+offset_bottom = 0.049999237
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33")
+expand_mode = 1
+
+[node name="TapeShadow" type="TextureRect" parent="LinksContainer/CenterNote/Tape" unique_id=634399520]
+modulate = Color(0, 0, 0, 0.12156863)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_top = 0.025
+anchor_right = 0.966
+anchor_bottom = 1.0250001
+offset_left = -0.010232568
+offset_right = -0.010234833
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("33")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="LinksContainer/CenterNote" unique_id=733173013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = -0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.017453292
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "This is a note"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_direction = 1
+
+[node name="Highlight" type="ColorRect" parent="LinksContainer/CenterNote" unique_id=384221715]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_hl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="." unique_id=1926683338]
+z_index = 10
+material = SubResource("ShaderMaterial_cd460")
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -577.0
+offset_top = 45.0
+offset_right = 575.0
+offset_bottom = 203.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+theme_override_colors/font_outline_color = Color(0.3019608, 0.3019608, 0.3019608, 0.8745098)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 35
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = ExtResource("36")
+theme_override_font_sizes/font_size = 116
+text = "The Registry"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("37")
+amplitude = 20.0
+hover_duration = 2.0
+
+[node name="Line2D" type="Line2D" parent="Label" unique_id=2133513347]
+z_index = -1
+position = Vector2(199, 112)
+points = PackedVector2Array(-28, 10, 2, 15, 43, 15, 70, 1, 100, -14, 128, -9, 143, -6, 193, -1, 210, -1, 231, -1, 257, -1, 280, -1, 304, -3, 323, -6, 346, -9, 377, -7, 406, -3, 440, 3, 461, 6, 502, 8, 525, 8, 558, 3, 601, 10, 619, 12, 627, 13, 652, 39, 659, 44, 673, 49, 683, 51, 699, 55, 741, 66, 763, 64, 776, 56)
+width = 40.0
+width_curve = SubResource("Curve_vr8o3")
+default_color = Color(1, 0, 0, 0.43400002)
+
+[node name="TitleHotspot" type="Control" parent="." unique_id=1926683339]
+z_index = 11
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.11100001
+anchor_right = 0.5
+anchor_bottom = 0.27100003
+offset_left = -326.0
+offset_top = 0.0799942
+offset_right = 292.0
+offset_bottom = -0.120025635
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+
+[node name="SettingsSlider" type="Control" parent="." unique_id=1081854656 node_paths=PackedStringArray("settings_button", "panel", "settings_label")]
+z_index = 40
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("38")
+settings_button = NodePath("../SettingsButton")
+panel = NodePath("SettingsPanel")
+settings_label = NodePath("SettingsPanel/TextureRect/SettingsLabel")
+show_duration = 0.77
+show_transition = 1
+hide_transition = 10
+hide_ease = 0
+show_sfx = SubResource("Resource_b4jiv")
+hide_sfx = SubResource("Resource_68b7m")
+hide_offset = Vector2(0, 450)
+
+[node name="SettingsPanel" type="Panel" parent="SettingsSlider" unique_id=581521103]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -393.0
+offset_right = 95.0
+offset_bottom = -90.0
+theme_override_styles/panel = SubResource("SB_ticket_panel")
+
+[node name="TextureRect" type="TextureRect" parent="SettingsSlider/SettingsPanel" unique_id=108076053]
+layout_mode = 0
+offset_top = 297.0
+offset_right = 288.0
+offset_bottom = 600.0
+texture = ExtResource("41")
+
+[node name="SettingsLabel" type="RichTextLabel" parent="SettingsSlider/SettingsPanel/TextureRect" unique_id=1652751904]
+layout_mode = 0
+offset_left = 15.0
+offset_right = 273.0
+offset_bottom = 126.0
+theme_override_colors/default_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "============
+[wave]Settings"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SoundSection" type="VBoxContainer" parent="SettingsSlider" unique_id=258960533 node_paths=PackedStringArray("language_dropdown", "arabic_numbers_toggle", "arabic_numbers_preview", "fullscreen_toggle", "post_processing_toggle", "vsync_toggle")]
+custom_minimum_size = Vector2(225, 150)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -375.0
+offset_right = 80.0
+offset_bottom = -102.0
+size_flags_horizontal = 2
+theme_override_constants/separation = -3
+alignment = 1
+script = ExtResource("42")
+language_dropdown = NodePath("../../LanguageDropdown")
+arabic_numbers_toggle = NodePath("../../ArabicNumbersToggle")
+arabic_numbers_preview = NodePath("../../ArabicNumbersPreview")
+fullscreen_toggle = NodePath("VBoxContainer/FullScreenToggle")
+post_processing_toggle = NodePath("VBoxContainer/PostProcessingToggle")
+vsync_toggle = NodePath("VBoxContainer/VSyncToggle")
+
+[node name="MusicLabel" type="Label" parent="SettingsSlider/SoundSection" unique_id=543755756]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_font_sizes/font_size = 30
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicSlider" parent="SettingsSlider/SoundSection" unique_id=967356846 instance=ExtResource("43")]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("44")
+theme_override_icons/grabber_highlight = ExtResource("45")
+theme_override_icons/grabber_disabled = ExtResource("44")
+theme_override_styles/slider = SubResource("SB_mm_slider_track")
+theme_override_styles/grabber_area = SubResource("SB_mm_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("SB_mm_slider_fill")
+script = ExtResource("46")
+touch_pad_vertical = 16.0
+
+[node name="SFXLabel" type="Label" parent="SettingsSlider/SoundSection" unique_id=1857713792]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_font_sizes/font_size = 30
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SFXSlider" parent="SettingsSlider/SoundSection" unique_id=629970316 instance=ExtResource("43")]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("44")
+theme_override_icons/grabber_highlight = ExtResource("45")
+theme_override_icons/grabber_disabled = ExtResource("44")
+theme_override_styles/slider = SubResource("SB_mm_slider_track")
+theme_override_styles/grabber_area = SubResource("SB_mm_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("SB_mm_slider_fill")
+script = ExtResource("46")
+touch_pad_vertical = 16.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsSlider/SoundSection" unique_id=657435169]
+layout_mode = 2
+theme_override_constants/separation = -15
+
+[node name="FullScreenToggle" type="CheckButton" parent="SettingsSlider/SoundSection/VBoxContainer" unique_id=629970320]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_constants/icon_max_width = 33
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("SB_toggle_hover")
+theme_override_styles/hover_pressed = SubResource("SB_toggle_hover")
+theme_override_icons/checked = ExtResource("47")
+theme_override_icons/unchecked = ExtResource("48")
+theme_override_icons/checked_disabled = ExtResource("47")
+theme_override_icons/unchecked_disabled = ExtResource("48")
+text = "FullScreen"
+expand_icon = true
+
+[node name="VSyncToggle" type="CheckButton" parent="SettingsSlider/SoundSection/VBoxContainer" unique_id=979999003]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_constants/icon_max_width = 33
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("SB_toggle_hover")
+theme_override_styles/hover_pressed = SubResource("SB_toggle_hover")
+theme_override_icons/checked = ExtResource("47")
+theme_override_icons/unchecked = ExtResource("48")
+theme_override_icons/checked_disabled = ExtResource("47")
+theme_override_icons/unchecked_disabled = ExtResource("48")
+text = "VSync"
+expand_icon = true
+
+[node name="PostProcessingToggle" type="CheckButton" parent="SettingsSlider/SoundSection/VBoxContainer" unique_id=979999001]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.337, 0.282, 0.282, 1)
+theme_override_constants/icon_max_width = 33
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("SB_toggle_hover")
+theme_override_styles/hover_pressed = SubResource("SB_toggle_hover")
+theme_override_icons/checked = ExtResource("47")
+theme_override_icons/unchecked = ExtResource("48")
+theme_override_icons/checked_disabled = ExtResource("47")
+theme_override_icons/unchecked_disabled = ExtResource("48")
+text = "Potato Mode"
+expand_icon = true
+
+[node name="LanguageLabel" type="Label" parent="." unique_id=825118774]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 19.0
+offset_right = -25.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "Language"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguageDropdown" type="OptionButton" parent="." unique_id=1993745566]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 55.0
+offset_right = -25.0
+offset_bottom = 95.0
+grow_horizontal = 0
+icon_alignment = 2
+expand_icon = true
+selected = 0
+item_count = 2
+popup/item_0/text = "العربية"
+popup/item_0/icon = ExtResource("49")
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/icon = ExtResource("50")
+popup/item_1/id = 1
+
+[node name="ArabicNumbersToggle" type="CheckButton" parent="." unique_id=629970317]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -164.0
+offset_top = 97.0
+offset_right = -35.0
+offset_bottom = 137.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "أرقام عربي"
+
+[node name="ArabicNumbersPreview" type="Label" parent="." unique_id=629970318]
+auto_translate_mode = 2
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -91.0
+offset_top = 102.0
+offset_right = -60.0
+offset_bottom = 134.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "٠"
+horizontal_alignment = 1
+
+[node name="FpsCounter" type="Label" parent="." unique_id=979999007]
+visible = false
+z_index = 1000
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+text = "60 FPS"
+script = ExtResource("51")
+
+[node name="SettingsButton" type="Button" parent="." unique_id=2092854892]
+z_index = 41
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -88.0
+offset_right = -16.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("SB_settings_normal")
+theme_override_styles/pressed = SubResource("SB_settings_pressed")
+theme_override_styles/hover = SubResource("SB_settings_normal")
+theme_override_styles/focus = SubResource("SB_settings_normal")
+text = "⚙️"
+script = ExtResource("25")
+hover_in_tp = SubResource("Resource_mm_set_hi")
+hover_out_tp = SubResource("Resource_mm_set_ho")
+rotate_tp = SubResource("Resource_mm_set_rot")
+
+[node name="StartButton" type="Button" parent="." unique_id=1612332314]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 541.0
+offset_right = 234.0
+offset_bottom = 595.0
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.742698, 0.7007688, 1)
+theme_override_colors/font_outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+flat = true
+alignment = 0
+
+[node name="MarkerLine" parent="StartButton" unique_id=254825241 instance=ExtResource("23")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="." unique_id=1612332315]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 460.0
+offset_right = 185.0
+offset_bottom = 514.0
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.742698, 0.7007688, 1)
+theme_override_colors/font_disabled_color = Color(0.8, 0.8, 0.8, 0.95)
+theme_override_colors/font_outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+flat = true
+alignment = 0
+
+[node name="MarkerLine" parent="ContinueButton" unique_id=254825242 instance=ExtResource("23")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueNoteInline" type="Label" parent="." unique_id=2133513360]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 478.0
+offset_right = 345.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0.8, 0.64705884, 0.36078432, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxnar")
+text = "No save file found"
+horizontal_alignment = 1
+
+[node name="ContinueHotspot" type="Button" parent="." unique_id=2133513361]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 577.0
+offset_right = 181.0
+offset_bottom = 631.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("SB_hotspot")
+theme_override_styles/pressed = SubResource("SB_hotspot")
+theme_override_styles/hover = SubResource("SB_hotspot")
+theme_override_styles/focus = SubResource("SB_hotspot")
+
+[node name="HoverNoteTimer" type="Timer" parent="." unique_id=2133513351]
+wait_time = 0.5
+one_shot = true
+
+[node name="EndlessButton" type="Button" parent="." unique_id=1612332316]
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43400002
+anchor_top = 0.93200004
+anchor_right = 0.57900006
+anchor_bottom = 1.0
+offset_left = 0.47998047
+offset_top = -0.040039063
+offset_right = -0.12005615
+offset_bottom = 2.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("SB_endless_normal")
+theme_override_styles/pressed = SubResource("SB_endless_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eku7s")
+theme_override_styles/focus = SubResource("SB_endless_normal")
+text = "Endless Mode"
+script = ExtResource("25")
+hover_in_tp = SubResource("Resource_endless_hi")
+hover_out_tp = SubResource("Resource_endless_ho")
+rotate_tp = SubResource("Resource_links_rot")
+
+[node name="MarkerLine" parent="EndlessButton" unique_id=254825243 instance=ExtResource("23")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuitButton" type="Button" parent="." unique_id=1080596260]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 666.0
+offset_right = 103.0
+offset_bottom = 720.0
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.742698, 0.7007688, 1)
+theme_override_colors/font_outline_color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="MarkerLine" parent="QuitButton" unique_id=357758286 instance=ExtResource("23")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1817649043]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_top = 0.84200007
+anchor_right = 0.086
+anchor_bottom = 0.96900004
+offset_left = 23.760002
+offset_top = -25.23999
+offset_right = 42.92
+offset_bottom = -82.67999
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.54965544
+theme_override_colors/font_color = Color(0, 0, 0, 0.4862745)
+theme_override_font_sizes/font_size = 24
+text = "v0.5.3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ExitButton" type="Button" parent="." unique_id=411070409]
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 86.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("SB_exit_normal")
+theme_override_styles/pressed = SubResource("SB_exit_pressed")
+theme_override_styles/hover = SubResource("SB_exit_hover")
+theme_override_styles/focus = SubResource("SB_exit_normal")
+text = "❌"
+
+[node name="ResetButton" type="Button" parent="." unique_id=2133513348]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 170.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_colors/font_pressed_color = Color(0.7, 0.1, 0.1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5, 0.5, 1)
+theme_override_colors/font_outline_color = Color(0.35, 0.05, 0.05, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 20
+text = "Reset Data"
+flat = true
+alignment = 0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1742008867]
+stream = ExtResource("52")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="PPLayer" parent="." unique_id=1611966179 instance=ExtResource("53")]
+
+[node name="NewGameConfirm" type="Control" parent="." unique_id=1803187090]
+visible = false
+z_index = 500
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="NewGameConfirm" unique_id=1803187091]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="NewGameConfirm" unique_id=1803187092]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -130.0
+offset_right = 300.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_confirm")
+
+[node name="VBox" type="VBoxContainer" parent="NewGameConfirm/Panel" unique_id=1803187093]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Title" type="Label" parent="NewGameConfirm/Panel/VBox" unique_id=1803187094]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Overwrite Save?"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="NewGameConfirm/Panel/VBox" unique_id=1803187095]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "A save file exists. Starting a new game will permanently overwrite it. Continue?"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="NewGameConfirm/Panel/VBox" unique_id=1803187096]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="NewGameConfirm/Panel/VBox/Buttons" unique_id=1803187097]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_confirm_cancel")
+theme_override_styles/hover = SubResource("SB_confirm_cancel")
+text = "Cancel"
+script = ExtResource("25")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+rotate_on_press = false
+
+[node name="ConfirmButton" type="Button" parent="NewGameConfirm/Panel/VBox/Buttons" unique_id=1803187098]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_confirm_confirm")
+theme_override_styles/pressed = SubResource("SB_confirm_pressed")
+theme_override_styles/hover = SubResource("SB_confirm_confirm")
+text = "New Game"
+script = ExtResource("25")
+hover_in_tp = SubResource("Resource_lb_hi")
+hover_out_tp = SubResource("Resource_lb_ho")
+rotate_tp = SubResource("Resource_links_rot")
+
+[node name="EndlessPicker" parent="." unique_id=1803187099 instance=ExtResource("54")]
+layout_mode = 1
+
+[connection signal="mouse_entered" from="FikiCard" to="FikiCard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FikiCard" to="FikiCard" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="EmmyCard" to="EmmyCard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EmmyCard" to="EmmyCard" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="SarahCard" to="SarahCard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SarahCard" to="SarahCard" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="JamCard" to="JamCard" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="JamCard" to="JamCard" method="_on_mouse_exited"]
+[connection signal="pressed" from="Printer/CreditsButton" to="Printer" method="throw_next_card"]
+[connection signal="pressed" from="Printer/CreditsButton" to="Printer/CreditsButton" method="_on_button_click"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="ContinueHotspot" to="." method="_on_continue_hover_start"]
+[connection signal="mouse_exited" from="ContinueHotspot" to="." method="_on_continue_hover_end"]
+[connection signal="pressed" from="ContinueHotspot" to="." method="_on_continue_hotspot_pressed"]
+[connection signal="timeout" from="HoverNoteTimer" to="." method="_show_hover_note"]
+[connection signal="pressed" from="EndlessButton" to="." method="_on_endless_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="NewGameConfirm/Panel/VBox/Buttons/CancelButton" to="." method="_on_new_game_cancel"]
+[connection signal="pressed" from="NewGameConfirm/Panel/VBox/Buttons/ConfirmButton" to="." method="_on_new_game_confirm"]

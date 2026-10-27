@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cfhiy2btbvbu2"]
+
+[ext_resource type="Script" uid="uid://dvq7xfo6pv2n0" path="res://system/tools/bell.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dygjitdsounrv" path="res://icon.svg" id="2"]
+
+[node name="Bell" type="Control" unique_id=125304486]
+self_modulate = Color(0.7794576, 0.02729603, 0.18585151, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1152.0
+offset_top = 93.0
+offset_right = 1252.0
+offset_bottom = 193.0
+script = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=674406740]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="." unique_id=1966824943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=676183273]

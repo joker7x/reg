@@ -1,0 +1,96 @@
+[gd_scene format=4 uid="uid://dbspp5qnkm0er"]
+
+[ext_resource type="Script" uid="uid://d0jpd5d3kcg2n" path="res://system/scripts/auto_loads/dialogue_box.gd" id="1"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="2"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="3"]
+
+[sub_resource type="Resource" id="Resource_eq3n6"]
+script = ExtResource("2")
+property = "position:y"
+from_value = 750.0
+to_value = 0.0
+duration = 0.3
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_1hcy2"]
+script = ExtResource("2")
+property = "modulate:a"
+from_value = 1.0
+to_value = 0.0
+duration = 1.0
+transition = 5
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_xgsih"]
+data = PackedByteArray("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")
+format = 3
+stereo = true
+
+[sub_resource type="Resource" id="Resource_7na1j"]
+script = ExtResource("3")
+stream = SubResource("AudioStreamWAV_xgsih")
+min_volume = -20.0
+max_volume = -15.0
+min_pitch = 0.75
+max_pitch = 0.9
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+bg_color = Color(0.7254902, 0.8156863, 0.8980392, 1)
+
+[node name="PlayerDialogueBox" type="Control" unique_id=2124748392 node_paths=PackedStringArray("label")]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+disappear_delay = 5
+label = NodePath("MarginContainer/MarginContainer/Label")
+move_tp = SubResource("Resource_eq3n6")
+fade_tp = SubResource("Resource_1hcy2")
+type_sfx = SubResource("Resource_7na1j")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=486200901]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -60.0
+offset_right = 116.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=2087073848]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tnpc")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1863280340]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=1028377588]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.245)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "test"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=336110729]
+bus = &"SFX"

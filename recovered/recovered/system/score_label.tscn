@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bvnuhtftyjpqe"]
+
+[ext_resource type="Script" uid="uid://bw5cd03kp7gs7" path="res://system/score_label.gd" id="1"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="2"]
+
+[sub_resource type="Resource" id="Resource_afspr"]
+script = ExtResource("2")
+property = "position:x"
+from_value = -500.0
+to_value = 0.0
+transition = 10
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_clkgo"]
+script = ExtResource("2")
+property = "modulate:a"
+from_value = 0.0
+to_value = 1.0
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[node name="ScoreLabel" type="Control" unique_id=1496207370 node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1")
+label = NodePath("Label")
+move_tp = SubResource("Resource_afspr")
+fade_tp = SubResource("Resource_clkgo")
+
+[node name="Label" type="Label" parent="." unique_id=644404385]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1260.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 20
+text = "Correct Judgment +5"

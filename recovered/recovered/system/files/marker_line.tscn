@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://jgnce75bxuya"]
+
+[ext_resource type="Script" uid="uid://dvldrv0j6vsnm" path="res://system/files/marker_line.gd" id="1"]
+
+[sub_resource type="Curve" id="Curve_temmi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.12546816, 0.88510823), 0.0, 0.0, 0, 0, Vector2(0.37640452, 1), 0.0, 0.0, 0, 0, Vector2(0.55992514, 0.81904554), 0.0, 0.0, 0, 0, Vector2(0.6985019, 1), 0.0, 0.0, 0, 0, Vector2(0.78464425, 0.9942554), 0.0, 0.0, 0, 0, Vector2(0.86142325, 0.8621299), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[node name="MarkerLine" type="Control" unique_id=484492972]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1")
+duration = 0.6
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1010253618]
+points = PackedVector2Array(1, 11, 10, 11, 16, 11, 21, 11, 28, 11, 35, 11, 43, 11, 51, 11, 57, 11, 64, 11, 67, 11)
+width_curve = SubResource("Curve_temmi")
+default_color = Color(1, 0, 0, 0.34117648)

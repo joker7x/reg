@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SFXClip" format=3 uid="uid://ndjxbvikpm33"]
+
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://kwtpy2volwq4" path="res://audio/sfx/uv/switch_6.wav" id="2"]
+
+[resource]
+script = ExtResource("1")
+stream = ExtResource("2")
+min_pitch = 0.7
+max_pitch = 1.3

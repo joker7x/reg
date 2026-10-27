@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SFXClip" format=3 uid="uid://d1lw057oiegut"]
+
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cx7nqywnywshi" path="res://audio/sfx/correct_wrong/703884__lilmati__diamond-click-luxury-ui-click.wav" id="2"]
+
+[resource]
+script = ExtResource("1")
+stream = ExtResource("2")
+min_volume = -5.0
+max_volume = -2.0
+min_pitch = 0.5
+max_pitch = 1.2

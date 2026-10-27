@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dv2kbc4awf4ut"
+path="res://.godot/imported/glass break with cat sfx 2.wav-f892fb49f1a6dfc8f8449193d4c86310.sample"
+
+[deps]
+
+source_file="res://audio/sfx/tea/glass break with cat sfx 2.wav"
+dest_files=["res://.godot/imported/glass break with cat sfx 2.wav-f892fb49f1a6dfc8f8449193d4c86310.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=48000
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=0
+compress/mode=0

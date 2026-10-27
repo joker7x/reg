@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://briqlys3etvy8"]
+
+[ext_resource type="Script" uid="uid://c80rqr4qf35n1" path="res://system/tools/stamp.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d1xq7fo0cfv8s" path="res://art/ui/upper_approved_ar.png" id="2"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="3"]
+[ext_resource type="AudioStream" uid="uid://b3tfedwmefsli" path="res://audio/sfx/stamp/stamp_pickupff.ogg" id="4"]
+[ext_resource type="AudioStream" uid="uid://bhhkq7pmesvlx" path="res://audio/sfx/stamp/stamp_stage1.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://dur1vkdcbukax" path="res://audio/sfx/stamp/stamp_stage2.ogg" id="6"]
+[ext_resource type="Texture2D" uid="uid://bp4g65i1gar1w" path="res://art/ui/mech_stamp_lower.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bmv2nu3go3xby" path="res://art/ui/upper_approved_eng.png" id="8"]
+[ext_resource type="Shader" uid="uid://ccvcbtgvflsaj" path="res://system/shaders/highlight.gdshader" id="9"]
+
+[sub_resource type="Resource" id="Resource_6xa0c"]
+script = ExtResource("3")
+stream = ExtResource("4")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_qyymm"]
+script = ExtResource("3")
+stream = ExtResource("4")
+min_volume = -20.0
+max_volume = -10.0
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_sw237"]
+script = ExtResource("3")
+stream = ExtResource("5")
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_6lhmi"]
+script = ExtResource("3")
+stream = ExtResource("6")
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2w6w4"]
+shader = ExtResource("9")
+shader_parameter/Line_Smoothness = 0.0
+shader_parameter/Line_Width = 0.110000005225
+shader_parameter/Brightness = 6.66
+shader_parameter/Rotation_deg = 41.385006240787504
+shader_parameter/Distortion = 1.8800000418
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 0.0800000038
+shader_parameter/surface = ExtResource("2")
+
+[node name="Stamp" type="Control" unique_id=1669360962 node_paths=PackedStringArray("highlight")]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 125.0
+offset_bottom = 125.0
+script = ExtResource("1")
+stamp_offset = Vector2(0, -30)
+arabic_texture = ExtResource("2")
+pickup_sfx = SubResource("Resource_6xa0c")
+prestamp_sfx = SubResource("Resource_qyymm")
+stamp_sfx = SubResource("Resource_sw237")
+stamp_release_sfx = SubResource("Resource_6lhmi")
+highlight = NodePath("Highlight")
+
+[node name="LowerPart" type="Control" parent="." unique_id=1340087845]
+z_index = 5
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 128.0
+offset_bottom = 168.0
+mouse_filter = 2
+
+[node name="LowerPart2" type="TextureRect" parent="LowerPart" unique_id=43258039]
+z_index = 5
+layout_mode = 0
+offset_top = 75.0
+offset_right = 125.0
+offset_bottom = 128.0
+mouse_filter = 2
+texture = ExtResource("7")
+
+[node name="MainPart" type="Control" parent="." unique_id=248946363]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MainPart2" type="TextureRect" parent="MainPart" unique_id=711301709]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8")
+
+[node name="Highlight" type="TextureRect" parent="." unique_id=1893682472]
+visible = false
+modulate = Color(11.578067, 11.578067, 11.578067, 1)
+z_index = 10
+material = SubResource("ShaderMaterial_2w6w4")
+layout_mode = 0
+offset_left = 2.0
+offset_top = 27.0
+offset_right = 123.0
+offset_bottom = 115.0
+mouse_filter = 2
+texture = ExtResource("8")
+expand_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]

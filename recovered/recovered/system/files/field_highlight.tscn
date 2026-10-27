@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://k4pislkf822e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfuhq"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.93, 0, 0, 0.6862745)
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[node name="FieldHighlight" type="Panel" unique_id=470876410]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jfuhq")

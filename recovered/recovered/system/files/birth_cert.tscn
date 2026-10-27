@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://dh64ap1jwc245"]
+
+[ext_resource type="Script" uid="uid://cmbub08uf1yql" path="res://system/files/birth_cert.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bcfciy8v16h6i" path="res://art/papers/birth_cert_2.png" id="2"]
+[ext_resource type="FontVariation" uid="uid://hybxur6i3cmq" path="res://fonts/overrides/methlama-regular.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://7acc1gtdeso7" path="res://art/stamps/bc_stamp_1.png" id="4"]
+[ext_resource type="Script" uid="uid://02r85r5e1cp0" path="res://system/files/stamp_randomizer.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://duvcx0365vk37" path="res://art/stamps/tmam_stamp_2_ar.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://2ksd0adijulm" path="res://art/stamps/rect_stamp_2_en.png" id="7"]
+
+[node name="BirthCertificate" type="Control" unique_id=1593968564 node_paths=PackedStringArray("full_name_value", "birth_date_value", "birth_place_value", "gender_value", "stamp_text", "mom_value", "dad_value")]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 500.0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1")
+full_name_value = NodePath("ContentMargin/FullNameValue")
+birth_date_value = NodePath("ContentMargin/HBoxContainer/BirthDateValue")
+birth_place_value = NodePath("ContentMargin/HBoxContainer/BirthPlaceValue")
+gender_value = NodePath("ContentMargin/GenderValue")
+stamp_text = NodePath("ContentMargin/StampText")
+mom_value = NodePath("ContentMargin/GridContainer/MomValue")
+dad_value = NodePath("ContentMargin/GridContainer/DadValue")
+
+[node name="Shadow" type="TextureRect" parent="." unique_id=1204369955]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="PaperPanel" type="TextureRect" parent="." unique_id=1910465168]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 5
+
+[node name="ContentMargin" type="Control" parent="." unique_id=1908994498]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="ContentMargin" unique_id=443485610]
+layout_mode = 0
+offset_left = 82.666664
+offset_top = 44.0
+offset_right = 266.66666
+offset_bottom = 131.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -12
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 27
+text = "BIRTH
+CERTIFICATE"
+horizontal_alignment = 1
+
+[node name="FullNameValue" type="Label" parent="ContentMargin" unique_id=1734831960]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 139.0
+offset_right = 327.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 27
+text = "Full Name"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="Control" parent="ContentMargin" unique_id=891801400]
+anchors_preset = 0
+offset_left = 35.0
+offset_top = 213.0
+offset_right = 269.0
+offset_bottom = 253.0
+
+[node name="BirthPlaceLabel" type="Label" parent="ContentMargin/HBoxContainer" unique_id=161880682]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 18.666668
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Born in:"
+
+[node name="BirthPlaceValue" type="Label" parent="ContentMargin/HBoxContainer" unique_id=1598984478]
+layout_mode = 0
+offset_left = 83.666664
+offset_top = -3.6666667
+offset_right = 218.66666
+offset_bottom = 19.333334
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "10th of ramadan"
+
+[node name="BirthDateLabel" type="Label" parent="ContentMargin/HBoxContainer" unique_id=1645008622]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 24.0
+offset_bottom = 45.666664
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "On:"
+
+[node name="BirthDateValue" type="Label" parent="ContentMargin/HBoxContainer" unique_id=1802553350]
+layout_mode = 0
+offset_left = 86.333336
+offset_top = 23.0
+offset_right = 186.33334
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "99/99/9999"
+
+[node name="GenderValue" type="Label" parent="ContentMargin" unique_id=1732469458]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 177.33333
+offset_right = 330.0
+offset_bottom = 205.33333
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 24
+text = "Male"
+horizontal_alignment = 1
+
+[node name="StampText" type="Label" parent="ContentMargin" unique_id=1196052042]
+layout_mode = 0
+offset_left = 29.333334
+offset_top = 358.66666
+offset_right = 322.33334
+offset_bottom = 381.66666
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+theme_override_font_sizes/font_size = 18
+text = "Person born successfully "
+horizontal_alignment = 1
+
+[node name="Stamp" type="TextureRect" parent="ContentMargin" unique_id=175308070]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_direction = 2
+layout_mode = 0
+offset_left = 29.333328
+offset_top = 34.666656
+offset_right = 105.33333
+offset_bottom = 110.66666
+pivot_offset = Vector2(38, 38)
+texture = ExtResource("4")
+script = ExtResource("5")
+
+[node name="Stamp2" type="TextureRect" parent="ContentMargin" unique_id=576729368]
+self_modulate = Color(0.2627451, 0.21176471, 0.7058824, 1)
+layout_direction = 2
+layout_mode = 0
+offset_left = 82.66664
+offset_top = 392.0
+offset_right = 270.6667
+offset_bottom = 468.0
+pivot_offset = Vector2(94, 38)
+texture = ExtResource("6")
+stretch_mode = 5
+script = ExtResource("5")
+max_offset = 15.0
+max_rot = 20.0
+en_textures = [ExtResource("7")]
+ar_textures = [ExtResource("6")]
+
+[node name="GridContainer" type="Control" parent="ContentMargin" unique_id=674855801]
+anchors_preset = 0
+offset_left = 36.666664
+offset_top = 281.66666
+offset_right = 299.66666
+offset_bottom = 350.11966
+
+[node name="MomLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=17756569]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 18.666666
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Mother:"
+horizontal_alignment = 1
+
+[node name="MomValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1112274071]
+layout_mode = 0
+offset_left = 86.0
+offset_top = -4.3333335
+offset_right = 181.0
+offset_bottom = 18.666666
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "Mom Name"
+horizontal_alignment = 1
+
+[node name="DadLabel" type="Label" parent="ContentMargin/GridContainer" unique_id=1967554595]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 54.0
+offset_bottom = 41.666664
+theme_override_colors/font_color = Color(0.3372549, 0.28235295, 0.28235295, 1)
+text = "Father:"
+horizontal_alignment = 1
+
+[node name="DadValue" type="Label" parent="ContentMargin/GridContainer" unique_id=1526867244]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 19.666666
+offset_right = 173.0
+offset_bottom = 42.666664
+theme_override_colors/font_color = Color(0, 0, 0.6784314, 1)
+theme_override_font_sizes/font_size = 20
+text = "Dad Name"
+horizontal_alignment = 1

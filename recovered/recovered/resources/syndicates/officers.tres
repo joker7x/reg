@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndoffi14n"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "OFFICERS"
+name_en = "Officers' Syndicate"
+name_ar = "نقابة الظباط"
+emojis = ["🛡️", "🎖️", "⭐"]
+occupations_en = ["police officer", "army officer"]
+occupations_ar = ["ظابط شرطة", "ظابط جيش"]

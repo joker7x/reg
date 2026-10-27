@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk5hfehh7nqpl"
+path="res://.godot/imported/card drop.ogg-53d8e977da4b44458674d54142c93e4e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/paper/card drop.ogg"
+dest_files=["res://.godot/imported/card drop.ogg-53d8e977da4b44458674d54142c93e4e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

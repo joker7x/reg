@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsynddocs1a"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "DOCTORS"
+name_en = "Doctors' Syndicate"
+name_ar = "نقابة الأطباء"
+emojis = ["🩺", "🏥", "⚕️"]
+occupations_en = ["doctor", "physician", "veterinarian", "veterinary"]
+occupations_ar = ["دكتور", "طبيب", "بيطري"]

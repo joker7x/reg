@@ -1,0 +1,2954 @@
+[gd_scene format=3 uid="uid://c0u8kuy1atn5l"]
+
+[ext_resource type="Script" uid="uid://d1vmhr0iidw4e" path="res://scenes/game_controller.gd" id="1"]
+[ext_resource type="Script" uid="uid://d7n0t3ntr0d4" path="res://system/scripts/resources/note_intro_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bfoky3bnjtfar" path="res://system/scripts/resources/day_config.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://csngtxljrr3oi" path="res://system/tutorials/center_note_stamp.tscn" id="4"]
+[ext_resource type="Script" uid="uid://bq0xq5v7p1bt" path="res://system/scripts/resources/game_config.gd" id="5"]
+[ext_resource type="Script" uid="uid://cfclrokakc4dm" path="res://system/scripts/resources/tutorial_case_data.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://bygj642sllxp1" path="res://art/Females/Female_8.png" id="7"]
+[ext_resource type="Script" uid="uid://cobcb1fas8a55" path="res://system/scripts/resources/civilian_data.gd" id="8"]
+[ext_resource type="Script" uid="uid://c4oif2kr87h33" path="res://system/scripts/resources/debug_case_data.gd" id="9"]
+[ext_resource type="Script" uid="uid://cp8fb7qf1kpaw" path="res://scenes/desk_controller.gd" id="10"]
+[ext_resource type="Script" uid="uid://cftf5cycer8qm" path="res://system/scripts/utils/sfx_clip.gd" id="11"]
+[ext_resource type="AudioStream" uid="uid://briie27gslmy4" path="res://audio/sfx/paper/p1.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://bifprmbn1q2u8" path="res://audio/sfx/paper/p2.wav" id="13"]
+[ext_resource type="AudioStream" uid="uid://g7rmuegm23qk" path="res://audio/sfx/paper/p3.wav" id="14"]
+[ext_resource type="AudioStream" uid="uid://g1ehjw8f7csw" path="res://audio/sfx/paper/p4.wav" id="15"]
+[ext_resource type="AudioStream" uid="uid://crjl4dkuvoiyc" path="res://audio/sfx/paper/p5.wav" id="16"]
+[ext_resource type="AudioStream" uid="uid://dlrgecpwtrg5l" path="res://audio/sfx/paper/p6.mp3" id="17"]
+[ext_resource type="AudioStream" uid="uid://bta0rnkhb251f" path="res://audio/sfx/paper/p7.wav" id="18"]
+[ext_resource type="Texture2D" uid="uid://bbnd535gmiaff" path="res://art/ui/Desk.png" id="19"]
+[ext_resource type="Shader" uid="uid://ccmjnnqjv40hr" path="res://system/shaders/vhs.gdshader" id="20"]
+[ext_resource type="PackedScene" uid="uid://7mto4fbyuxf2" path="res://system/tools/day_stamp.tscn" id="21"]
+[ext_resource type="Script" uid="uid://b4746n57enctr" path="res://scenes/desk_stamp_layer.gd" id="22"]
+[ext_resource type="Script" uid="uid://j3jvh7hlyhlr" path="res://system/tools/tea_cup.gd" id="23"]
+[ext_resource type="AudioStream" uid="uid://bcax8iw5xgw0p" path="res://audio/sfx/glass/180034__unfa__lego-chop.mp3" id="24"]
+[ext_resource type="AudioStream" uid="uid://dq66ejufcksf0" path="res://audio/sfx/tea/glass break Tom Scream SFX 1.wav" id="25"]
+[ext_resource type="AudioStream" uid="uid://dfo3epip4wdl1" path="res://audio/sfx/tea/glass break 4.wav" id="26"]
+[ext_resource type="AudioStream" uid="uid://c6tkld6vlsfk3" path="res://audio/sfx/tea/glass break 5.wav" id="27"]
+[ext_resource type="AudioStream" uid="uid://bpkrw2kjund4e" path="res://audio/sfx/tea/glass break 7.wav" id="28"]
+[ext_resource type="AudioStream" uid="uid://mtesj44m1uim" path="res://audio/sfx/tea/tom scream glass break 2.wav" id="29"]
+[ext_resource type="AudioStream" uid="uid://dv2kbc4awf4ut" path="res://audio/sfx/tea/glass break with cat sfx 2.wav" id="30"]
+[ext_resource type="AudioStream" uid="uid://co4iwvkpi123v" path="res://audio/sfx/tea/glass break with cat sfx 1.wav" id="31"]
+[ext_resource type="AudioStream" uid="uid://bneyurokfjs46" path="res://audio/sfx/tea/glass break 3.wav" id="32"]
+[ext_resource type="AudioStream" uid="uid://codh0fpgh2a4j" path="res://audio/sfx/tea/glass break 1.wav" id="33"]
+[ext_resource type="AudioStream" uid="uid://bh2vsu3tbhrss" path="res://audio/sfx/tea/ah ya regly.wav" id="34"]
+[ext_resource type="AudioStream" uid="uid://c6685aapg678y" path="res://audio/sfx/tea/cartoon crash sfx.wav" id="35"]
+[ext_resource type="AudioStream" uid="uid://bo1fbc3l7x0fh" path="res://audio/sfx/tea/tea_sipping_and_haa7.wav" id="36"]
+[ext_resource type="AudioStream" uid="uid://l7i28j810rwo" path="res://audio/sfx/tea/glass slide.wav" id="37"]
+[ext_resource type="PackedScene" uid="uid://bwaa211id22bs" path="res://system/tools/glass_shards.tscn" id="38"]
+[ext_resource type="Texture2D" uid="uid://bkdfj4g4kjij0" path="res://art/ui/Tea_Cup.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://cdppj7hqpnf02" path="res://art/1adbf3b57f78bb8e-360x360.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://dnnlcok15gpye" path="res://art/3eb3ebe2d01299ec-360x360.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://cvxypwj8xn4sj" path="res://art/distorted_face.png" id="42"]
+[ext_resource type="PackedScene" uid="uid://dfgq8urglgfb1" path="res://system/tutorials/center_note.tscn" id="43"]
+[ext_resource type="Script" uid="uid://b1xc4vk607ap1" path="res://system/scripts/marker.gd" id="44"]
+[ext_resource type="AudioStream" uid="uid://f7m12tvf0bg6" path="res://audio/sfx/paper/line_marker_trimmed2.ogg" id="45"]
+[ext_resource type="AudioStream" uid="uid://ccwvxsf6g03rj" path="res://audio/sfx/dialogue/319791__zmobie__uncorking-fine-scotch-3b.wav" id="46"]
+[ext_resource type="Texture2D" uid="uid://m6jeomnpqvsp" path="res://art/papers/marker.png" id="47"]
+[ext_resource type="Shader" uid="uid://ccvcbtgvflsaj" path="res://system/shaders/highlight.gdshader" id="48"]
+[ext_resource type="Script" uid="uid://dvq7xfo6pv2n0" path="res://system/tools/bell.gd" id="49"]
+[ext_resource type="AudioStream" uid="uid://dbiigynnpvgy7" path="res://audio/sfx/buzz/button click start.ogg" id="50"]
+[ext_resource type="AudioStream" uid="uid://5d3go1c7uf8u" path="res://audio/sfx/buzz/68121__gijsknol__horn1.wav" id="51"]
+[ext_resource type="AudioStream" uid="uid://crsrd2pims0on" path="res://audio/sfx/buzz/button click release.ogg" id="52"]
+[ext_resource type="Texture2D" uid="uid://ylsago7wqren" path="res://art/ui/btn_up_ar.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://b8cn3gup5towh" path="res://art/ui/btn_down_ar.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://chyl4e1f6iv5q" path="res://art/ui/btn up.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://claq80vt8snyc" path="res://art/papers/mag glass tool.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://bnlgciqyx6i87" path="res://art/ui/btn down.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://dygjitdsounrv" path="res://icon.svg" id="58"]
+[ext_resource type="Texture2D" uid="uid://cwyplqpkpsleh" path="res://art/ui/btn_up_eng.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://kdh1p5uj6vf2" path="res://art/ui/btn_down_eng.png" id="60"]
+[ext_resource type="Script" uid="uid://buv8nidem6c2e" path="res://system/tools/printer.gd" id="61"]
+[ext_resource type="AudioStream" uid="uid://b15juh11i8glm" path="res://audio/sfx/printer/printer_main_1.wav" id="62"]
+[ext_resource type="AudioStream" uid="uid://ddfvrkggsu35q" path="res://audio/sfx/printer/printer_main_2.mp3" id="63"]
+[ext_resource type="AudioStream" uid="uid://ehtdxuhuqsgw" path="res://audio/sfx/printer/printer_main_3.wav" id="64"]
+[ext_resource type="AudioStream" uid="uid://b0o4nwrbio7kb" path="res://audio/sfx/printer/printer_main_4.wav" id="65"]
+[ext_resource type="AudioStream" uid="uid://dqddskk1seyw7" path="res://audio/sfx/printer/printer_secondary_noise.wav" id="66"]
+[ext_resource type="Texture2D" uid="uid://db2luotow5unc" path="res://art/printer/ID_Printer_.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://1p2tvn3aritn" path="res://art/printer/ID_Printer_Background.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://db7rnbgivhic3" path="res://art/printer/ID_Printer_Lamp.png" id="69"]
+[ext_resource type="Script" uid="uid://cg368divrjrqa" path="res://system/tools/stamp_shadow.gd" id="70"]
+[ext_resource type="Texture2D" uid="uid://bmv2nu3go3xby" path="res://art/ui/upper_approved_eng.png" id="71"]
+[ext_resource type="PackedScene" uid="uid://briqlys3etvy8" path="res://system/tools/stamp.tscn" id="72"]
+[ext_resource type="AudioStream" uid="uid://b3tfedwmefsli" path="res://audio/sfx/stamp/stamp_pickupff.ogg" id="73"]
+[ext_resource type="Texture2D" uid="uid://bbvxjw8nrsvk4" path="res://art/ui/upper_denied_eng.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://c1vb31ev7icwn" path="res://art/ui/upper_denied_ar.png" id="75"]
+[ext_resource type="Script" uid="uid://jr3ju12c1yf3" path="res://system/tools/boss_stamper.gd" id="76"]
+[ext_resource type="AudioStream" uid="uid://dttlejmm34vhw" path="res://audio/sfx/stamp/boss_stamp.mp3" id="77"]
+[ext_resource type="Texture2D" uid="uid://8b8nia4rj31f" path="res://art/ui/wooden_stamp.png" id="78"]
+[ext_resource type="Script" uid="uid://b46y7r8c4pkj" path="res://system/tutorials/stamp_guide.gd" id="79"]
+[ext_resource type="Script" uid="uid://dulop8mb8setq" path="res://system/tools/magnifying_glass.gd" id="80"]
+[ext_resource type="Texture2D" uid="uid://bmoa0pv4ga2b6" path="res://art/papers/mag_glass.png" id="81"]
+[ext_resource type="Shader" uid="uid://bthckpel7jngm" path="res://system/shaders/magnify.gdshader" id="82"]
+[ext_resource type="Shader" uid="uid://cp4pb1bvrkj0c" path="res://system/shaders/glass_overlay.gdshader" id="83"]
+[ext_resource type="PackedScene" uid="uid://c8q7p3uvl1ght" path="res://system/tools/uv_light.tscn" id="84"]
+[ext_resource type="Script" uid="uid://cc5iw1caa1lfv" path="res://system/tween_button.gd" id="85"]
+[ext_resource type="Script" uid="uid://d20fd7hw4vocu" path="res://system/scripts/resources/tween_parameter.gd" id="86"]
+[ext_resource type="Script" uid="uid://ctlsn65iarw1v" path="res://system/scripts/score_ui.gd" id="87"]
+[ext_resource type="PackedScene" uid="uid://bvnuhtftyjpqe" path="res://system/score_label.tscn" id="88"]
+[ext_resource type="AudioStream" uid="uid://b30u3suw1hdxx" path="res://audio/sfx/correct_wrong/correct_1.wav" id="89"]
+[ext_resource type="AudioStream" uid="uid://ci52ifnfkkewl" path="res://audio/sfx/correct_wrong/wrong_1.wav" id="90"]
+[ext_resource type="FontVariation" uid="uid://bd0w54q0emyhm" path="res://fonts/overrides/LightdotArabic.tres" id="91"]
+[ext_resource type="FontFile" uid="uid://dt0uc6pv64vo1" path="res://fonts/Lightdot-16x10.ttf" id="92"]
+[ext_resource type="Script" uid="uid://b2ydpxaboa4cm" path="res://system/customer_ui.gd" id="93"]
+[ext_resource type="Texture2D" uid="uid://4fmh7pwsrhtj" path="res://art/papers/id_card.png" id="94"]
+[ext_resource type="PackedScene" uid="uid://c8ulrljyqtjs6" path="res://system/day_dots.tscn" id="95"]
+[ext_resource type="AudioStream" uid="uid://ws6yaxu6083v" path="res://audio/music/shutdown sequence.ogg" id="96"]
+[ext_resource type="PackedScene" uid="uid://bwwh8t1o3bnqj" path="res://system/pp_layer.tscn" id="97"]
+[ext_resource type="Script" uid="uid://bpqy2tb5vl7kd" path="res://system/game_audio_container.gd" id="98"]
+[ext_resource type="Script" uid="uid://erwrqdgqv5ee" path="res://system/main_menu/options_container.gd" id="99"]
+[ext_resource type="PackedScene" uid="uid://18lfmmqypdx0" path="res://system/main_menu/volume_slider.tscn" id="100"]
+[ext_resource type="Script" path="res://system/scripts/utils/touch_slider.gd" id="101"]
+[ext_resource type="PackedScene" uid="uid://21lxkty1nrua" path="res://system/scripts/message_history_panel.tscn" id="102"]
+[ext_resource type="Script" uid="uid://bmrx52oia60s5" path="res://system/scripts/eod_controller.gd" id="103"]
+[ext_resource type="Script" path="res://system/scripts/eod_summary_panel.gd" id="104"]
+[ext_resource type="Texture2D" uid="uid://d13d31vqsoac0" path="res://art/ui/home_icon.svg" id="105"]
+[ext_resource type="PackedScene" uid="uid://c4d3usu4h0324" path="res://system/scripts/eod_review_panel.tscn" id="106"]
+[ext_resource type="PackedScene" uid="uid://btfebsoijxsnw" path="res://system/shop/shop_view.tscn" id="107"]
+[ext_resource type="PackedScene" uid="uid://008d3emb63u4" path="res://system/scripts/graduation_popup.tscn" id="108"]
+[ext_resource type="PackedScene" uid="uid://5hbqhl2oh0c8" path="res://system/scripts/utils/save_indicator.tscn" id="109"]
+[ext_resource type="Script" uid="uid://djiu3bkcwr3n6" path="res://system/scripts/fps_counter.gd" id="110"]
+[ext_resource type="PackedScene" uid="uid://b4kq7r2x9m1pd" path="res://system/tools/radio.tscn" id="111"]
+
+[sub_resource type="Resource" id="Resource_day1note1"]
+script = ExtResource("2")
+note_text = "DAY_1_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day1note2"]
+script = ExtResource("2")
+note_text = "DAY_1_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day1"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day1note1"), SubResource("Resource_day1note2")]
+
+[sub_resource type="Resource" id="Resource_day2note1"]
+script = ExtResource("2")
+note_text = "DAY_2_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day2note2"]
+script = ExtResource("2")
+note_text = "DAY_2_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day2"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day2note1"), SubResource("Resource_day2note2")]
+cases_required = 5
+missing_doc_chance = 0.22
+
+[sub_resource type="Resource" id="Resource_day3note1"]
+script = ExtResource("2")
+note_text = "DAY_3_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day3note2"]
+script = ExtResource("2")
+note_text = "DAY_3_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day3"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day3note1"), SubResource("Resource_day3note2")]
+cases_required = 6
+wrong_field_chance = 0.5
+missing_doc_chance = 0.05
+
+[sub_resource type="Resource" id="Resource_day4note1"]
+script = ExtResource("2")
+note_text = "DAY_4_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day4note2"]
+script = ExtResource("2")
+note_text = "DAY_4_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day4note3"]
+script = ExtResource("2")
+note_text = "DAY_4_NOTE_3"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day4"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day4note1"), SubResource("Resource_day4note2"), SubResource("Resource_day4note3")]
+cases_required = 6
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.25
+missing_doc_chance = 0.1
+
+[sub_resource type="Resource" id="Resource_day5"]
+script = ExtResource("3")
+cases_required = 7
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.5
+missing_doc_chance = 0.05
+micro_wrong_chance = 0.7
+pay_per_correct = 11
+
+[sub_resource type="Resource" id="Resource_day6note1"]
+script = ExtResource("2")
+note_text = "DAY_6_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day6note2"]
+script = ExtResource("2")
+note_text = "DAY_6_NOTE_2"
+custom_scene = ExtResource("4")
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day6"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day6note1"), SubResource("Resource_day6note2")]
+cases_required = 7
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.15
+missing_doc_chance = 0.05
+micro_wrong_chance = 0.2
+forgery_chance = 0.5
+pay_per_correct = 11
+
+[sub_resource type="Resource" id="Resource_day7note1"]
+script = ExtResource("2")
+note_text = "DAY_7_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day7note2"]
+script = ExtResource("2")
+note_text = "DAY_7_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day7"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day7note1"), SubResource("Resource_day7note2")]
+cases_required = 8
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.3
+missing_doc_chance = 0.15
+micro_wrong_chance = 0.3
+micro_tier = 2
+forgery_chance = 0.2
+pay_per_correct = 12
+
+[sub_resource type="Resource" id="Resource_day8note1"]
+script = ExtResource("2")
+note_text = "DAY_8_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day8note2"]
+script = ExtResource("2")
+note_text = "DAY_8_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day8"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day8note1"), SubResource("Resource_day8note2")]
+cases_required = 8
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.15
+missing_doc_chance = 0.05
+micro_wrong_chance = 0.2
+micro_tier = 2
+forgery_chance = 0.1
+ticket_required = true
+ticket_missing_chance = 0.5
+pay_per_correct = 12
+
+[sub_resource type="Resource" id="Resource_day9note1"]
+script = ExtResource("2")
+note_text = "DAY_9_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day9note2"]
+script = ExtResource("2")
+note_text = "DAY_9_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day9"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day9note1"), SubResource("Resource_day9note2")]
+cases_required = 9
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.22
+missing_doc_chance = 0.09
+micro_wrong_chance = 0.4
+micro_tier = 3
+forgery_chance = 0.15
+ticket_required = true
+pay_per_correct = 13
+
+[sub_resource type="Resource" id="Resource_day10note1"]
+script = ExtResource("2")
+note_text = "DAY_10_NOTE_1"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day10note2"]
+script = ExtResource("2")
+note_text = "DAY_10_NOTE_2"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day10note3"]
+script = ExtResource("2")
+note_text = "DAY_10_NOTE_3"
+custom_scene = null
+metadata/_custom_type_script = "uid://d7n0t3ntr0d4"
+
+[sub_resource type="Resource" id="Resource_day10"]
+script = ExtResource("3")
+note_intros = [SubResource("Resource_day10note1"), SubResource("Resource_day10note2"), SubResource("Resource_day10note3")]
+cases_required = 10
+allowed_case_types = [0, 1, 2]
+wrong_field_chance = 0.2
+missing_doc_chance = 0.12
+micro_wrong_chance = 0.45
+micro_tier = 3
+forgery_chance = 0.14
+ticket_required = true
+pay_per_correct = 14
+
+[sub_resource type="Resource" id="Resource_game_cfg"]
+script = ExtResource("5")
+day_configs = [SubResource("Resource_day1"), SubResource("Resource_day2"), SubResource("Resource_day3"), SubResource("Resource_day4"), SubResource("Resource_day5"), SubResource("Resource_day6"), SubResource("Resource_day7"), SubResource("Resource_day8"), SubResource("Resource_day9"), SubResource("Resource_day10")]
+graduation_failure_notes = ["FAILURE_NOTE_1", "FAILURE_NOTE_2", "FAILURE_NOTE_3", "FAILURE_NOTE_4", "FAILURE_NOTE_5"]
+
+[sub_resource type="Resource" id="Resource_pf7vy"]
+script = ExtResource("6")
+show_stamp_highlight = true
+start_dialogue = "Welcome to the registry! If all the information matches, you may approve. All seems good here."
+ar_start_dialogue = "دا أول يوم ليك. لو كل البيانات مظبوطة، وافق على الطلب بالختم الأخضر. الإستمارة شكلها تمام هنا."
+metadata/_custom_type_script = "uid://cfclrokakc4dm"
+
+[sub_resource type="Resource" id="Resource_3hbvx"]
+script = ExtResource("6")
+wrong_field_chance = 1.0
+occupation_hint = 2
+start_dialogue = "There's a wrong field, civilians tend to mistake fields sometimes... Any mismatch must be denied with red stamp."
+ar_start_dialogue = "في غلط هنا, ساعات المواطنين بيغلطوا في البيانات... أي اختلاف يعني لازم ترفض بالختم الأحمر."
+metadata/_custom_type_script = "uid://cfclrokakc4dm"
+
+[sub_resource type="Resource" id="Resource_q8j3a"]
+script = ExtResource("6")
+wrong_doc_chance = 1.0
+occupation_hint = 1
+has_marker = true
+start_dialogue = "There seems to be a missing document... Mark it with red highlighter before denial. For extra cool stuff. "
+ar_start_dialogue = "واضح في ورقة ناقصة، علم على خانتها الأول بالقلم الأحمر قبل ما ترفض. عشان الشياكة يعني... ونقط زيادة."
+metadata/_custom_type_script = "uid://cfclrokakc4dm"
+
+[sub_resource type="Resource" id="Resource_2iuns"]
+script = ExtResource("8")
+gender = "f"
+marrital = "m"
+full_name = "Afaf Sayed"
+portrait = ExtResource("7")
+address = null
+old_address = null
+birth_date = null
+occupation = "Gov Worker"
+metadata/_custom_type_script = "uid://cobcb1fas8a55"
+
+[sub_resource type="Resource" id="Resource_7gkqi"]
+script = ExtResource("9")
+civilian = SubResource("Resource_2iuns")
+case_type = 1
+metadata/_custom_type_script = "uid://c4oif2kr87h33"
+
+[sub_resource type="Resource" id="Resource_gxtfn"]
+script = ExtResource("11")
+stream = ExtResource("12")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_twgab"]
+script = ExtResource("11")
+stream = ExtResource("13")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_02fa5"]
+script = ExtResource("11")
+stream = ExtResource("14")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_nepv3"]
+script = ExtResource("11")
+stream = ExtResource("15")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_7025r"]
+script = ExtResource("11")
+stream = ExtResource("16")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_m4url"]
+script = ExtResource("11")
+stream = ExtResource("17")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_8ool0"]
+script = ExtResource("11")
+stream = ExtResource("18")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Gradient" id="Gradient_cheapvig"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.7032641, 1)
+colors = PackedColorArray(0.13, 0.07072, 0.031200001, 0, 0, 0, 0, 0.08627451, 0, 0, 0, 0.49411765)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cheapvig"]
+gradient = SubResource("Gradient_cheapvig")
+width = 512
+height = 512
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.82)
+metadata/_snap_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ixpq"]
+shader = ExtResource("20")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 0.0
+shader_parameter/warp_amount = 0.0
+shader_parameter/vignette_amount = 0.75200003572
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/grille_amount = 0.0
+shader_parameter/brightness_boost = 1.50000002375
+
+[sub_resource type="Resource" id="Resource_weeiq"]
+script = ExtResource("11")
+stream = ExtResource("24")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_xbifu"]
+script = ExtResource("11")
+stream = ExtResource("25")
+max_volume = 0.0
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_gdf8r"]
+script = ExtResource("11")
+stream = ExtResource("26")
+min_volume = 0.5
+max_volume = 0.5
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_x8trd"]
+script = ExtResource("11")
+stream = ExtResource("27")
+min_volume = -1.1
+max_volume = -1.1
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_3hv4c"]
+script = ExtResource("11")
+stream = ExtResource("28")
+min_volume = -10.9
+max_volume = -10.9
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_vniw0"]
+script = ExtResource("11")
+stream = ExtResource("29")
+min_volume = -5.0
+max_volume = -5.0
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_lddog"]
+script = ExtResource("11")
+stream = ExtResource("30")
+min_volume = -8.2
+max_volume = -8.2
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_boxkr"]
+script = ExtResource("11")
+stream = ExtResource("31")
+min_volume = -6.2
+max_volume = -6.2
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_de5we"]
+script = ExtResource("11")
+stream = ExtResource("32")
+min_volume = -0.7
+max_volume = -0.7
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_473mq"]
+script = ExtResource("11")
+stream = ExtResource("33")
+min_volume = 0.2
+max_volume = 0.2
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_1va0p"]
+script = ExtResource("11")
+stream = ExtResource("34")
+max_volume = 0.0
+min_pitch = 0.9
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_2tvof"]
+script = ExtResource("11")
+stream = ExtResource("35")
+min_volume = -10.0
+max_volume = -10.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_tea_cat2"]
+script = ExtResource("11")
+stream = ExtResource("36")
+min_volume = 8.1
+max_volume = 8.1
+min_pitch = 0.5
+max_pitch = 1.15
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_tea_slide"]
+script = ExtResource("11")
+stream = ExtResource("37")
+min_volume = 5.4
+max_volume = 5.4
+min_pitch = 0.7
+max_pitch = 1.25
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_qouja"]
+script = ExtResource("11")
+stream = ExtResource("45")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_mmvbu"]
+script = ExtResource("11")
+stream = ExtResource("46")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_7nv0b"]
+script = ExtResource("11")
+stream = ExtResource("46")
+min_volume = -10.0
+max_volume = -10.0
+min_pitch = 0.5
+max_pitch = 0.7
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66xif"]
+shader = ExtResource("48")
+shader_parameter/Line_Smoothness = 0.04400000209
+shader_parameter/Line_Width = 0.05600000266
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 0.99
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+shader_parameter/surface = ExtResource("47")
+
+[sub_resource type="Resource" id="Resource_js0lu"]
+script = ExtResource("11")
+stream = ExtResource("50")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_pr1ej"]
+script = ExtResource("11")
+stream = ExtResource("51")
+min_volume = 1.0
+max_volume = 3.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_05nbr"]
+script = ExtResource("11")
+stream = ExtResource("52")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvpfn"]
+shader = ExtResource("48")
+shader_parameter/Line_Smoothness = 0.090000004275
+shader_parameter/Line_Width = 0.1270000060325
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 0.8
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+shader_parameter/surface = ExtResource("56")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ms3bu"]
+shader = ExtResource("48")
+shader_parameter/Line_Smoothness = 0.04400000209
+shader_parameter/Line_Width = 0.05600000266
+shader_parameter/Brightness = 6.66
+shader_parameter/Rotation_deg = 38.30800609463
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 0.8
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 0.2470000117325
+shader_parameter/surface = ExtResource("59")
+
+[sub_resource type="Resource" id="Resource_458eo"]
+script = ExtResource("11")
+stream = ExtResource("62")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_h3rex"]
+script = ExtResource("11")
+stream = ExtResource("63")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_fedci"]
+script = ExtResource("11")
+stream = ExtResource("64")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_8qswn"]
+script = ExtResource("11")
+stream = ExtResource("65")
+min_volume = -10.0
+max_volume = -5.0
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_rm0al"]
+script = ExtResource("11")
+stream = ExtResource("66")
+min_pitch = 0.7
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_o8oq8"]
+script = ExtResource("11")
+stream = ExtResource("73")
+min_pitch = 0.9
+max_pitch = 1.2
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_sxt1d"]
+script = ExtResource("11")
+stream = ExtResource("73")
+min_volume = -10.0
+max_volume = -10.0
+min_pitch = 0.5
+max_pitch = 0.7
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_37s47"]
+script = ExtResource("11")
+stream = ExtResource("77")
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_uxocx"]
+script = ExtResource("11")
+stream = ExtResource("24")
+min_volume = -10.0
+max_volume = -10.0
+min_pitch = 0.5
+max_pitch = 0.7
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmvbu"]
+shader = ExtResource("48")
+shader_parameter/Line_Smoothness = 0.074000003515
+shader_parameter/Line_Width = 0.10400000494
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 2.0
+shader_parameter/Speed = 1.11
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+shader_parameter/surface = ExtResource("56")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1va0p"]
+shader = ExtResource("82")
+shader_parameter/zoom = 4.0
+shader_parameter/magnifier_screen_pos = Vector2(977, 231)
+shader_parameter/magnifier_size = Vector2(400, 400)
+shader_parameter/screen_size = Vector2(1280, 720)
+shader_parameter/border_color = Color(0, 0, 0, 0.85)
+shader_parameter/border_thickness = 6.0
+shader_parameter/distortion = -0.15000000000000002
+shader_parameter/chromatic_aberration = 0.001
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2tvof"]
+shader = ExtResource("83")
+shader_parameter/specular_intensity = 0.504
+shader_parameter/specular_position = Vector2(0.5, -0.02)
+shader_parameter/specular_spread = 0.5
+shader_parameter/specular_color = Color(0.7139055, 0.75894254, 1, 1)
+shader_parameter/pixel_specular_intensity = 0.25
+shader_parameter/pixel_specular_position = Vector2(0.5, 0.05)
+shader_parameter/pixel_specular_size = 0.1
+shader_parameter/pixel_grid = 64.0
+shader_parameter/pixel_specular_color = Color(1, 1, 1, 1)
+shader_parameter/counter_pixel_specular_intensity = 0.18
+shader_parameter/counter_pixel_specular_position = Vector2(0.6363219, 0.89579093)
+shader_parameter/counter_pixel_specular_size = 0.04
+shader_parameter/counter_pixel_specular_color = Color(1, 1, 1, 1)
+shader_parameter/bevel_intensity = 0.5
+shader_parameter/bevel_start = 1.0
+shader_parameter/bevel_softness = 0.1
+shader_parameter/tint_strength = 0.0
+shader_parameter/tint_color = Color(0.82, 0.92, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_yqjtg"]
+offsets = PackedFloat32Array(0.25619835, 1)
+colors = PackedColorArray(1, 0.46101677, 0.3927373, 1, 0, 0.8411461, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lnu2h"]
+gradient = SubResource("Gradient_yqjtg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edb"]
+bg_color = Color(0.24, 0.0408, 0.08727995, 0.8509804)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iekjf"]
+
+[sub_resource type="Resource" id="Resource_edb_hi"]
+script = ExtResource("86")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.35, 1.35)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_edb_ho"]
+script = ExtResource("86")
+from_value = Vector2(1.35, 1.35)
+to_value = Vector2(1, 1)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_edb_rot"]
+script = ExtResource("86")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.5
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_ir15t"]
+script = ExtResource("86")
+from_value = Vector2(2, 2)
+to_value = Vector2(1, 1)
+duration = 1.0
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_trtic"]
+script = ExtResource("86")
+property = "modulate"
+from_value = Color(0.6171653, 1, 0.58702683, 1)
+to_value = Color(1, 1, 1, 1)
+duration = 1.0
+transition = 5
+ease_type = 0
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_ca42v"]
+script = ExtResource("86")
+property = "modulate"
+from_value = Color(1, 0.41968358, 0.3509908, 1)
+to_value = Color(1, 1, 1, 1)
+duration = 1.0
+transition = 5
+ease_type = 0
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_0sl42"]
+script = ExtResource("11")
+stream = ExtResource("89")
+min_pitch = 0.8
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_oaba0"]
+script = ExtResource("11")
+stream = ExtResource("90")
+min_pitch = 0.8
+max_pitch = 1.1
+metadata/_custom_type_script = "uid://cftf5cycer8qm"
+
+[sub_resource type="Resource" id="Resource_264po"]
+script = ExtResource("86")
+from_value = Vector2(2, 2)
+to_value = Vector2(1, 1)
+duration = 1.0
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ounyb"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Resource" id="Resource_ab_hi"]
+script = ExtResource("86")
+from_value = Vector2(1, 1)
+to_value = Vector2(1.5, 1.5)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_ab_ho"]
+script = ExtResource("86")
+from_value = Vector2(1.5, 1.5)
+to_value = Vector2(1, 1)
+duration = 0.15
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="Resource" id="Resource_ab_rot"]
+script = ExtResource("86")
+property = "rotation"
+from_value = 0.0
+to_value = 6.28319
+duration = 0.5
+transition = 11
+metadata/_custom_type_script = "uid://d20fd7hw4vocu"
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+bg_color = Color(0.07, 0.07, 0.09, 0.85)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.506, 0.349, 0.29, 0.35)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_track"]
+content_margin_left = 0.0
+content_margin_top = 6.0
+content_margin_right = 0.0
+content_margin_bottom = 6.0
+bg_color = Color(0.12, 0.12, 0.14, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_fill"]
+bg_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_fill_hl"]
+bg_color = Color(0.61, 0.44, 0.37, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_normal"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 0.68466663, 0.57, 0.18039216)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_pressed"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.506, 0.349, 0.29, 0.5)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_hover"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.506, 0.349, 0.29, 0.32)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gkqi"]
+bg_color = Color(0.65, 0, 0.021666646, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="SB_prog_bg"]
+bg_color = Color(0.12, 0.12, 0.14, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.506, 0.349, 0.29, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="SB_prog_fill"]
+bg_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_home"]
+bg_color = Color(0.75, 0.13, 0.13, 0.9)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iekjf"]
+bg_color = Color(0.19315353, 0.19315353, 0.19315341, 1)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndb"]
+bg_color = Color(0.1, 0.32, 0.65, 0.8509804)
+border_width_bottom = 2
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Game" type="Control" unique_id=79603762 node_paths=PackedStringArray("desk_controller")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1")
+desk_controller = NodePath("DeskController")
+game_config = SubResource("Resource_game_cfg")
+tut_cases = [SubResource("Resource_pf7vy"), SubResource("Resource_3hbvx"), SubResource("Resource_q8j3a")]
+debug_case_data = SubResource("Resource_7gkqi")
+debug_start_mode = 4
+debug_test_day = 2
+debug_force_phone_stretch = true
+
+[node name="DeskController" type="Control" parent="." unique_id=1709912392]
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("10")
+paper_sfxs = [SubResource("Resource_gxtfn"), SubResource("Resource_twgab"), SubResource("Resource_02fa5"), SubResource("Resource_nepv3"), SubResource("Resource_7025r"), SubResource("Resource_m4url"), SubResource("Resource_8ool0")]
+
+[node name="DeskBG" type="TextureRect" parent="." unique_id=1865923391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CheapVignette" type="TextureRect" parent="." unique_id=777193159]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_cheapvig")
+expand_mode = 1
+
+[node name="Vignette" type="TextureRect" parent="." unique_id=478054376]
+material = SubResource("ShaderMaterial_7ixpq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DayStamp" parent="." unique_id=1366214391 instance=ExtResource("21")]
+z_index = 250
+layout_mode = 1
+day_start_stamp_position = Vector2(640, 50)
+pause_duration = 0.4
+fade_duration = 5.0
+start_x_offset = -50.0
+start_top_margin = 0.0
+label_offset = Vector2(0, 10)
+shake_strength = 5.0
+shake_duration = 0.1
+start_splash_color = Color(0.78, 0.26519996, 0.26519996, 1)
+
+[node name="DeskStamps" type="Control" parent="." unique_id=717585072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("22")
+
+[node name="Misc" type="Control" parent="." unique_id=2121848854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tea" type="Control" parent="Misc" unique_id=742326361 node_paths=PackedStringArray("target_entry")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -327.0
+offset_top = -701.0
+offset_right = -227.0
+offset_bottom = -601.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(50, 50)
+script = ExtResource("23")
+pickup_sfx = SubResource("Resource_weeiq")
+throw_others_sfxs = [SubResource("Resource_xbifu"), SubResource("Resource_gdf8r"), SubResource("Resource_x8trd"), SubResource("Resource_3hv4c"), SubResource("Resource_vniw0"), SubResource("Resource_lddog"), SubResource("Resource_boxkr"), SubResource("Resource_de5we"), SubResource("Resource_473mq"), SubResource("Resource_1va0p"), SubResource("Resource_2tvof")]
+throw_bottom_sfxs = [SubResource("Resource_tea_cat2")]
+reenter_sfx = SubResource("Resource_tea_slide")
+glass_shards_scene = ExtResource("38")
+shard_spawn_offset = 200.0
+target_entry = NodePath("../TeaEntry")
+
+[node name="TeaShadow" type="TextureRect" parent="Misc/Tea" unique_id=1801670509]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 5.0
+offset_right = -2.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("39")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tea" type="TextureRect" parent="Misc/Tea" unique_id=527470759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("39")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TeaEntry" type="Control" parent="Misc" unique_id=742326362]
+visible = false
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -327.0
+offset_top = -820.0
+offset_right = -227.0
+offset_bottom = -720.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Emoji 1" type="Control" parent="Misc" unique_id=941745366]
+visible = false
+anchors_preset = 0
+offset_left = 840.0
+offset_top = 279.0
+offset_right = 940.0
+offset_bottom = 379.0
+mouse_filter = 2
+
+[node name="TeaShadow" type="TextureRect" parent="Misc/Emoji 1" unique_id=583386379]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 7.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("40")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tea" type="TextureRect" parent="Misc/Emoji 1" unique_id=758847227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("40")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Emoji 2" type="Control" parent="Misc" unique_id=1712791602]
+visible = false
+anchors_preset = 0
+offset_left = 819.0
+offset_top = 116.0
+offset_right = 919.0
+offset_bottom = 216.0
+mouse_filter = 2
+
+[node name="TeaShadow" type="TextureRect" parent="Misc/Emoji 2" unique_id=832686926]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 7.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("41")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tea" type="TextureRect" parent="Misc/Emoji 2" unique_id=1239370456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("41")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Emoji 3" type="Control" parent="Misc" unique_id=2000025349]
+visible = false
+anchors_preset = 0
+offset_left = 636.0
+offset_top = 289.0
+offset_right = 736.0
+offset_bottom = 389.0
+mouse_filter = 2
+
+[node name="TeaShadow" type="TextureRect" parent="Misc/Emoji 3" unique_id=601509519]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 7.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("42")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tea" type="TextureRect" parent="Misc/Emoji 3" unique_id=1755427901]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("42")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Tools" type="Control" parent="." unique_id=1857454635]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterNote" parent="Tools" unique_id=1645295953 instance=ExtResource("43")]
+layout_mode = 1
+enter_transition = 5
+
+[node name="Marker" type="Control" parent="Tools" unique_id=321938778 node_paths=PackedStringArray("marker_shadow", "marker_texture", "highlight", "hover_scale_target")]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -163.0
+offset_top = -573.0
+offset_right = -63.0
+offset_bottom = -473.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("44")
+tex_rotation = 0.0
+shadow_offset = Vector2(10, 0)
+mark_sfx = SubResource("Resource_qouja")
+pickup_sfx = SubResource("Resource_mmvbu")
+release_sfx = SubResource("Resource_7nv0b")
+marker_shadow = NodePath("Control/MarkerShadow")
+marker_texture = NodePath("Control/MarkerTexture")
+highlight = NodePath("Control/MarkerTexture/Highlight")
+hover_scale_target = NodePath("Control")
+hover_scale = 1.2
+
+[node name="Control" type="Control" parent="Tools/Marker" unique_id=1602533932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 2.3561945
+pivot_offset = Vector2(50, 50)
+mouse_filter = 2
+
+[node name="MarkerShadow" type="TextureRect" parent="Tools/Marker/Control" unique_id=489364454]
+self_modulate = Color(0, 0, 0, 0.43137255)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 5.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("47")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarkerTexture" type="TextureRect" parent="Tools/Marker/Control" unique_id=2119424924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.9116559
+offset_top = 11.220337
+offset_right = 0.91165924
+offset_bottom = 11.220337
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("47")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="Tools/Marker/Control/MarkerTexture" unique_id=1496266080]
+visible = false
+self_modulate = Color(17.045815, 17.045815, 17.045815, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_66xif")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.163406
+offset_top = -0.111198425
+offset_right = -36.17552
+offset_bottom = -0.111198425
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("47")
+expand_mode = 1
+
+[node name="Bell" type="Control" parent="Tools" unique_id=125304486 node_paths=PackedStringArray("highlight")]
+self_modulate = Color(0.7794576, 0.02729603, 0.18585151, 1)
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -165.0
+offset_right = -33.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("49")
+press_sfx = SubResource("Resource_js0lu")
+buzz_sfx = SubResource("Resource_pr1ej")
+release_sfx = SubResource("Resource_05nbr")
+arabic_normal_texture = ExtResource("53")
+arabic_pressed_texture = ExtResource("54")
+moving_btn_offset = Vector2(0, -20)
+highlight = NodePath("BellParent/BellRingButton/Highlight")
+
+[node name="BellParent" type="Control" parent="Tools/Bell" unique_id=538804348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Shadow" type="TextureRect" parent="Tools/Bell/BellParent" unique_id=1805191211]
+modulate = Color(0, 0, 0, 0.63100004)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 19.0
+offset_right = -4.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("55")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="Tools/Bell/BellParent/Shadow" unique_id=1904004523]
+visible = false
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_kvpfn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = -29.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("57")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Tools/Bell/BellParent" unique_id=674406740]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("55")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="Tools/Bell/BellParent/TextureRect" unique_id=1252465579]
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_kvpfn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = -29.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("57")
+expand_mode = 1
+
+[node name="MovingButton" type="TextureRect" parent="Tools/Bell/BellParent" unique_id=1322609647]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("58")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="Tools/Bell/BellParent/MovingButton" unique_id=736970881]
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_kvpfn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("58")
+expand_mode = 1
+
+[node name="BellRingButton" type="TextureButton" parent="Tools/Bell/BellParent" unique_id=1789308416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("59")
+texture_pressed = ExtResource("60")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Highlight" type="TextureRect" parent="Tools/Bell/BellParent/BellRingButton" unique_id=1808712427]
+visible = false
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_ms3bu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = -17.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("57")
+expand_mode = 1
+
+[node name="HidePos" type="Control" parent="Tools/Bell" unique_id=108443780]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 302.0
+offset_top = -1.0
+offset_right = 302.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ShowPos" type="Control" parent="Tools/Bell" unique_id=287220179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Printer" type="Control" parent="Tools" unique_id=425981535]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -261.0
+offset_top = -292.0
+offset_right = 79.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("61")
+manual_hold_progress_per_sec = 0.2
+manual_click_progress = 0.04
+print_sfxs = [SubResource("Resource_458eo"), SubResource("Resource_h3rex"), SubResource("Resource_fedci"), SubResource("Resource_8qswn")]
+print_sec_sfx = SubResource("Resource_rm0al")
+
+[node name="PrinterParent" type="Control" parent="Tools/Printer" unique_id=2066577637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 273.0
+offset_right = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Shadow" type="TextureRect" parent="Tools/Printer/PrinterParent" unique_id=820922364]
+modulate = Color(0, 0, 0, 0.4)
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("67")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Body" type="TextureRect" parent="Tools/Printer/PrinterParent" unique_id=64404654]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("67")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BGShadow" type="TextureRect" parent="Tools/Printer/PrinterParent" unique_id=1128279548]
+modulate = Color(0, 0, 0, 0.4)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("68")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BG" type="TextureRect" parent="Tools/Printer/PrinterParent" unique_id=359905411]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("68")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Lamp" type="TextureRect" parent="Tools/Printer/PrinterParent" unique_id=689633745]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("69")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PrinterShowPos" type="Control" parent="Tools/Printer" unique_id=1896286576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PrinterHidePos" type="Control" parent="Tools/Printer" unique_id=195125430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 292.0
+offset_right = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardSpawn" type="Control" parent="Tools/Printer" unique_id=1577980161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 593.0
+offset_top = 80.0
+offset_right = 593.0
+offset_bottom = -113.20999
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardPrint" type="Control" parent="Tools/Printer" unique_id=2054269644]
+anchors_preset = 0
+offset_left = -208.0
+offset_top = 80.0
+offset_right = -168.0
+offset_bottom = 120.0
+mouse_filter = 2
+
+[node name="CardThrow" type="Control" parent="Tools/Printer" unique_id=258134734]
+anchors_preset = 0
+offset_left = -495.0
+offset_top = -70.0
+offset_right = -455.0
+offset_bottom = -30.0
+mouse_filter = 2
+
+[node name="ApproveShadow" type="Control" parent="Tools" unique_id=1433500930]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -347.0
+offset_right = -47.0
+offset_bottom = -297.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("70")
+vertical_offset = 40.0
+pickup_duration = 0.1
+return_duration = 0.0
+
+[node name="ColorRect" type="TextureRect" parent="Tools/ApproveShadow" unique_id=2033608473]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = -3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("71")
+
+[node name="ApproveStamp" parent="Tools" unique_id=1669360962 node_paths=PackedStringArray("stop_node", "shadow") groups=["stamp_tools"] instance=ExtResource("72")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -470.0
+offset_right = -50.0
+offset_bottom = -345.0
+grow_horizontal = 0
+grow_vertical = 0
+approve_stamp = true
+stop_node = NodePath("../StampArea")
+default_z = 150
+shadow = NodePath("../ApproveShadow")
+pickup_sfx = SubResource("Resource_o8oq8")
+release_sfx = SubResource("Resource_sxt1d")
+
+[node name="RejectShadow" type="Control" parent="Tools" unique_id=1577301903]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -347.0
+offset_right = -190.0
+offset_bottom = -297.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("70")
+vertical_offset = 40.0
+pickup_duration = 0.05
+return_duration = 0.0
+
+[node name="ColorRect" type="TextureRect" parent="Tools/RejectShadow" unique_id=978412497]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -8.0
+offset_right = -3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("74")
+
+[node name="RejectStamp" parent="Tools" unique_id=1317013461 node_paths=PackedStringArray("stop_node", "shadow") groups=["stamp_tools"] instance=ExtResource("72")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -318.0
+offset_top = -470.0
+offset_right = -193.0
+offset_bottom = -345.0
+grow_horizontal = 0
+grow_vertical = 0
+stop_node = NodePath("../StampArea")
+default_z = 150
+shadow = NodePath("../RejectShadow")
+arabic_texture = ExtResource("75")
+release_sfx = SubResource("Resource_sxt1d")
+
+[node name="MainPart2" parent="Tools/RejectStamp/MainPart" parent_id_path=PackedInt32Array(1317013461, 248946363) index="0" unique_id=711301709]
+texture = ExtResource("74")
+
+[node name="StampArea" type="ColorRect" parent="Tools" unique_id=89014891]
+visible = false
+z_index = 5
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 28.0
+offset_top = 592.0
+offset_right = 43.32
+offset_bottom = 635.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.3019608, 1, 1, 0.4117647)
+
+[node name="BossShadow" type="Control" parent="Tools" unique_id=1814101757]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_left = 683.0
+offset_top = -159.0
+offset_right = 811.0
+offset_bottom = -109.0
+mouse_filter = 2
+script = ExtResource("70")
+
+[node name="ColorRect" type="ColorRect" parent="Tools/BossShadow" unique_id=1887117311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.57254905)
+
+[node name="BossStamper" type="Control" parent="Tools" unique_id=1745744880 node_paths=PackedStringArray("stop_node", "shadow")]
+anchors_preset = 0
+offset_left = 685.0
+offset_top = -241.0
+offset_right = 725.0
+offset_bottom = -201.0
+mouse_filter = 2
+script = ExtResource("76")
+offset = Vector2(0, -80)
+stamp_offset = Vector2(0, -20)
+stop_node = NodePath("../StampArea")
+shadow = NodePath("../BossShadow")
+stamp_sfx = SubResource("Resource_37s47")
+
+[node name="Shadow" type="TextureRect" parent="Tools/BossStamper" unique_id=949356937]
+modulate = Color(0, 0, 0, 0.4)
+z_index = 5
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 130.0
+mouse_filter = 2
+texture = ExtResource("78")
+stretch_mode = 5
+
+[node name="MainPart" type="TextureRect" parent="Tools/BossStamper" unique_id=530001156]
+z_index = 5
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+texture = ExtResource("78")
+stretch_mode = 5
+
+[node name="Sounds" type="Control" parent="Tools/BossStamper" unique_id=1586767030]
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 491.0
+offset_right = 460.0
+offset_bottom = 531.0
+mouse_filter = 2
+
+[node name="StampSound" type="AudioStreamPlayer" parent="Tools/BossStamper/Sounds" unique_id=1520617856]
+bus = &"SFX"
+
+[node name="StampGuide" type="Control" parent="." unique_id=811000001]
+z_index = 50
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("79")
+ghost_scale = Vector2(1.25, 1.25)
+
+[node name="FormArea" type="Control" parent="." unique_id=1991339089]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 150.0
+offset_right = 273.0
+offset_bottom = 700.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="FolderArea" type="Control" parent="." unique_id=1426294150]
+anchors_preset = 0
+anchor_left = 0.25
+anchor_right = 0.25
+offset_left = -320.0
+offset_top = 155.0
+offset_right = 80.0
+offset_bottom = 705.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=493672666]
+visible = false
+z_index = 10
+position = Vector2(-120, -121)
+copy_mode = 2
+
+[node name="MagnifyingGlass" type="Control" parent="." unique_id=1584743745 node_paths=PackedStringArray("highlight", "hover_scale_target")]
+z_index = 100
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -321.0
+offset_top = -567.0
+offset_right = -183.0688
+offset_bottom = -487.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_default_cursor_shape = 2
+script = ExtResource("80")
+pickup_sfx = SubResource("Resource_weeiq")
+release_sfx = SubResource("Resource_uxocx")
+touch_hold_offset = Vector2(0, -150)
+zoom = 4.0
+distortion = -0.15000000000000002
+chromatic_aberration = 0.001
+lens_size = Vector2(400, 400)
+tint_strength = 0.0
+specular_color = Color(0.7139055, 0.75894254, 1, 1)
+specular_intensity = 0.504
+specular_position = Vector2(0.5, -0.02)
+specular_spread = 0.5
+pixel_specular_intensity = 0.25
+pixel_specular_position = Vector2(0.5, 0.05)
+pixel_specular_size = 0.1
+pixel_grid = 64.0
+counter_pixel_specular_intensity = 0.18
+counter_pixel_specular_size = 0.04
+pixel_specular_pos_left = Vector2(0.9, 0.2)
+pixel_specular_pos_right = Vector2(0.1, 0.2)
+pixel_specular_pos_top = Vector2(0.5, 0.2)
+pixel_specular_pos_bottom = Vector2(0.5, 0.05)
+frame_shadow_offset = Vector2(0, 115)
+bevel_intensity = 0.5
+bevel_start = 1.0
+bevel_softness = 0.1
+highlight = NodePath("IdleTexture/Highlight")
+hover_scale_target = NodePath(".")
+
+[node name="IdleTexture" type="Control" parent="MagnifyingGlass" unique_id=1527928175]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="Shadow" type="TextureRect" parent="MagnifyingGlass/IdleTexture" unique_id=1707874257]
+self_modulate = Color(0, 0, 0, 0.32200003)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("56")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Texture" type="TextureRect" parent="MagnifyingGlass/IdleTexture" unique_id=598855068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = ExtResource("56")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Highlight" type="TextureRect" parent="MagnifyingGlass/IdleTexture" unique_id=406690207]
+visible = false
+self_modulate = Color(5.3314185, 5.3314185, 5.3314185, 1)
+z_index = 5
+material = SubResource("ShaderMaterial_mmvbu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("56")
+expand_mode = 1
+
+[node name="FrameTexture" type="Control" parent="MagnifyingGlass" unique_id=776118780]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+mouse_filter = 2
+
+[node name="FrameShadow" type="TextureRect" parent="MagnifyingGlass/FrameTexture" unique_id=1403382207]
+self_modulate = Color(0, 0, 0, 0.193)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.96558
+offset_top = -150.0
+offset_right = 156.90244
+offset_bottom = 447.28998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3333334, 1.3333334)
+pivot_offset = Vector2(166.434, 298.645)
+mouse_filter = 2
+texture = ExtResource("81")
+expand_mode = 1
+
+[node name="FrameTexture" type="TextureRect" parent="MagnifyingGlass/FrameTexture" unique_id=1944933725]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4996698
+anchor_top = 0.595
+anchor_right = 0.4996698
+anchor_bottom = 0.595
+offset_left = -166.8335
+offset_top = -187.0
+offset_right = 166.03452
+offset_bottom = 410.28998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3333334, 1.3333334)
+pivot_offset = Vector2(166.434, 298.645)
+mouse_filter = 2
+texture = ExtResource("81")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="MagnifyingGlass" unique_id=1847333676]
+copy_mode = 2
+
+[node name="Lens" type="ColorRect" parent="MagnifyingGlass" unique_id=1173498500]
+visible = false
+material = SubResource("ShaderMaterial_1va0p")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+mouse_filter = 2
+
+[node name="Overlay" type="ColorRect" parent="MagnifyingGlass" unique_id=1227210126]
+material = SubResource("ShaderMaterial_2tvof")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 200)
+mouse_filter = 2
+
+[node name="UVLight" parent="." unique_id=2063377109 instance=ExtResource("84")]
+layout_mode = 0
+anchor_left = 0.25
+anchor_right = 0.25
+offset_left = 110.0
+offset_top = 292.0
+offset_right = 199.27
+offset_bottom = 692.0
+grow_horizontal = 2
+
+[node name="HUD" type="MarginContainer" parent="." unique_id=1796861906]
+z_index = 200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="Reputation" type="Control" parent="HUD" unique_id=556593874]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Reputation" unique_id=701653547]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 5.0
+offset_right = 752.0
+offset_bottom = 45.0
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_lnu2h")
+
+[node name="Arrow" type="TextureRect" parent="HUD/Reputation" unique_id=769720535]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 52.0
+offset_right = 588.0
+offset_bottom = 76.0
+mouse_filter = 2
+texture = ExtResource("58")
+expand_mode = 1
+
+[node name="HBoxContainer" type="Control" parent="HUD" unique_id=739961406]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="EndDayButton" type="Button" parent="HUD/HBoxContainer" unique_id=1612332317]
+visible = false
+layout_mode = 0
+offset_left = 125.0
+offset_top = 12.0
+offset_right = 247.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_edb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edb")
+text = "End Day"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+
+[node name="ScoreUI" type="Control" parent="HUD/HBoxContainer" unique_id=852931138]
+anchors_preset = 0
+offset_left = 14.0
+offset_right = 82.0
+offset_bottom = 690.0
+mouse_filter = 2
+script = ExtResource("87")
+tp = SubResource("Resource_ir15t")
+correct_color_tp = SubResource("Resource_trtic")
+false_color_tp = SubResource("Resource_ca42v")
+score_label_prefab = ExtResource("88")
+correct_sfx = SubResource("Resource_0sl42")
+wrong_sfx = SubResource("Resource_oaba0")
+
+[node name="ScoreLabel" type="Label" parent="HUD/HBoxContainer/ScoreUI" unique_id=137099575]
+layout_mode = 0
+offset_left = -6.0
+offset_right = 77.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("91")
+theme_override_font_sizes/font_size = 24
+text = "Score"
+
+[node name="ScoreValue" type="Label" parent="HUD/HBoxContainer/ScoreUI" unique_id=2323585]
+layout_mode = 0
+offset_top = 31.0
+offset_right = 68.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("92")
+theme_override_font_sizes/font_size = 33
+text = "372"
+
+[node name="CustomerUI" type="Control" parent="HUD/HBoxContainer" unique_id=534356259]
+custom_minimum_size = Vector2(135, 0)
+anchors_preset = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -164.0
+offset_right = -29.0
+offset_bottom = 690.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("93")
+tp = SubResource("Resource_264po")
+
+[node name="Control" type="Control" parent="HUD/HBoxContainer/CustomerUI" unique_id=1121856500]
+visible = false
+anchors_preset = 0
+offset_right = 135.0
+
+[node name="ColorRect" type="TextureRect" parent="HUD/HBoxContainer/CustomerUI/Control" unique_id=275122217]
+modulate = Color(0, 0, 0, 0.4)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("94")
+expand_mode = 1
+
+[node name="CustomerLabel" type="Label" parent="HUD/HBoxContainer/CustomerUI" unique_id=1520601146]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 14.0
+offset_right = 142.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("91")
+theme_override_font_sizes/font_size = 24
+text = "Customer"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="CustomerValue" type="Label" parent="HUD/HBoxContainer/CustomerUI" unique_id=624030015]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 43.0
+offset_right = 135.0
+offset_bottom = 93.0
+pivot_offset = Vector2(9.135, 14.275)
+theme_override_fonts/font = ExtResource("92")
+theme_override_font_sizes/font_size = 33
+text = "999"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DayDots" parent="HUD/HBoxContainer/CustomerUI" unique_id=876483660 instance=ExtResource("95")]
+layout_mode = 0
+current_dot_size = 8.0
+current_color = Color(0.92, 0.85376006, 0.25759998, 0.5921569)
+upcoming_color = Color(0, 0, 0, 0.3254902)
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=608438132]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 10
+
+[node name="ScoreLabelsParent" type="VBoxContainer" parent="HUD/MarginContainer" unique_id=654857163]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=269756305]
+stream = ExtResource("96")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="SpawnArea" type="Control" parent="." unique_id=845184433]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.0
+offset_top = -1361.0
+offset_right = -246.0
+offset_bottom = -1321.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ConsumeArea" type="Control" parent="." unique_id=133557852]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -286.0
+offset_top = 1614.0
+offset_right = -246.0
+offset_bottom = 1654.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="PPLayer" parent="." unique_id=1611966179 instance=ExtResource("97")]
+
+[node name="SettingsContainerShowPos" type="Control" parent="." unique_id=1160821502]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -620.0
+offset_right = 220.0
+offset_bottom = -18.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="SettingsContainer" type="Control" parent="." unique_id=1107125058 node_paths=PackedStringArray("show_pos_node")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -620.0
+offset_right = -9.0
+offset_bottom = -18.0
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("98")
+show_pos_node = NodePath("../SettingsContainerShowPos")
+
+[node name="AudioSettingsButton" type="Button" parent="SettingsContainer" unique_id=37171624]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -77.0
+offset_right = 88.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ounyb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ounyb")
+text = "⚙️"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_ab_hi")
+hover_out_tp = SubResource("Resource_ab_ho")
+rotate_tp = SubResource("Resource_ab_rot")
+
+[node name="Panel" type="Panel" parent="SettingsContainer" unique_id=457379065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_panel")
+
+[node name="SoundSection" type="VBoxContainer" parent="SettingsContainer" unique_id=1276575549 node_paths=PackedStringArray("magnifier_zoom_value_label", "language_dropdown", "arabic_numbers_toggle", "arabic_numbers_preview", "magnifier_zoom_slider", "fullscreen_toggle")]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = -20.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+script = ExtResource("99")
+magnifier_zoom_value_label = NodePath("MagnifierZoomSlider/MagnifierZoomCurrentValue")
+language_dropdown = NodePath("LanguageDropdown")
+arabic_numbers_toggle = NodePath("ArabicNumbersToggle")
+arabic_numbers_preview = NodePath("ArabicNumbersPreview")
+magnifier_zoom_slider = NodePath("MagnifierZoomSlider")
+fullscreen_toggle = NodePath("FullScreenToggle")
+
+[node name="MusicLabel" type="Label" parent="SettingsContainer/SoundSection" unique_id=2112221595]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 25
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicSlider" parent="SettingsContainer/SoundSection" unique_id=148288413 instance=ExtResource("100")]
+layout_mode = 2
+theme_override_styles/slider = SubResource("SB_slider_track")
+theme_override_styles/grabber_area = SubResource("SB_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("SB_slider_fill_hl")
+script = ExtResource("101")
+touch_pad_vertical = 16.0
+
+[node name="SFXLabel" type="Label" parent="SettingsContainer/SoundSection" unique_id=1350145707]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 25
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SFXSlider" parent="SettingsContainer/SoundSection" unique_id=2112543570 instance=ExtResource("100")]
+layout_mode = 2
+theme_override_styles/slider = SubResource("SB_slider_track")
+theme_override_styles/grabber_area = SubResource("SB_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("SB_slider_fill_hl")
+script = ExtResource("101")
+touch_pad_vertical = 16.0
+
+[node name="FullScreenToggle" type="CheckButton" parent="SettingsContainer/SoundSection" unique_id=987654328]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_colors/button_checked_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+theme_override_colors/button_unchecked_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+text = "FullScreen"
+
+[node name="HSeparator2" type="HSeparator" parent="SettingsContainer/SoundSection" unique_id=1631281839]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 25
+
+[node name="LanguageLabel" type="Label" parent="SettingsContainer/SoundSection" unique_id=912345678]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 25
+text = "Language"
+vertical_alignment = 1
+
+[node name="LanguageDropdown" type="OptionButton" parent="SettingsContainer/SoundSection" unique_id=987654321]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("SB_btn_normal")
+theme_override_styles/pressed = SubResource("SB_btn_pressed")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+theme_override_styles/focus = SubResource("SB_btn_normal")
+selected = 0
+item_count = 2
+popup/item_0/text = "العربية"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="ArabicNumbersToggle" type="CheckButton" parent="SettingsContainer/SoundSection" unique_id=987654323]
+auto_translate_mode = 2
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_colors/button_checked_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+theme_override_colors/button_unchecked_color = Color(0.5882353, 0.40392157, 0.3372549, 1)
+button_pressed = true
+text = "أرقام عربي"
+
+[node name="ArabicNumbersPreview" type="Label" parent="SettingsContainer/SoundSection" unique_id=987654327]
+auto_translate_mode = 2
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "٠"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="SettingsContainer/SoundSection" unique_id=1491291776]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 25
+
+[node name="MagnifierZoomLabel" type="Label" parent="SettingsContainer/SoundSection" unique_id=987654324]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 25
+text = "Magnifier Zoom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagnifierZoomSlider" type="HSlider" parent="SettingsContainer/SoundSection" unique_id=987654325]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/slider = SubResource("SB_slider_track")
+theme_override_styles/grabber_area = SubResource("SB_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("SB_slider_fill_hl")
+min_value = 1.5
+max_value = 4.0
+step = 0.5
+value = 3.0
+
+[node name="MagnifierZoomValue" type="Label" parent="SettingsContainer/SoundSection/MagnifierZoomSlider" unique_id=987654326]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 22.0
+offset_right = 177.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.61)
+theme_override_font_sizes/font_size = 16
+text = "1.5x	                                 4x"
+horizontal_alignment = 1
+
+[node name="MagnifierZoomCurrentValue" type="Label" parent="SettingsContainer/SoundSection/MagnifierZoomSlider" unique_id=1479525279]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 22.0
+offset_right = 177.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 27
+text = "2x"
+horizontal_alignment = 1
+
+[node name="MMBtn" type="Button" parent="SettingsContainer" unique_id=2034685577]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -51.0
+offset_right = -33.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gkqi")
+text = "Exit"
+
+[node name="MessageHistoryPanel" parent="." unique_id=637225953 instance=ExtResource("102")]
+layout_mode = 1
+
+[node name="EndOfDayScreen" type="Control" parent="." unique_id=1354483214]
+visible = false
+z_index = 300
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("103")
+shop_shake_duration = 0.05
+shop_shake_strength = 0.0
+
+[node name="EODView" type="Control" parent="EndOfDayScreen" unique_id=76215250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BGBottom" type="TextureRect" parent="EndOfDayScreen/EODView" unique_id=296177690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19")
+
+[node name="Split" type="HBoxContainer" parent="EndOfDayScreen/EODView" unique_id=500000101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Panel" type="PanelContainer" parent="EndOfDayScreen/EODView/Split" unique_id=2021836646]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SB_panel")
+script = ExtResource("104")
+eod_field_delay = 0.25
+eod_appear_duration = 0.2
+
+[node name="VBox" type="VBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel" unique_id=1115488496]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DayTitle" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1763359713]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Day 1 complete"
+horizontal_alignment = 1
+
+[node name="PerfectBanner" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=500000102]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.31, 1)
+theme_override_font_sizes/font_size = 20
+text = "No mistakes. The Registry is proud of you, probably."
+horizontal_alignment = 1
+
+[node name="CasesServed" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1889017325]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Prefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/CasesServed" unique_id=-1100000001]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Cases served: "
+
+[node name="Value" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/CasesServed" unique_id=-1100000002]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="Tally" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1173295200]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="CorrectPrefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Tally" unique_id=-1100000003]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "✔ Correct: "
+
+[node name="CorrectValue" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Tally" unique_id=-1100000004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="WrongPrefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Tally" unique_id=-1100000005]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "   ✖ Wrong: "
+
+[node name="WrongValue" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Tally" unique_id=-1100000006]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="TodayPay" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1067845671]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Prefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/TodayPay" unique_id=-1100000007]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Today's pay: "
+
+[node name="Value" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/TodayPay" unique_id=-1100000008]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="Expenses" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=940270091]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Prefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Expenses" unique_id=-1100000013]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "Expenses: "
+
+[node name="Value" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Expenses" unique_id=-1100000014]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="FoodLabel" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=940270092]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="TotalMoney" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=940270089]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Prefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/TotalMoney" unique_id=-1100000009]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Total money: "
+
+[node name="Value" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/TotalMoney" unique_id=-1100000010]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
+
+[node name="ExpGained" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=940270090]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Prefix" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/ExpGained" unique_id=-1100000011]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Exp gained: "
+
+[node name="Value" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox/ExpGained" unique_id=-1100000012]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.9, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "0"
+
+[node name="Rank" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1827103041]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Rank: Clerk-in-Training"
+horizontal_alignment = 1
+
+[node name="RankProgress" type="ProgressBar" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=500000105]
+custom_minimum_size = Vector2(300, 26)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("SB_prog_bg")
+theme_override_styles/fill = SubResource("SB_prog_fill")
+max_value = 1.0
+step = 0.001
+show_percentage = false
+
+[node name="RankProgressLabel" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=500000107]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "0 / 0"
+horizontal_alignment = 1
+
+[node name="PromotionBanner" type="Label" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=500000106]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.84, 0.31, 1)
+theme_override_font_sizes/font_size = 22
+text = "Promoted! You are now a Records Officer"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=500000104]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="EndOfDayScreen/EODView/Split/Panel/VBox" unique_id=1019161243]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="HomeButton" type="Button" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Buttons" unique_id=978400442]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_home")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_home")
+icon = ExtResource("105")
+expand_icon = true
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+
+[node name="ShopButton" type="Button" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Buttons" unique_id=1283629990]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iekjf")
+text = "Shop"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+rotate_on_press = false
+
+[node name="Spacer" type="Control" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Buttons" unique_id=978400443]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="NextDayButton" type="Button" parent="EndOfDayScreen/EODView/Split/Panel/VBox/Buttons" unique_id=978400440]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ndb")
+text = "Next Day ▶"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+
+[node name="ReviewPanel" parent="EndOfDayScreen/EODView/Split" unique_id=500000103 instance=ExtResource("106")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("SB_panel")
+spring_transition = 10
+flash_color = Color(1, 1, 1, 0.6)
+
+[node name="ShopView" parent="EndOfDayScreen" unique_id=1379590670 instance=ExtResource("107")]
+layout_mode = 1
+
+[node name="EndDayConfirm" type="Control" parent="." unique_id=1612332318]
+visible = false
+z_index = 400
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="ColorRect" parent="EndDayConfirm" unique_id=1612332319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="EndDayConfirm" unique_id=1612332320]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -120.0
+offset_right = 250.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_panel")
+
+[node name="VBox" type="VBoxContainer" parent="EndDayConfirm/Panel" unique_id=1612332321]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Title" type="Label" parent="EndDayConfirm/Panel/VBox" unique_id=1612332322]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "End the day?"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="EndDayConfirm/Panel/VBox" unique_id=1612332323]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Are you sure you want to end
+your run and collect your earnings?"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="EndDayConfirm/Panel/VBox" unique_id=1612332324]
+layout_mode = 2
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="EndDayConfirm/Panel/VBox/Buttons" unique_id=1612332325]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iekjf")
+text = "No"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+rotate_on_press = false
+
+[node name="ConfirmButton" type="Button" parent="EndDayConfirm/Panel/VBox/Buttons" unique_id=1612332326]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_edb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iekjf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_edb")
+text = "Yes, End Day"
+script = ExtResource("85")
+hover_in_tp = SubResource("Resource_edb_hi")
+hover_out_tp = SubResource("Resource_edb_ho")
+rotate_tp = SubResource("Resource_edb_rot")
+
+[node name="GraduationPopup" parent="." unique_id=1612332327 instance=ExtResource("108")]
+layout_mode = 1
+
+[node name="SaveIndicator" parent="." unique_id=307410315 instance=ExtResource("109")]
+layout_mode = 1
+
+[node name="FpsCounter" type="Label" parent="." unique_id=979999008]
+visible = false
+z_index = 1000
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
+text = "60 FPS"
+script = ExtResource("110")
+
+[node name="Radio" parent="Tools" instance=ExtResource("111")]
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 174.0
+offset_bottom = 136.0
+
+[connection signal="mouse_entered" from="Tools/Marker" to="Tools/Marker" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tools/Marker" to="Tools/Marker" method="_on_mouse_exit"]
+[connection signal="mouse_entered" from="Tools/Bell" to="Tools/Bell" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tools/Bell" to="Tools/Bell" method="_on_mouse_exit"]
+[connection signal="button_up" from="Tools/Bell/BellParent/BellRingButton" to="Tools/Bell" method="_on_button_up"]
+[connection signal="pressed" from="Tools/Bell/BellParent/BellRingButton" to="Tools/Bell" method="ring_bell"]
+[connection signal="mouse_entered" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MagnifyingGlass" to="MagnifyingGlass" method="_on_mouse_exit"]
+[connection signal="pressed" from="SettingsContainer/MMBtn" to="SettingsContainer" method="back_to_mm"]
+[connection signal="gui_input" from="EndDayConfirm/Backdrop" to="." method="_on_end_day_backdrop_input"]
+[connection signal="pressed" from="EndDayConfirm/Panel/VBox/Buttons/CancelButton" to="." method="_on_end_day_cancel"]
+[connection signal="pressed" from="EndDayConfirm/Panel/VBox/Buttons/ConfirmButton" to="." method="_on_end_day_confirm"]
+
+[editable path="Tools/RejectStamp"]

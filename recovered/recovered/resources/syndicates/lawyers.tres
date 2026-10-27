@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SyndicateData" format=3 uid="uid://bsyndlawy3c"]
+
+[ext_resource type="Script" uid="uid://b6fjrcnepy62" path="res://system/scripts/resources/syndicate_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "LAWYERS"
+name_en = "Lawyers' Syndicate"
+name_ar = "نقابة المحامين"
+emojis = ["⚖️", "📜", "🏛️"]
+occupations_en = ["lawyer", "judge"]
+occupations_ar = ["محامي", "قاضي"]

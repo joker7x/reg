@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1nksp1ash70"]
+
+[ext_resource type="Script" uid="uid://ttxu0tu7sj88" path="res://system/tools/ink_splash.gd" id="1"]
+
+[node name="InkSplash" type="Node2D" unique_id=1772318620]
+script = ExtResource("1")

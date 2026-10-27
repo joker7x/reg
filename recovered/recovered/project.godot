@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="The Registry"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://export_setup_runner.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=120
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="uid://v0jqwsep0nic"
 boot_splash/image="uid://cndqr50xw0v1u"
+config/icon="uid://v0jqwsep0nic"
 
 [audio]
 
